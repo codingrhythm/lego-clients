@@ -27,6 +27,11 @@
 		B5E1541F20E5EBB60025A759 /* lego_core_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5E1541D20E5EBB60025A759 /* lego_core_impl.cpp */; };
 		B5E1542020E5EBB60025A759 /* network_callback_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5E1541E20E5EBB60025A759 /* network_callback_impl.cpp */; };
 		B5E1543120E5EF470025A759 /* LGLegoPlatformImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E1543020E5EF470025A759 /* LGLegoPlatformImpl.m */; };
+		B5E1543720E5F1B00025A759 /* Lego.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E1543420E5F1AF0025A759 /* Lego.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B5E1543820E5F1B00025A759 /* Lego.pbrpc.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E1543620E5F1AF0025A759 /* Lego.pbrpc.m */; };
+		B5E1543E20E600620025A759 /* Template+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E1543D20E600620025A759 /* Template+Extensions.m */; };
+		B5E1544120E602020025A759 /* Question+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E1544020E602020025A759 /* Question+Extensions.m */; };
+		B5E1544420E603190025A759 /* Page+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E1544320E603190025A759 /* Page+Extensions.m */; };
 		D434C176FD454F7A69EC1B78 /* libPods-lego.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 717290BF3DBAAD3B8A500E5D /* libPods-lego.a */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +88,16 @@
 		B5E1542B20E5EC520025A759 /* page.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = page.hpp; sourceTree = "<group>"; };
 		B5E1542F20E5EF470025A759 /* LGLegoPlatformImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGLegoPlatformImpl.h; sourceTree = "<group>"; };
 		B5E1543020E5EF470025A759 /* LGLegoPlatformImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGLegoPlatformImpl.m; sourceTree = "<group>"; };
+		B5E1543320E5F1AF0025A759 /* Lego.pbrpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lego.pbrpc.h; path = proto/Lego.pbrpc.h; sourceTree = SOURCE_ROOT; };
+		B5E1543420E5F1AF0025A759 /* Lego.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lego.pbobjc.m; path = proto/Lego.pbobjc.m; sourceTree = SOURCE_ROOT; };
+		B5E1543520E5F1AF0025A759 /* Lego.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lego.pbobjc.h; path = proto/Lego.pbobjc.h; sourceTree = SOURCE_ROOT; };
+		B5E1543620E5F1AF0025A759 /* Lego.pbrpc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lego.pbrpc.m; path = proto/Lego.pbrpc.m; sourceTree = SOURCE_ROOT; };
+		B5E1543C20E600620025A759 /* Template+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Template+Extensions.h"; sourceTree = "<group>"; };
+		B5E1543D20E600620025A759 /* Template+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Template+Extensions.m"; sourceTree = "<group>"; };
+		B5E1543F20E602020025A759 /* Question+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Question+Extensions.h"; sourceTree = "<group>"; };
+		B5E1544020E602020025A759 /* Question+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Question+Extensions.m"; sourceTree = "<group>"; };
+		B5E1544220E603190025A759 /* Page+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Page+Extensions.h"; sourceTree = "<group>"; };
+		B5E1544320E603190025A759 /* Page+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Page+Extensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +160,7 @@
 		B5E153F120E5EAA90025A759 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				B5E1543220E5F19B0025A759 /* GRPC */,
 				B5E153F320E5EAE10025A759 /* Bridge */,
 				B5E153F220E5EAD90025A759 /* Djinni */,
 			);
@@ -231,8 +247,25 @@
 			children = (
 				B5E1542F20E5EF470025A759 /* LGLegoPlatformImpl.h */,
 				B5E1543020E5EF470025A759 /* LGLegoPlatformImpl.m */,
+				B5E1543C20E600620025A759 /* Template+Extensions.h */,
+				B5E1543D20E600620025A759 /* Template+Extensions.m */,
+				B5E1543F20E602020025A759 /* Question+Extensions.h */,
+				B5E1544020E602020025A759 /* Question+Extensions.m */,
+				B5E1544220E603190025A759 /* Page+Extensions.h */,
+				B5E1544320E603190025A759 /* Page+Extensions.m */,
 			);
 			path = Platform;
+			sourceTree = "<group>";
+		};
+		B5E1543220E5F19B0025A759 /* GRPC */ = {
+			isa = PBXGroup;
+			children = (
+				B5E1543520E5F1AF0025A759 /* Lego.pbobjc.h */,
+				B5E1543420E5F1AF0025A759 /* Lego.pbobjc.m */,
+				B5E1543320E5F1AF0025A759 /* Lego.pbrpc.h */,
+				B5E1543620E5F1AF0025A759 /* Lego.pbrpc.m */,
+			);
+			path = GRPC;
 			sourceTree = "<group>";
 		};
 		C048C21C07291745096BEC5A /* Frameworks */ = {
@@ -365,12 +398,17 @@
 				B5E153FA20E5EB230025A759 /* DJIProxyCaches.mm in Sources */,
 				B5E1541920E5EB550025A759 /* LGQuestion+Private.mm in Sources */,
 				B5E1541420E5EB550025A759 /* LGLegoCore+Private.mm in Sources */,
+				B5E1543820E5F1B00025A759 /* Lego.pbrpc.m in Sources */,
+				B5E1544420E603190025A759 /* Page+Extensions.m in Sources */,
 				B5E1541220E5EB550025A759 /* LGPage.mm in Sources */,
 				B5E153EB20E5E83D0025A759 /* main.mm in Sources */,
 				B5E1541720E5EB550025A759 /* LGTemplate.mm in Sources */,
+				B5E1543E20E600620025A759 /* Template+Extensions.m in Sources */,
 				B5E1541620E5EB550025A759 /* LGPage+Private.mm in Sources */,
 				B5E1541520E5EB550025A759 /* LGTemplate+Private.mm in Sources */,
 				B5E153DD20E5E83B0025A759 /* AppDelegate.m in Sources */,
+				B5E1544120E602020025A759 /* Question+Extensions.m in Sources */,
+				B5E1543720E5F1B00025A759 /* Lego.pbobjc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

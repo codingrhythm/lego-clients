@@ -7,23 +7,28 @@
 //
 
 #import "ViewController.h"
+#import "LGLegoCore.h"
+#import "LGLegoPlatformImpl.h"
 
 @interface ViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    LGLegoCore *_coreAPI;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    LGLegoPlatformImpl *platform = [[LGLegoPlatformImpl alloc] init];
+    _coreAPI = [LGLegoCore create:platform];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)actionButtonTapped:(id)sender {
+    for (int i = 0; i < 10; i ++) {
+        [_coreAPI getData:true];
+    }
 }
-
 
 @end
