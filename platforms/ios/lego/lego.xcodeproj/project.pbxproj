@@ -13,9 +13,13 @@
 		B5E153E520E5E83D0025A759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E153E420E5E83D0025A759 /* Assets.xcassets */; };
 		B5E153E820E5E83D0025A759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E153E620E5E83D0025A759 /* LaunchScreen.storyboard */; };
 		B5E153EB20E5E83D0025A759 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E153EA20E5E83D0025A759 /* main.m */; };
+		D434C176FD454F7A69EC1B78 /* libPods-lego.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 717290BF3DBAAD3B8A500E5D /* libPods-lego.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BB43923ACF91B12C5D6AE99 /* Pods-lego.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lego.release.xcconfig"; path = "Pods/Target Support Files/Pods-lego/Pods-lego.release.xcconfig"; sourceTree = "<group>"; };
+		717290BF3DBAAD3B8A500E5D /* libPods-lego.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lego.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B11EB63DFF84CE9BF09B034A /* Pods-lego.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lego.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lego/Pods-lego.debug.xcconfig"; sourceTree = "<group>"; };
 		B5E153D820E5E83B0025A759 /* lego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lego.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E153DB20E5E83B0025A759 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5E153DC20E5E83B0025A759 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D434C176FD454F7A69EC1B78 /* libPods-lego.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10030BA2743471B44C855935 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B11EB63DFF84CE9BF09B034A /* Pods-lego.debug.xcconfig */,
+				0BB43923ACF91B12C5D6AE99 /* Pods-lego.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B5E153CF20E5E83A0025A759 = {
 			isa = PBXGroup;
 			children = (
 				B5E153DA20E5E83B0025A759 /* lego */,
 				B5E153D920E5E83B0025A759 /* Products */,
+				10030BA2743471B44C855935 /* Pods */,
+				C048C21C07291745096BEC5A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +87,14 @@
 			path = lego;
 			sourceTree = "<group>";
 		};
+		C048C21C07291745096BEC5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				717290BF3DBAAD3B8A500E5D /* libPods-lego.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5E153EE20E5E83D0025A759 /* Build configuration list for PBXNativeTarget "lego" */;
 			buildPhases = (
+				3C6142F25CDBD766468A5A5C /* [CP] Check Pods Manifest.lock */,
 				B5E153D420E5E83B0025A759 /* Sources */,
 				B5E153D520E5E83B0025A759 /* Frameworks */,
 				B5E153D620E5E83B0025A759 /* Resources */,
+				C3377164816C9445BFFBB1EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +161,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C6142F25CDBD766468A5A5C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lego-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3377164816C9445BFFBB1EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-lego/Pods-lego-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC/gRPCCertificates.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lego/Pods-lego-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B5E153D420E5E83B0025A759 /* Sources */ = {
@@ -281,14 +346,12 @@
 		};
 		B5E153EF20E5E83D0025A759 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B11EB63DFF84CE9BF09B034A /* Pods-lego.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = lego/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cmsight.lego;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -297,14 +360,12 @@
 		};
 		B5E153F020E5E83D0025A759 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BB43923ACF91B12C5D6AE99 /* Pods-lego.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = lego/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cmsight.lego;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
