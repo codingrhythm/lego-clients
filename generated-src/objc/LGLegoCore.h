@@ -14,10 +14,11 @@
 + (nullable LGLegoCore *)create:(nullable id<LGLegoPlatform>)platform;
 
 /** get data */
-- (void)getData;
+- (void)getData:(BOOL)useGrpc;
 
 /** send data */
-- (void)sendData:(nonnull LGTemplate *)data;
+- (void)sendData:(nonnull LGTemplate *)data
+         useGrpc:(BOOL)useGrpc;
 
 /** upload file */
 - (void)uploadFile:(nonnull NSData *)fileData;

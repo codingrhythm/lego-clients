@@ -22,10 +22,10 @@ public:
     static std::shared_ptr<LegoCore> create(const std::shared_ptr<LegoPlatform> & platform);
 
     /** get data */
-    virtual void get_data() = 0;
+    virtual void get_data(bool use_grpc) = 0;
 
     /** send data */
-    virtual void send_data(const Template & data) = 0;
+    virtual void send_data(const Template & data, bool use_grpc) = 0;
 
     /** upload file */
     virtual void upload_file(const std::vector<uint8_t> & file_data) = 0;

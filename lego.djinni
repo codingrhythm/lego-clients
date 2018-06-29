@@ -46,10 +46,10 @@ lego_core = interface +c {
   static create(platform: lego_platform): lego_core;
 
   # get data
-  get_data();
+  get_data(use_grpc: bool);
 
   # send data
-  send_data(data: template);
+  send_data(data: template, use_grpc: bool);
 
   # upload file
   upload_file(file_data: binary);

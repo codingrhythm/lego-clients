@@ -39,15 +39,17 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)getData {
+- (void)getData:(BOOL)useGrpc {
     try {
-        _cppRefHandle.get()->get_data();
+        _cppRefHandle.get()->get_data(::djinni::Bool::toCpp(useGrpc));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)sendData:(nonnull LGTemplate *)data {
+- (void)sendData:(nonnull LGTemplate *)data
+         useGrpc:(BOOL)useGrpc {
     try {
-        _cppRefHandle.get()->send_data(::djinni_generated::Template::toCpp(data));
+        _cppRefHandle.get()->send_data(::djinni_generated::Template::toCpp(data),
+                                       ::djinni::Bool::toCpp(useGrpc));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
