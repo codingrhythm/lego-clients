@@ -1,0 +1,6 @@
+[submodule "deps/djinni"]
+	path = deps/djinni
+	url = https://github.com/dropbox/djinni.git
+[submodule "deps/flatbuffers"]
+	path = deps/flatbuffers
+	url = https://github.com/google/flatbuffers.git
