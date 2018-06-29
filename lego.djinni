@@ -1,0 +1,92 @@
+question = record {
+  # id of the question
+  id: string;
+
+  # title of the question
+  title: string;
+
+  # response type
+  response_type: i32;
+
+  # description of the question
+  description: string;
+
+  # order of the question
+  order: i32;
+}
+
+page = record {
+  # id of the page
+  id: string;
+
+  # title of the page
+  title: string;
+
+  # order of the page
+  order: i32;
+
+  # questions
+  questions: list<question>;
+}
+
+template = record {
+  # id of the template
+  id: string;
+
+  # name of the template
+  name: string;
+
+  # pages
+  pages: list<page>;
+}
+
+# Shared core APIs
+lego_core = interface +c {
+  # class method to create core API instance
+  static create(platform: lego_platform): lego_core;
+
+  # get data
+  get_data();
+
+  # send data
+  send_data(data: template);
+
+  # upload file
+  upload_file(file_data: binary);
+
+  # download file
+  download_file(file_id: string);
+}
+
+# Platform APIs
+lego_platform = interface +o +j {
+  # get platform specific storage path
+  get_storage_path(): string;
+
+  # event subscriptions
+  # notify UI layer when data is updated
+  data_updated(data: template);
+
+  # http methods
+  http_download_file(file_id: string, callback: network_callback);
+  http_upload_file(path: string, callback: network_callback);
+  http_get_data(callback: network_callback);
+  http_send_data(data: template, callback: network_callback);
+
+  # grpc methods
+  grpc_get_data(callback: network_callback);
+  grpc_send_data(data: template, callback: network_callback)
+}
+
+# Callbacks
+network_callback = interface +c {
+  # http handlers
+  on_http_download_file_success(path: string);
+  on_http_upload_file_success();
+  on_http_get_data_success(data: template);
+  on_http_send_data_success();
+
+  # grpc handlers
+  on_grpc_get_data_success(data: template);
+  on_grpc_send_data_success();
+}
