@@ -75,7 +75,7 @@ lego_platform = interface +o +j {
 
   # grpc methods
   grpc_get_data(callback: network_callback);
-  grpc_send_data(data: template, callback: network_callback)
+  grpc_send_data(data: template, callback: network_callback);
 }
 
 # Callbacks
