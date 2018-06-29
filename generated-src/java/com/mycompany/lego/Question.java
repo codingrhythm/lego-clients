@@ -12,7 +12,7 @@ public final class Question {
 
     /*package*/ final int mResponseType;
 
-    /*package*/ final String mDescription;
+    /*package*/ final String mQuestionDescription;
 
     /*package*/ final int mOrder;
 
@@ -20,12 +20,12 @@ public final class Question {
             String id,
             String title,
             int responseType,
-            String description,
+            String questionDescription,
             int order) {
         this.mId = id;
         this.mTitle = title;
         this.mResponseType = responseType;
-        this.mDescription = description;
+        this.mQuestionDescription = questionDescription;
         this.mOrder = order;
     }
 
@@ -45,8 +45,8 @@ public final class Question {
     }
 
     /** description of the question */
-    public String getDescription() {
-        return mDescription;
+    public String getQuestionDescription() {
+        return mQuestionDescription;
     }
 
     /** order of the question */
@@ -60,7 +60,7 @@ public final class Question {
                 "mId=" + mId +
                 "," + "mTitle=" + mTitle +
                 "," + "mResponseType=" + mResponseType +
-                "," + "mDescription=" + mDescription +
+                "," + "mQuestionDescription=" + mQuestionDescription +
                 "," + "mOrder=" + mOrder +
         "}";
     }

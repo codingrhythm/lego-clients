@@ -1,8 +1,7 @@
 #include "lego_core_impl.hpp"
-#include "network_callback_impl.hpp"
 
 namespace lego {
-  std::shared_ptr<LegoCore> lego::create(const std::shared_ptr<LegoPlatform> & platform) {
+  std::shared_ptr<LegoCore> LegoCore::create(const std::shared_ptr<LegoPlatform> & platform) {
     return std::make_shared<LegoCoreImpl>(platform);
   }
 

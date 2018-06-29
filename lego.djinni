@@ -9,7 +9,7 @@ question = record {
   response_type: i32;
 
   # description of the question
-  description: string;
+  question_description: string;
 
   # order of the question
   order: i32;

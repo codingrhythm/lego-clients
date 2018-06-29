@@ -7,12 +7,12 @@
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                              title:(nonnull NSString *)title
                       responseType:(int32_t)responseType
-                       description:(nonnull NSString *)description
+               questionDescription:(nonnull NSString *)questionDescription
                              order:(int32_t)order;
 + (nonnull instancetype)questionWithId:(nonnull NSString *)id
                                  title:(nonnull NSString *)title
                           responseType:(int32_t)responseType
-                           description:(nonnull NSString *)description
+                   questionDescription:(nonnull NSString *)questionDescription
                                  order:(int32_t)order;
 
 /** id of the question */
@@ -25,7 +25,7 @@
 @property (nonatomic, readonly) int32_t responseType;
 
 /** description of the question */
-@property (nonatomic, readonly, nonnull) NSString * description;
+@property (nonatomic, readonly, nonnull) NSString * questionDescription;
 
 /** order of the question */
 @property (nonatomic, readonly) int32_t order;

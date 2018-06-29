@@ -9,14 +9,14 @@
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                              title:(nonnull NSString *)title
                       responseType:(int32_t)responseType
-                       description:(nonnull NSString *)description
+               questionDescription:(nonnull NSString *)questionDescription
                              order:(int32_t)order
 {
     if (self = [super init]) {
         _id = [id copy];
         _title = [title copy];
         _responseType = responseType;
-        _description = [description copy];
+        _questionDescription = [questionDescription copy];
         _order = order;
     }
     return self;
@@ -25,19 +25,19 @@
 + (nonnull instancetype)questionWithId:(nonnull NSString *)id
                                  title:(nonnull NSString *)title
                           responseType:(int32_t)responseType
-                           description:(nonnull NSString *)description
+                   questionDescription:(nonnull NSString *)questionDescription
                                  order:(int32_t)order
 {
     return [[self alloc] initWithId:id
                               title:title
                        responseType:responseType
-                        description:description
+                questionDescription:questionDescription
                               order:order];
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ title:%@ responseType:%@ description:%@ order:%@>", self.class, (void *)self, self.id, self.title, @(self.responseType), self.description, @(self.order)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ title:%@ responseType:%@ questionDescription:%@ order:%@>", self.class, (void *)self, self.id, self.title, @(self.responseType), self.questionDescription, @(self.order)];
 }
 
 @end

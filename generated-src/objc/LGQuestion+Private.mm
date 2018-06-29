@@ -13,7 +13,7 @@ auto Question::toCpp(ObjcType obj) -> CppType
     return {::djinni::String::toCpp(obj.id),
             ::djinni::String::toCpp(obj.title),
             ::djinni::I32::toCpp(obj.responseType),
-            ::djinni::String::toCpp(obj.description),
+            ::djinni::String::toCpp(obj.questionDescription),
             ::djinni::I32::toCpp(obj.order)};
 }
 
@@ -22,7 +22,7 @@ auto Question::fromCpp(const CppType& cpp) -> ObjcType
     return [[LGQuestion alloc] initWithId:(::djinni::String::fromCpp(cpp.id))
                                     title:(::djinni::String::fromCpp(cpp.title))
                              responseType:(::djinni::I32::fromCpp(cpp.response_type))
-                              description:(::djinni::String::fromCpp(cpp.description))
+                      questionDescription:(::djinni::String::fromCpp(cpp.question_description))
                                     order:(::djinni::I32::fromCpp(cpp.order))];
 }
 

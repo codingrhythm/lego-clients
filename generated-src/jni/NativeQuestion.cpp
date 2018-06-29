@@ -16,7 +16,7 @@ auto NativeQuestion::fromCpp(JNIEnv* jniEnv, const CppType& c) -> ::djinni::Loca
                                                            ::djinni::get(::djinni::String::fromCpp(jniEnv, c.id)),
                                                            ::djinni::get(::djinni::String::fromCpp(jniEnv, c.title)),
                                                            ::djinni::get(::djinni::I32::fromCpp(jniEnv, c.response_type)),
-                                                           ::djinni::get(::djinni::String::fromCpp(jniEnv, c.description)),
+                                                           ::djinni::get(::djinni::String::fromCpp(jniEnv, c.question_description)),
                                                            ::djinni::get(::djinni::I32::fromCpp(jniEnv, c.order)))};
     ::djinni::jniExceptionCheck(jniEnv);
     return r;
@@ -29,7 +29,7 @@ auto NativeQuestion::toCpp(JNIEnv* jniEnv, JniType j) -> CppType {
     return {::djinni::String::toCpp(jniEnv, (jstring)jniEnv->GetObjectField(j, data.field_mId)),
             ::djinni::String::toCpp(jniEnv, (jstring)jniEnv->GetObjectField(j, data.field_mTitle)),
             ::djinni::I32::toCpp(jniEnv, jniEnv->GetIntField(j, data.field_mResponseType)),
-            ::djinni::String::toCpp(jniEnv, (jstring)jniEnv->GetObjectField(j, data.field_mDescription)),
+            ::djinni::String::toCpp(jniEnv, (jstring)jniEnv->GetObjectField(j, data.field_mQuestionDescription)),
             ::djinni::I32::toCpp(jniEnv, jniEnv->GetIntField(j, data.field_mOrder))};
 }
 
