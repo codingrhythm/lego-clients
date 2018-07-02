@@ -7,7 +7,7 @@ namespace lego {
 
   LegoCoreImpl::LegoCoreImpl(const std::shared_ptr<LegoPlatform> & platform) {
     _platform = platform;
-    _networkCallback = std::make_shared<NetworkCallbackImpl>();
+    _networkCallback = std::make_shared<NetworkCallbackImpl>(platform->get_storage_path());
     _networkCallback->getDataCallback = std::bind(&LegoCoreImpl::get_data_handler, this, std::placeholders::_1);
     _networkCallback->sendDataCallback = std::bind(&LegoCoreImpl::send_data_handler, this);
     _networkCallback->downloadCallback = std::bind(&LegoCoreImpl::download_handler, this, std::placeholders::_1);
