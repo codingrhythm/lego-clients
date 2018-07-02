@@ -54,7 +54,7 @@
 }
 
 - (void)httpGetData:(LGNetworkCallback *)callback {
-
+    
 }
 
 - (void)httpSendData:(LGTemplate *)data callback:(LGNetworkCallback *)callback {
