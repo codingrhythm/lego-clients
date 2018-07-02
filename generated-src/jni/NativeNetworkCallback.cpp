@@ -38,12 +38,12 @@ CJNIEXPORT void JNICALL Java_com_mycompany_lego_NetworkCallback_00024CppProxy_na
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 
-CJNIEXPORT void JNICALL Java_com_mycompany_lego_NetworkCallback_00024CppProxy_native_1onHttpGetDataSuccess(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jobject j_data)
+CJNIEXPORT void JNICALL Java_com_mycompany_lego_NetworkCallback_00024CppProxy_native_1onHttpGetDataSuccess(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_path)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::lego::NetworkCallback>(nativeRef);
-        ref->on_http_get_data_success(::djinni_generated::NativeTemplate::toCpp(jniEnv, j_data));
+        ref->on_http_get_data_success(::djinni::String::toCpp(jniEnv, j_path));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 

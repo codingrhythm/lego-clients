@@ -83,7 +83,7 @@ network_callback = interface +c {
   # http handlers
   on_http_download_file_success(path: string);
   on_http_upload_file_success();
-  on_http_get_data_success(data: template);
+  on_http_get_data_success(path: string);
   on_http_send_data_success();
 
   # grpc handlers

@@ -12,7 +12,7 @@ public abstract class NetworkCallback {
 
     public abstract void onHttpUploadFileSuccess();
 
-    public abstract void onHttpGetDataSuccess(Template data);
+    public abstract void onHttpGetDataSuccess(String path);
 
     public abstract void onHttpSendDataSuccess();
 
@@ -61,12 +61,12 @@ public abstract class NetworkCallback {
         private native void native_onHttpUploadFileSuccess(long _nativeRef);
 
         @Override
-        public void onHttpGetDataSuccess(Template data)
+        public void onHttpGetDataSuccess(String path)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            native_onHttpGetDataSuccess(this.nativeRef, data);
+            native_onHttpGetDataSuccess(this.nativeRef, path);
         }
-        private native void native_onHttpGetDataSuccess(long _nativeRef, Template data);
+        private native void native_onHttpGetDataSuccess(long _nativeRef, String path);
 
         @Override
         public void onHttpSendDataSuccess()

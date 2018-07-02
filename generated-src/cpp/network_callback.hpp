@@ -19,7 +19,7 @@ public:
 
     virtual void on_http_upload_file_success() = 0;
 
-    virtual void on_http_get_data_success(const Template & data) = 0;
+    virtual void on_http_get_data_success(const std::string & path) = 0;
 
     virtual void on_http_send_data_success() = 0;
 

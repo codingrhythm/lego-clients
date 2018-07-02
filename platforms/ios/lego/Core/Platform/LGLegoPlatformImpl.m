@@ -55,7 +55,24 @@
 }
 
 - (void)httpGetData:(LGNetworkCallback *)callback {
-    
+    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8512/data"]];
+
+    //create the Method "GET"
+    [urlRequest setHTTPMethod:@"GET"];
+
+    NSURLSession *session = [NSURLSession sharedSession];
+
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        if(httpResponse.statusCode == 200) {
+            NSString *filePath = [[self getStoragePath] stringByAppendingPathComponent:@"http_resp.json"];
+            [data writeToFile:filePath atomically:YES];
+            [callback onHttpGetDataSuccess:filePath];
+        } else {
+            NSLog(@"Error");
+        }
+    }];
+    [dataTask resume];
 }
 
 - (void)httpSendData:(LGTemplate *)data callback:(LGNetworkCallback *)callback {

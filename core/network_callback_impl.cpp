@@ -65,9 +65,9 @@ namespace lego {
         }
     }
 
-    void NetworkCallbackImpl::on_http_get_data_success(const Template & data) {
+    void NetworkCallbackImpl::on_http_get_data_success(const std::string & path) {
         if (getDataCallback) {
-            getDataCallback(parse_and_store_data(data));
+            //getDataCallback(parse_and_store_data(data));
         }
     }
 

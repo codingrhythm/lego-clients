@@ -43,9 +43,9 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)onHttpGetDataSuccess:(nonnull LGTemplate *)data {
+- (void)onHttpGetDataSuccess:(nonnull NSString *)path {
     try {
-        _cppRefHandle.get()->on_http_get_data_success(::djinni_generated::Template::toCpp(data));
+        _cppRefHandle.get()->on_http_get_data_success(::djinni::String::toCpp(path));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

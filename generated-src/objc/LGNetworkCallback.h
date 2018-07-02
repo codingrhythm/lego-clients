@@ -13,7 +13,7 @@
 
 - (void)onHttpUploadFileSuccess;
 
-- (void)onHttpGetDataSuccess:(nonnull LGTemplate *)data;
+- (void)onHttpGetDataSuccess:(nonnull NSString *)path;
 
 - (void)onHttpSendDataSuccess;
 
