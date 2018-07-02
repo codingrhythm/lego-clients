@@ -1,0 +1,24 @@
+namespace Lego;
+
+table QuestionRecord {
+  id: string;
+  title: string;
+  response_type: int;
+  question_description: string;
+  order: int;
+}
+
+table PageRecord {
+  id: string;
+  title: string;
+  order: int;
+  questions: [QuestionRecord];
+}
+
+table TemplateRecord {
+  id: string;
+  name: string;
+  pages: [PageRecord];
+}
+
+root_type TemplateRecord;
