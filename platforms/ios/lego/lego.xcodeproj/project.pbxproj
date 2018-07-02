@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B54B8B1120E9A4D900B06735 /* lego_core_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B0F20E9A4D900B06735 /* lego_core_impl.cpp */; };
 		B54B8B1220E9A4D900B06735 /* network_callback_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1020E9A4D900B06735 /* network_callback_impl.cpp */; };
+		B54B8B1B20E9B8B200B06735 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1A20E9B8B200B06735 /* util.cpp */; };
 		B5E153DD20E5E83B0025A759 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E153DC20E5E83B0025A759 /* AppDelegate.m */; };
 		B5E153E020E5E83B0025A759 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E153DF20E5E83B0025A759 /* ViewController.m */; };
 		B5E153E320E5E83B0025A759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E153E120E5E83B0025A759 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		B54B8B1720E9A50900B06735 /* lego_core.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = lego_core.hpp; path = "../../../../../../generated-src/cpp/lego_core.hpp"; sourceTree = "<group>"; };
 		B54B8B1820E9A50900B06735 /* page.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = page.hpp; path = "../../../../../../generated-src/cpp/page.hpp"; sourceTree = "<group>"; };
 		B54B8B1920E9A66300B06735 /* lego_generated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lego_generated.h; path = ../../../../../../lego_generated.h; sourceTree = "<group>"; };
+		B54B8B1A20E9B8B200B06735 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = ../../../../../deps/flatbuffers/src/util.cpp; sourceTree = "<group>"; };
 		B5E153D820E5E83B0025A759 /* lego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lego.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E153DB20E5E83B0025A759 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5E153DC20E5E83B0025A759 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		B54B8B0920E9A0F800B06735 /* FlatBuffers */ = {
 			isa = PBXGroup;
 			children = (
+				B54B8B1A20E9B8B200B06735 /* util.cpp */,
 				B54B8B0C20E9A1C500B06735 /* idl.h */,
 				B54B8B0B20E9A1C400B06735 /* util.h */,
 				B54B8B0A20E9A18000B06735 /* flatbuffers.h */,
@@ -408,6 +411,7 @@
 				B5E1541120E5EB550025A759 /* LGLegoPlatform+Private.mm in Sources */,
 				B54B8B1120E9A4D900B06735 /* lego_core_impl.cpp in Sources */,
 				B5E1543120E5EF470025A759 /* LGLegoPlatformImpl.m in Sources */,
+				B54B8B1B20E9B8B200B06735 /* util.cpp in Sources */,
 				B54B8B1220E9A4D900B06735 /* network_callback_impl.cpp in Sources */,
 				B5E153E020E5E83B0025A759 /* ViewController.m in Sources */,
 				B5E153FB20E5EB230025A759 /* DJIError.mm in Sources */,

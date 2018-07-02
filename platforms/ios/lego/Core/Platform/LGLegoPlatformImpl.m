@@ -43,6 +43,7 @@
     GetRequest *request = [GetRequest message];
     request.flag = @"flag";
     GRPCProtoCall * call = [_grpcClient RPCToGetDataWithRequest:request handler:^(Template * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"%@", response.name);
         [callback onGrpcGetDataSuccess:response.viewModel];
     }];
 

@@ -1,4 +1,11 @@
 #include "lego_core_impl.hpp"
+#include "flatbuffers/idl.h"
+#include "flatbuffers/util.h"
+#include "lego_generated.h"
+#include "template.hpp"
+#include "page.hpp"
+#include "question.hpp"
+#include <string>
 
 namespace lego {
   std::shared_ptr<LegoCore> LegoCore::create(const std::shared_ptr<LegoPlatform> & platform) {
@@ -15,7 +22,21 @@ namespace lego {
   }
 
   void LegoCoreImpl::get_data_handler(const std::string & template_id) {
+      flatbuffers::FlatBufferBuilder builder;
+      std::string loaded_file;
+      std::string file_path = _platform->get_storage_path() + "/" + template_id + ".bin";
+      flatbuffers::LoadFile(file_path.c_str(), true, &loaded_file);
+      builder.PushBytes((uint8_t*)(loaded_file.c_str()), loaded_file.length());
+      auto record = Lego::GetTemplateRecord(builder.GetCurrentBufferPointer());
 
+      std::vector<Page> pages;
+      Template templateData = {
+          record->id()->c_str(),
+          record->name()->c_str(),
+          pages
+      };
+
+      _platform->data_updated(templateData);
   }
 
   void LegoCoreImpl::send_data_handler() {
