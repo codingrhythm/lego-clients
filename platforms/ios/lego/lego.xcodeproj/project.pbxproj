@@ -52,6 +52,7 @@
 		B54B8B1620E9A50900B06735 /* network_callback.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = network_callback.hpp; path = "../../../../../../generated-src/cpp/network_callback.hpp"; sourceTree = "<group>"; };
 		B54B8B1720E9A50900B06735 /* lego_core.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = lego_core.hpp; path = "../../../../../../generated-src/cpp/lego_core.hpp"; sourceTree = "<group>"; };
 		B54B8B1820E9A50900B06735 /* page.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = page.hpp; path = "../../../../../../generated-src/cpp/page.hpp"; sourceTree = "<group>"; };
+		B54B8B1920E9A66300B06735 /* lego_generated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lego_generated.h; path = ../../../../../../lego_generated.h; sourceTree = "<group>"; };
 		B5E153D820E5E83B0025A759 /* lego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lego.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E153DB20E5E83B0025A759 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5E153DC20E5E83B0025A759 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -234,6 +235,7 @@
 		B5E1542C20E5ED460025A759 /* Includes */ = {
 			isa = PBXGroup;
 			children = (
+				B54B8B1920E9A66300B06735 /* lego_generated.h */,
 				B54B8B1720E9A50900B06735 /* lego_core.hpp */,
 				B54B8B1420E9A50900B06735 /* lego_platform.hpp */,
 				B54B8B1620E9A50900B06735 /* network_callback.hpp */,
@@ -564,6 +566,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/BoringSSL\"",
+					"\"${PODS_ROOT}/Headers/Public/Protobuf\"",
+					"\"${PODS_ROOT}/Headers/Public/gRPC\"",
+					"\"${PODS_ROOT}/Headers/Public/gRPC-Core\"",
+					"\"${PODS_ROOT}/Headers/Public/gRPC-ProtoRPC\"",
+					"\"${PODS_ROOT}/Headers/Public/gRPC-RxLibrary\"",
+					"\"${PODS_ROOT}/Headers/Public/nanopb\"",
+					"${SRCROOT}/../../../deps/flatbuffers/include",
+				);
 				INFOPLIST_FILE = lego/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -581,6 +595,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/BoringSSL\"",
+					"\"${PODS_ROOT}/Headers/Public/Protobuf\"",
+					"\"${PODS_ROOT}/Headers/Public/gRPC\"",
+					"\"${PODS_ROOT}/Headers/Public/gRPC-Core\"",
+					"\"${PODS_ROOT}/Headers/Public/gRPC-ProtoRPC\"",
+					"\"${PODS_ROOT}/Headers/Public/gRPC-RxLibrary\"",
+					"\"${PODS_ROOT}/Headers/Public/nanopb\"",
+					"${SRCROOT}/../../../deps/flatbuffers/include",
+				);
 				INFOPLIST_FILE = lego/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

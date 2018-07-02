@@ -1,5 +1,8 @@
 #include "network_callback_impl.hpp"
 #include "template.hpp"
+#include "flatbuffers/idl.h"
+#include "flatbuffers/util.h"
+#include "lego_generated.h"
 
 namespace lego {
   std::string NetworkCallbackImpl::parse_and_store_data(const Template & data) {
