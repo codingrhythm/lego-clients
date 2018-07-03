@@ -11,4 +11,6 @@
 
 @interface LGLegoPlatformImpl : NSObject<LGLegoPlatform>
 
+- (instancetype)initWithCallback:(void (^)(void))block;
+
 @end

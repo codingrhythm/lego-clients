@@ -18,21 +18,21 @@
 @interface LGLegoPlatformImpl ()
 @property (strong, nonatomic) Lego *grpcClient;
 @property (strong, nonnull, nonatomic) NSString * host;
+@property (strong, nonatomic) void (^callbackBlock)(void);
 @end
 
 @implementation LGLegoPlatformImpl
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
+- (instancetype)initWithCallback:(void (^)(void))block {
+    if (self = [super init]) {
         _host = @"localhost:8513";
         [GRPCCall setUserAgentPrefix:@"Lego/1.0" forHost:_host];
         [GRPCCall useInsecureConnectionsForHost:_host];
         _grpcClient = [[Lego alloc] initWithHost:_host];
+        _callbackBlock = block;
     }
     return self;
 }
-
 
 - (NSString *)getStoragePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -43,7 +43,6 @@
     GetRequest *request = [GetRequest message];
     request.flag = @"flag";
     GRPCProtoCall * call = [_grpcClient RPCToGetDataWithRequest:request handler:^(Template * _Nullable response, NSError * _Nullable error) {
-        NSLog(@"%@", response.name);
         [callback onGrpcGetDataSuccess:response.viewModel];
     }];
 
@@ -88,7 +87,8 @@
 }
 
 - (void)dataUpdated:(nonnull LGTemplate *)data {
-
+    NSLog(@"%@", data.name);
+    _callbackBlock();
 }
 
 @end
