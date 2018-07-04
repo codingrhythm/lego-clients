@@ -1,3 +1,4 @@
 .vscode
 /platforms/ios/lego/Pods
 /platforms/ios/lego/Podfile.lock
+.DS_Store
