@@ -38,8 +38,8 @@ const int NUMBER_OF_REQUESTS = 1;
     _numOfRequests = 0;
     startTime = [NSDate new];
     for (int i = 0; i < NUMBER_OF_REQUESTS; i ++) {
-        //[self getDataFromDjinni];
-        [self getData];
+        [self getDataFromDjinni];
+        //[self getData];
     }
 }
 
