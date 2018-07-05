@@ -3,24 +3,24 @@
 
 #pragma once
 
-#include "page.hpp"
+#include "s_page.hpp"
 #include <string>
 #include <utility>
 #include <vector>
 
 namespace lego {
 
-struct Template final {
+struct STemplate final {
     /** id of the template */
     std::string id;
     /** name of the template */
     std::string name;
     /** pages */
-    std::vector<Page> pages;
+    std::vector<SPage> pages;
 
-    Template(std::string id_,
-             std::string name_,
-             std::vector<Page> pages_)
+    STemplate(std::string id_,
+              std::string name_,
+              std::vector<SPage> pages_)
     : id(std::move(id_))
     , name(std::move(name_))
     , pages(std::move(pages_))

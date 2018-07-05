@@ -1,4 +1,4 @@
-question = record {
+s_question = record {
   # id of the question
   id: string;
 
@@ -15,7 +15,7 @@ question = record {
   order: i32;
 }
 
-page = record {
+s_page = record {
   # id of the page
   id: string;
 
@@ -26,10 +26,10 @@ page = record {
   order: i32;
 
   # questions
-  questions: list<question>;
+  questions: list<s_question>;
 }
 
-template = record {
+s_template = record {
   # id of the template
   id: string;
 
@@ -37,7 +37,7 @@ template = record {
   name: string;
 
   # pages
-  pages: list<page>;
+  pages: list<s_page>;
 }
 
 # Shared core APIs
@@ -49,7 +49,7 @@ lego_core = interface +c {
   get_data(use_grpc: bool);
 
   # send data
-  send_data(data: template, use_grpc: bool);
+  send_data(data: s_template, use_grpc: bool);
 
   # upload file
   upload_file(file_data: binary);
@@ -65,17 +65,17 @@ lego_platform = interface +o +j {
 
   # event subscriptions
   # notify UI layer when data is updated
-  data_updated(data: template);
+  data_updated(data: s_template);
 
   # http methods
   http_download_file(file_id: string, callback: network_callback);
   http_upload_file(path: string, callback: network_callback);
   http_get_data(callback: network_callback);
-  http_send_data(data: template, callback: network_callback);
+  http_send_data(data: s_template, callback: network_callback);
 
   # grpc methods
   grpc_get_data(callback: network_callback);
-  grpc_send_data(data: template, callback: network_callback);
+  grpc_send_data(data: s_template, callback: network_callback);
 }
 
 # Callbacks
@@ -87,6 +87,6 @@ network_callback = interface +c {
   on_http_send_data_success();
 
   # grpc handlers
-  on_grpc_get_data_success(data: template);
+  on_grpc_get_data_success(data: s_template);
   on_grpc_send_data_success();
 }

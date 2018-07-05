@@ -17,7 +17,7 @@ public abstract class NetworkCallback {
     public abstract void onHttpSendDataSuccess();
 
     /** grpc handlers */
-    public abstract void onGrpcGetDataSuccess(Template data);
+    public abstract void onGrpcGetDataSuccess(STemplate data);
 
     public abstract void onGrpcSendDataSuccess();
 
@@ -77,12 +77,12 @@ public abstract class NetworkCallback {
         private native void native_onHttpSendDataSuccess(long _nativeRef);
 
         @Override
-        public void onGrpcGetDataSuccess(Template data)
+        public void onGrpcGetDataSuccess(STemplate data)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
             native_onGrpcGetDataSuccess(this.nativeRef, data);
         }
-        private native void native_onGrpcGetDataSuccess(long _nativeRef, Template data);
+        private native void native_onGrpcGetDataSuccess(long _nativeRef, STemplate data);
 
         @Override
         public void onGrpcSendDataSuccess()

@@ -2,10 +2,15 @@
 #include "flatbuffers/idl.h"
 #include "flatbuffers/util.h"
 #include "lego_generated.h"
-#include "template.hpp"
-#include "page.hpp"
-#include "question.hpp"
+#include "s_template.hpp"
+#include "s_page.hpp"
+#include "s_question.hpp"
 #include <string>
+
+#include "lego.pb.h"
+#include "lego.grpc.pb.h"
+#include <grpcpp/grpcpp.h>
+#include <grpc/support/log.h>
 
 namespace lego {
     std::shared_ptr<LegoCore> LegoCore::create(const std::shared_ptr<LegoPlatform> & platform) {
@@ -27,13 +32,13 @@ namespace lego {
         std::string file_path = _platform->get_storage_path() + "/" + template_id + ".bin";
         flatbuffers::LoadFile(file_path.c_str(), true, &loaded_file);
         builder.PushBytes((uint8_t*)(loaded_file.c_str()), loaded_file.length());
-        auto record = Lego::GetTemplateRecord(builder.GetCurrentBufferPointer());
+        auto record = ::Lego::GetTemplateRecord(builder.GetCurrentBufferPointer());
 
-        std::vector<Page> pages;
+        std::vector<SPage> pages;
         for (const auto page:*record->pages()) {
-            std::vector<Question> questions;
+            std::vector<SQuestion> questions;
             for (const auto question:*page->questions()) {
-                Question question_data = {
+                SQuestion question_data = {
                     question->id()->c_str(),
                     question->title()->c_str(),
                     question->response_type(),
@@ -43,7 +48,7 @@ namespace lego {
                 questions.push_back(question_data);
             }
 
-            Page page_data = {
+            SPage page_data = {
                 page->id()->c_str(),
                 page->title()->c_str(),
                 page->order(),
@@ -53,7 +58,7 @@ namespace lego {
             pages.push_back(page_data);
         }
         
-        Template templateData = {
+        STemplate templateData = {
             record->id()->c_str(),
             record->name()->c_str(),
             pages
@@ -82,7 +87,7 @@ namespace lego {
         }
     }
 
-    void LegoCoreImpl::send_data(const Template & data, bool use_grpc) {
+    void LegoCoreImpl::send_data(const STemplate & data, bool use_grpc) {
         if (use_grpc) {
             _platform->grpc_send_data(data, _networkCallback);
         } else {

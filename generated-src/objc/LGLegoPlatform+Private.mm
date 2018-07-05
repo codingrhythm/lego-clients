@@ -6,7 +6,7 @@
 #import "DJIMarshal+Private.h"
 #import "DJIObjcWrapperCache+Private.h"
 #import "LGNetworkCallback+Private.h"
-#import "LGTemplate+Private.h"
+#import "LGSTemplate+Private.h"
 #include <stdexcept>
 
 static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for this file");
@@ -27,10 +27,10 @@ public:
             return ::djinni::String::toCpp(objcpp_result_);
         }
     }
-    void data_updated(const ::lego::Template & c_data) override
+    void data_updated(const ::lego::STemplate & c_data) override
     {
         @autoreleasepool {
-            [djinni_private_get_proxied_objc_object() dataUpdated:(::djinni_generated::Template::fromCpp(c_data))];
+            [djinni_private_get_proxied_objc_object() dataUpdated:(::djinni_generated::STemplate::fromCpp(c_data))];
         }
     }
     void http_download_file(const std::string & c_file_id, const std::shared_ptr<::lego::NetworkCallback> & c_callback) override
@@ -53,10 +53,10 @@ public:
             [djinni_private_get_proxied_objc_object() httpGetData:(::djinni_generated::NetworkCallback::fromCpp(c_callback))];
         }
     }
-    void http_send_data(const ::lego::Template & c_data, const std::shared_ptr<::lego::NetworkCallback> & c_callback) override
+    void http_send_data(const ::lego::STemplate & c_data, const std::shared_ptr<::lego::NetworkCallback> & c_callback) override
     {
         @autoreleasepool {
-            [djinni_private_get_proxied_objc_object() httpSendData:(::djinni_generated::Template::fromCpp(c_data))
+            [djinni_private_get_proxied_objc_object() httpSendData:(::djinni_generated::STemplate::fromCpp(c_data))
                                                           callback:(::djinni_generated::NetworkCallback::fromCpp(c_callback))];
         }
     }
@@ -66,10 +66,10 @@ public:
             [djinni_private_get_proxied_objc_object() grpcGetData:(::djinni_generated::NetworkCallback::fromCpp(c_callback))];
         }
     }
-    void grpc_send_data(const ::lego::Template & c_data, const std::shared_ptr<::lego::NetworkCallback> & c_callback) override
+    void grpc_send_data(const ::lego::STemplate & c_data, const std::shared_ptr<::lego::NetworkCallback> & c_callback) override
     {
         @autoreleasepool {
-            [djinni_private_get_proxied_objc_object() grpcSendData:(::djinni_generated::Template::fromCpp(c_data))
+            [djinni_private_get_proxied_objc_object() grpcSendData:(::djinni_generated::STemplate::fromCpp(c_data))
                                                           callback:(::djinni_generated::NetworkCallback::fromCpp(c_callback))];
         }
     }

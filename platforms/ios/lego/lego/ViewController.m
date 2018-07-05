@@ -85,28 +85,28 @@ const int NUMBER_OF_REQUESTS = 1;
     NSData *data = [[NSFileManager defaultManager] contentsAtPath:filePath];
     NSError *parseError = nil;
     NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
-    NSMutableArray<LGPage*> *pages = [[NSMutableArray alloc] init];
+    NSMutableArray<LGSPage*> *pages = [[NSMutableArray alloc] init];
     NSArray *_pages = (NSArray *)responseDictionary[@"pages"];
 
     for (NSDictionary *page in _pages) {
-        NSMutableArray<LGQuestion*> *questions = [[NSMutableArray alloc] init];
+        NSMutableArray<LGSQuestion*> *questions = [[NSMutableArray alloc] init];
         NSArray *_questions = (NSArray *)page[@"questions"];
 
         for (NSDictionary *question in _questions) {
-            [questions addObject:[[LGQuestion alloc] initWithId:question[@"id"]
+            [questions addObject:[[LGSQuestion alloc] initWithId:question[@"id"]
                                                           title:question[@"title"]
                                                    responseType:[(NSNumber *)question[@"response_type"] intValue]
                                             questionDescription:question[@"question_description"]
                                                           order:[(NSNumber *)question[@"order"] intValue]]];
         }
 
-        [pages addObject:[[LGPage alloc] initWithId:page[@"id"]
+        [pages addObject:[[LGSPage alloc] initWithId:page[@"id"]
                                               title:page[@"title"]
                                               order:[(NSNumber *)page[@"order"] intValue]
                                           questions:questions]];
     }
 
-    LGTemplate *template = [[LGTemplate alloc] initWithId:responseDictionary[@"id"]
+    LGSTemplate *template = [[LGSTemplate alloc] initWithId:responseDictionary[@"id"]
                                                      name:responseDictionary[@"name"]
                                                     pages:pages];
     NSLog(@"%@", template.id);

@@ -11,7 +11,7 @@
 namespace lego {
 
 class LegoPlatform;
-struct Template;
+struct STemplate;
 
 /** Shared core APIs */
 class LegoCore {
@@ -25,7 +25,7 @@ public:
     virtual void get_data(bool use_grpc) = 0;
 
     /** send data */
-    virtual void send_data(const Template & data, bool use_grpc) = 0;
+    virtual void send_data(const STemplate & data, bool use_grpc) = 0;
 
     /** upload file */
     virtual void upload_file(const std::vector<uint8_t> & file_data) = 0;

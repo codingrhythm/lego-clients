@@ -12,7 +12,7 @@ namespace lego {
         // properties
         std::string _storage_path;
         // methods
-        std::string parse_and_store_data(const Template & data);
+        std::string parse_and_store_data(const STemplate & data);
 
     public:
         // properties
@@ -29,7 +29,7 @@ namespace lego {
         void on_http_upload_file_success();
         void on_http_get_data_success(const std::string & path);
         void on_http_send_data_success();
-        void on_grpc_get_data_success(const Template & data);
+        void on_grpc_get_data_success(const STemplate & data);
         void on_grpc_send_data_success();
     };
 }

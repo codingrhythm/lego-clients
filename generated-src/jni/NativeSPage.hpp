@@ -4,27 +4,27 @@
 #pragma once
 
 #include "djinni_support.hpp"
-#include "page.hpp"
+#include "s_page.hpp"
 
 namespace djinni_generated {
 
-class NativePage final {
+class NativeSPage final {
 public:
-    using CppType = ::lego::Page;
+    using CppType = ::lego::SPage;
     using JniType = jobject;
 
-    using Boxed = NativePage;
+    using Boxed = NativeSPage;
 
-    ~NativePage();
+    ~NativeSPage();
 
     static CppType toCpp(JNIEnv* jniEnv, JniType j);
     static ::djinni::LocalRef<JniType> fromCpp(JNIEnv* jniEnv, const CppType& c);
 
 private:
-    NativePage();
-    friend ::djinni::JniClass<NativePage>;
+    NativeSPage();
+    friend ::djinni::JniClass<NativeSPage>;
 
-    const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("com/mycompany/lego/Page") };
+    const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("com/mycompany/lego/SPage") };
     const jmethodID jconstructor { ::djinni::jniGetMethodID(clazz.get(), "<init>", "(Ljava/lang/String;Ljava/lang/String;ILjava/util/ArrayList;)V") };
     const jfieldID field_mId { ::djinni::jniGetFieldID(clazz.get(), "mId", "Ljava/lang/String;") };
     const jfieldID field_mTitle { ::djinni::jniGetFieldID(clazz.get(), "mTitle", "Ljava/lang/String;") };

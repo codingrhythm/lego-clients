@@ -7,7 +7,7 @@
 
 namespace lego {
 
-struct Template;
+struct STemplate;
 
 /** Callbacks */
 class NetworkCallback {
@@ -24,7 +24,7 @@ public:
     virtual void on_http_send_data_success() = 0;
 
     /** grpc handlers */
-    virtual void on_grpc_get_data_success(const Template & data) = 0;
+    virtual void on_grpc_get_data_success(const STemplate & data) = 0;
 
     virtual void on_grpc_send_data_success() = 0;
 };

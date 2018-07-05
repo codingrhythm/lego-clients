@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "question.hpp"
+#include "s_question.hpp"
 #include <cstdint>
 #include <string>
 #include <utility>
@@ -11,7 +11,7 @@
 
 namespace lego {
 
-struct Page final {
+struct SPage final {
     /** id of the page */
     std::string id;
     /** title of the page */
@@ -19,12 +19,12 @@ struct Page final {
     /** order of the page */
     int32_t order;
     /** questions */
-    std::vector<Question> questions;
+    std::vector<SQuestion> questions;
 
-    Page(std::string id_,
-         std::string title_,
-         int32_t order_,
-         std::vector<Question> questions_)
+    SPage(std::string id_,
+          std::string title_,
+          int32_t order_,
+          std::vector<SQuestion> questions_)
     : id(std::move(id_))
     , title(std::move(title_))
     , order(std::move(order_))

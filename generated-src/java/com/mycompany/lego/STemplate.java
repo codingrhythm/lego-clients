@@ -5,19 +5,19 @@ package com.mycompany.lego;
 
 import java.util.ArrayList;
 
-public final class Template {
+public final class STemplate {
 
 
     /*package*/ final String mId;
 
     /*package*/ final String mName;
 
-    /*package*/ final ArrayList<Page> mPages;
+    /*package*/ final ArrayList<SPage> mPages;
 
-    public Template(
+    public STemplate(
             String id,
             String name,
-            ArrayList<Page> pages) {
+            ArrayList<SPage> pages) {
         this.mId = id;
         this.mName = name;
         this.mPages = pages;
@@ -34,13 +34,13 @@ public final class Template {
     }
 
     /** pages */
-    public ArrayList<Page> getPages() {
+    public ArrayList<SPage> getPages() {
         return mPages;
     }
 
     @Override
     public String toString() {
-        return "Template{" +
+        return "STemplate{" +
                 "mId=" + mId +
                 "," + "mName=" + mName +
                 "," + "mPages=" + mPages +

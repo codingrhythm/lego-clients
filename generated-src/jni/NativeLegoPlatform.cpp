@@ -4,7 +4,7 @@
 #include "NativeLegoPlatform.hpp"  // my header
 #include "Marshal.hpp"
 #include "NativeNetworkCallback.hpp"
-#include "NativeTemplate.hpp"
+#include "NativeSTemplate.hpp"
 
 namespace djinni_generated {
 
@@ -24,12 +24,12 @@ std::string NativeLegoPlatform::JavaProxy::get_storage_path() {
     ::djinni::jniExceptionCheck(jniEnv);
     return ::djinni::String::toCpp(jniEnv, jret);
 }
-void NativeLegoPlatform::JavaProxy::data_updated(const ::lego::Template & c_data) {
+void NativeLegoPlatform::JavaProxy::data_updated(const ::lego::STemplate & c_data) {
     auto jniEnv = ::djinni::jniGetThreadEnv();
     ::djinni::JniLocalScope jscope(jniEnv, 10);
     const auto& data = ::djinni::JniClass<::djinni_generated::NativeLegoPlatform>::get();
     jniEnv->CallVoidMethod(Handle::get().get(), data.method_dataUpdated,
-                           ::djinni::get(::djinni_generated::NativeTemplate::fromCpp(jniEnv, c_data)));
+                           ::djinni::get(::djinni_generated::NativeSTemplate::fromCpp(jniEnv, c_data)));
     ::djinni::jniExceptionCheck(jniEnv);
 }
 void NativeLegoPlatform::JavaProxy::http_download_file(const std::string & c_file_id, const std::shared_ptr<::lego::NetworkCallback> & c_callback) {
@@ -58,12 +58,12 @@ void NativeLegoPlatform::JavaProxy::http_get_data(const std::shared_ptr<::lego::
                            ::djinni::get(::djinni_generated::NativeNetworkCallback::fromCpp(jniEnv, c_callback)));
     ::djinni::jniExceptionCheck(jniEnv);
 }
-void NativeLegoPlatform::JavaProxy::http_send_data(const ::lego::Template & c_data, const std::shared_ptr<::lego::NetworkCallback> & c_callback) {
+void NativeLegoPlatform::JavaProxy::http_send_data(const ::lego::STemplate & c_data, const std::shared_ptr<::lego::NetworkCallback> & c_callback) {
     auto jniEnv = ::djinni::jniGetThreadEnv();
     ::djinni::JniLocalScope jscope(jniEnv, 10);
     const auto& data = ::djinni::JniClass<::djinni_generated::NativeLegoPlatform>::get();
     jniEnv->CallVoidMethod(Handle::get().get(), data.method_httpSendData,
-                           ::djinni::get(::djinni_generated::NativeTemplate::fromCpp(jniEnv, c_data)),
+                           ::djinni::get(::djinni_generated::NativeSTemplate::fromCpp(jniEnv, c_data)),
                            ::djinni::get(::djinni_generated::NativeNetworkCallback::fromCpp(jniEnv, c_callback)));
     ::djinni::jniExceptionCheck(jniEnv);
 }
@@ -75,12 +75,12 @@ void NativeLegoPlatform::JavaProxy::grpc_get_data(const std::shared_ptr<::lego::
                            ::djinni::get(::djinni_generated::NativeNetworkCallback::fromCpp(jniEnv, c_callback)));
     ::djinni::jniExceptionCheck(jniEnv);
 }
-void NativeLegoPlatform::JavaProxy::grpc_send_data(const ::lego::Template & c_data, const std::shared_ptr<::lego::NetworkCallback> & c_callback) {
+void NativeLegoPlatform::JavaProxy::grpc_send_data(const ::lego::STemplate & c_data, const std::shared_ptr<::lego::NetworkCallback> & c_callback) {
     auto jniEnv = ::djinni::jniGetThreadEnv();
     ::djinni::JniLocalScope jscope(jniEnv, 10);
     const auto& data = ::djinni::JniClass<::djinni_generated::NativeLegoPlatform>::get();
     jniEnv->CallVoidMethod(Handle::get().get(), data.method_grpcSendData,
-                           ::djinni::get(::djinni_generated::NativeTemplate::fromCpp(jniEnv, c_data)),
+                           ::djinni::get(::djinni_generated::NativeSTemplate::fromCpp(jniEnv, c_data)),
                            ::djinni::get(::djinni_generated::NativeNetworkCallback::fromCpp(jniEnv, c_callback)));
     ::djinni::jniExceptionCheck(jniEnv);
 }

@@ -6,7 +6,7 @@
 #import "DJICppWrapperCache+Private.h"
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
-#import "LGTemplate+Private.h"
+#import "LGSTemplate+Private.h"
 #include <exception>
 #include <stdexcept>
 #include <utility>
@@ -55,9 +55,9 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)onGrpcGetDataSuccess:(nonnull LGTemplate *)data {
+- (void)onGrpcGetDataSuccess:(nonnull LGSTemplate *)data {
     try {
-        _cppRefHandle.get()->on_grpc_get_data_success(::djinni_generated::Template::toCpp(data));
+        _cppRefHandle.get()->on_grpc_get_data_success(::djinni_generated::STemplate::toCpp(data));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

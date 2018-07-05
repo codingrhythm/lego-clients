@@ -3,7 +3,7 @@
 
 package com.mycompany.lego;
 
-public final class Question {
+public final class SQuestion {
 
 
     /*package*/ final String mId;
@@ -16,7 +16,7 @@ public final class Question {
 
     /*package*/ final int mOrder;
 
-    public Question(
+    public SQuestion(
             String id,
             String title,
             int responseType,
@@ -56,7 +56,7 @@ public final class Question {
 
     @Override
     public String toString() {
-        return "Question{" +
+        return "SQuestion{" +
                 "mId=" + mId +
                 "," + "mTitle=" + mTitle +
                 "," + "mResponseType=" + mResponseType +

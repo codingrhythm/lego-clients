@@ -3,17 +3,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LGQuestion : NSObject
+@interface LGSQuestion : NSObject
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                              title:(nonnull NSString *)title
                       responseType:(int32_t)responseType
                questionDescription:(nonnull NSString *)questionDescription
                              order:(int32_t)order;
-+ (nonnull instancetype)questionWithId:(nonnull NSString *)id
-                                 title:(nonnull NSString *)title
-                          responseType:(int32_t)responseType
-                   questionDescription:(nonnull NSString *)questionDescription
-                                 order:(int32_t)order;
++ (nonnull instancetype)sQuestionWithId:(nonnull NSString *)id
+                                  title:(nonnull NSString *)title
+                           responseType:(int32_t)responseType
+                    questionDescription:(nonnull NSString *)questionDescription
+                                  order:(int32_t)order;
 
 /** id of the question */
 @property (nonatomic, readonly, nonnull) NSString * id;

@@ -5,7 +5,7 @@ package com.mycompany.lego;
 
 import java.util.ArrayList;
 
-public final class Page {
+public final class SPage {
 
 
     /*package*/ final String mId;
@@ -14,13 +14,13 @@ public final class Page {
 
     /*package*/ final int mOrder;
 
-    /*package*/ final ArrayList<Question> mQuestions;
+    /*package*/ final ArrayList<SQuestion> mQuestions;
 
-    public Page(
+    public SPage(
             String id,
             String title,
             int order,
-            ArrayList<Question> questions) {
+            ArrayList<SQuestion> questions) {
         this.mId = id;
         this.mTitle = title;
         this.mOrder = order;
@@ -43,13 +43,13 @@ public final class Page {
     }
 
     /** questions */
-    public ArrayList<Question> getQuestions() {
+    public ArrayList<SQuestion> getQuestions() {
         return mQuestions;
     }
 
     @Override
     public String toString() {
-        return "Page{" +
+        return "SPage{" +
                 "mId=" + mId +
                 "," + "mTitle=" + mTitle +
                 "," + "mOrder=" + mOrder +

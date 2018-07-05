@@ -33,7 +33,7 @@
 - (void)grpcGetData:(LGNetworkCallback *)callback {
 }
 
-- (void)grpcSendData:(LGTemplate *)data callback:(LGNetworkCallback *)callback {
+- (void)grpcSendData:(LGSTemplate *)data callback:(LGNetworkCallback *)callback {
 
 }
 
@@ -58,7 +58,7 @@
     [dataTask resume];
 }
 
-- (void)httpSendData:(LGTemplate *)data callback:(LGNetworkCallback *)callback {
+- (void)httpSendData:(LGSTemplate *)data callback:(LGNetworkCallback *)callback {
 
 }
 
@@ -70,7 +70,7 @@
 
 }
 
-- (void)dataUpdated:(nonnull LGTemplate *)data {
+- (void)dataUpdated:(nonnull LGSTemplate *)data {
     NSLog(@"%@", data.name);
     _callbackBlock();
 }

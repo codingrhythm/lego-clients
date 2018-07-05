@@ -34,13 +34,13 @@ private:
         ~JavaProxy();
 
         std::string get_storage_path() override;
-        void data_updated(const ::lego::Template & data) override;
+        void data_updated(const ::lego::STemplate & data) override;
         void http_download_file(const std::string & file_id, const std::shared_ptr<::lego::NetworkCallback> & callback) override;
         void http_upload_file(const std::string & path, const std::shared_ptr<::lego::NetworkCallback> & callback) override;
         void http_get_data(const std::shared_ptr<::lego::NetworkCallback> & callback) override;
-        void http_send_data(const ::lego::Template & data, const std::shared_ptr<::lego::NetworkCallback> & callback) override;
+        void http_send_data(const ::lego::STemplate & data, const std::shared_ptr<::lego::NetworkCallback> & callback) override;
         void grpc_get_data(const std::shared_ptr<::lego::NetworkCallback> & callback) override;
-        void grpc_send_data(const ::lego::Template & data, const std::shared_ptr<::lego::NetworkCallback> & callback) override;
+        void grpc_send_data(const ::lego::STemplate & data, const std::shared_ptr<::lego::NetworkCallback> & callback) override;
 
     private:
         friend ::djinni::JniInterface<::lego::LegoPlatform, ::djinni_generated::NativeLegoPlatform>;
@@ -48,13 +48,13 @@ private:
 
     const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("com/mycompany/lego/LegoPlatform") };
     const jmethodID method_getStoragePath { ::djinni::jniGetMethodID(clazz.get(), "getStoragePath", "()Ljava/lang/String;") };
-    const jmethodID method_dataUpdated { ::djinni::jniGetMethodID(clazz.get(), "dataUpdated", "(Lcom/mycompany/lego/Template;)V") };
+    const jmethodID method_dataUpdated { ::djinni::jniGetMethodID(clazz.get(), "dataUpdated", "(Lcom/mycompany/lego/STemplate;)V") };
     const jmethodID method_httpDownloadFile { ::djinni::jniGetMethodID(clazz.get(), "httpDownloadFile", "(Ljava/lang/String;Lcom/mycompany/lego/NetworkCallback;)V") };
     const jmethodID method_httpUploadFile { ::djinni::jniGetMethodID(clazz.get(), "httpUploadFile", "(Ljava/lang/String;Lcom/mycompany/lego/NetworkCallback;)V") };
     const jmethodID method_httpGetData { ::djinni::jniGetMethodID(clazz.get(), "httpGetData", "(Lcom/mycompany/lego/NetworkCallback;)V") };
-    const jmethodID method_httpSendData { ::djinni::jniGetMethodID(clazz.get(), "httpSendData", "(Lcom/mycompany/lego/Template;Lcom/mycompany/lego/NetworkCallback;)V") };
+    const jmethodID method_httpSendData { ::djinni::jniGetMethodID(clazz.get(), "httpSendData", "(Lcom/mycompany/lego/STemplate;Lcom/mycompany/lego/NetworkCallback;)V") };
     const jmethodID method_grpcGetData { ::djinni::jniGetMethodID(clazz.get(), "grpcGetData", "(Lcom/mycompany/lego/NetworkCallback;)V") };
-    const jmethodID method_grpcSendData { ::djinni::jniGetMethodID(clazz.get(), "grpcSendData", "(Lcom/mycompany/lego/Template;Lcom/mycompany/lego/NetworkCallback;)V") };
+    const jmethodID method_grpcSendData { ::djinni::jniGetMethodID(clazz.get(), "grpcSendData", "(Lcom/mycompany/lego/STemplate;Lcom/mycompany/lego/NetworkCallback;)V") };
 };
 
 }  // namespace djinni_generated

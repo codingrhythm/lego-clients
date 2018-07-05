@@ -1,5 +1,5 @@
 #include "network_callback_impl.hpp"
-#include "template.hpp"
+#include "s_template.hpp"
 #include "flatbuffers/idl.h"
 #include "flatbuffers/util.h"
 #include "lego_generated.h"
@@ -9,14 +9,14 @@ namespace lego {
         _storage_path = path;
     }
 
-    std::string NetworkCallbackImpl::parse_and_store_data(const Template & data) {
+    std::string NetworkCallbackImpl::parse_and_store_data(const STemplate & data) {
         flatbuffers::FlatBufferBuilder builder;
 
         std::vector<flatbuffers::Offset<Lego::PageRecord>> pages_vector;
 
-        for (const Page &page : data.pages) {
+        for (const SPage &page : data.pages) {
             std::vector<flatbuffers::Offset<Lego::QuestionRecord>> questions_vector;
-            for (const Question &question: page.questions) {
+            for (const SQuestion &question: page.questions) {
                 auto id = builder.CreateString(question.id);
                 auto title = builder.CreateString(question.title);
                 auto description = builder.CreateString(question.question_description);
@@ -77,7 +77,7 @@ namespace lego {
         }
     }
 
-    void NetworkCallbackImpl::on_grpc_get_data_success(const Template & data) {
+    void NetworkCallbackImpl::on_grpc_get_data_success(const STemplate & data) {
         if (getDataCallback) {
             getDataCallback(parse_and_store_data(data));
         }

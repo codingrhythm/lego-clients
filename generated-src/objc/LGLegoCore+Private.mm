@@ -7,7 +7,7 @@
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
 #import "LGLegoPlatform+Private.h"
-#import "LGTemplate+Private.h"
+#import "LGSTemplate+Private.h"
 #include <exception>
 #include <stdexcept>
 #include <utility>
@@ -45,10 +45,10 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)sendData:(nonnull LGTemplate *)data
+- (void)sendData:(nonnull LGSTemplate *)data
          useGrpc:(BOOL)useGrpc {
     try {
-        _cppRefHandle.get()->send_data(::djinni_generated::Template::toCpp(data),
+        _cppRefHandle.get()->send_data(::djinni_generated::STemplate::toCpp(data),
                                        ::djinni::Bool::toCpp(useGrpc));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }

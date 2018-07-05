@@ -3,7 +3,7 @@
 
 #include "NativeNetworkCallback.hpp"  // my header
 #include "Marshal.hpp"
-#include "NativeTemplate.hpp"
+#include "NativeSTemplate.hpp"
 
 namespace djinni_generated {
 
@@ -61,7 +61,7 @@ CJNIEXPORT void JNICALL Java_com_mycompany_lego_NetworkCallback_00024CppProxy_na
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::lego::NetworkCallback>(nativeRef);
-        ref->on_grpc_get_data_success(::djinni_generated::NativeTemplate::toCpp(jniEnv, j_data));
+        ref->on_grpc_get_data_success(::djinni_generated::NativeSTemplate::toCpp(jniEnv, j_data));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 

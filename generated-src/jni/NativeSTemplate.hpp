@@ -4,27 +4,27 @@
 #pragma once
 
 #include "djinni_support.hpp"
-#include "template.hpp"
+#include "s_template.hpp"
 
 namespace djinni_generated {
 
-class NativeTemplate final {
+class NativeSTemplate final {
 public:
-    using CppType = ::lego::Template;
+    using CppType = ::lego::STemplate;
     using JniType = jobject;
 
-    using Boxed = NativeTemplate;
+    using Boxed = NativeSTemplate;
 
-    ~NativeTemplate();
+    ~NativeSTemplate();
 
     static CppType toCpp(JNIEnv* jniEnv, JniType j);
     static ::djinni::LocalRef<JniType> fromCpp(JNIEnv* jniEnv, const CppType& c);
 
 private:
-    NativeTemplate();
-    friend ::djinni::JniClass<NativeTemplate>;
+    NativeSTemplate();
+    friend ::djinni::JniClass<NativeSTemplate>;
 
-    const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("com/mycompany/lego/Template") };
+    const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("com/mycompany/lego/STemplate") };
     const jmethodID jconstructor { ::djinni::jniGetMethodID(clazz.get(), "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;)V") };
     const jfieldID field_mId { ::djinni::jniGetFieldID(clazz.get(), "mId", "Ljava/lang/String;") };
     const jfieldID field_mName { ::djinni::jniGetFieldID(clazz.get(), "mName", "Ljava/lang/String;") };

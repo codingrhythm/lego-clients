@@ -12,7 +12,7 @@ public abstract class LegoPlatform {
      * event subscriptions
      * notify UI layer when data is updated
      */
-    public abstract void dataUpdated(Template data);
+    public abstract void dataUpdated(STemplate data);
 
     /** http methods */
     public abstract void httpDownloadFile(String fileId, NetworkCallback callback);
@@ -21,10 +21,10 @@ public abstract class LegoPlatform {
 
     public abstract void httpGetData(NetworkCallback callback);
 
-    public abstract void httpSendData(Template data, NetworkCallback callback);
+    public abstract void httpSendData(STemplate data, NetworkCallback callback);
 
     /** grpc methods */
     public abstract void grpcGetData(NetworkCallback callback);
 
-    public abstract void grpcSendData(Template data, NetworkCallback callback);
+    public abstract void grpcSendData(STemplate data, NetworkCallback callback);
 }

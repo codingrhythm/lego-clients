@@ -11,7 +11,7 @@ public abstract class LegoCore {
     public abstract void getData(boolean useGrpc);
 
     /** send data */
-    public abstract void sendData(Template data, boolean useGrpc);
+    public abstract void sendData(STemplate data, boolean useGrpc);
 
     /** upload file */
     public abstract void uploadFile(byte[] fileData);
@@ -54,12 +54,12 @@ public abstract class LegoCore {
         private native void native_getData(long _nativeRef, boolean useGrpc);
 
         @Override
-        public void sendData(Template data, boolean useGrpc)
+        public void sendData(STemplate data, boolean useGrpc)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
             native_sendData(this.nativeRef, data, useGrpc);
         }
-        private native void native_sendData(long _nativeRef, Template data, boolean useGrpc);
+        private native void native_sendData(long _nativeRef, STemplate data, boolean useGrpc);
 
         @Override
         public void uploadFile(byte[] fileData)
