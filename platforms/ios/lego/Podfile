@@ -1,8 +1,15 @@
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/cocoapods/specs.git'
 platform :ios, '9.0'
 
 install! 'cocoapods', :deterministic_uuids => false
 
 target 'lego' do
-  pod 'GrpcLibrary', :path => '.'
+  #pod 'GrpcLibrary', :path => '.'
+  #pod 'gRPC-C++'
+  #pod 'gRPC-C++', :path => '../../../deps/grpc/'
+  pod 'gRPC-C++', :git => 'https://github.com/codingrhythm/grpc.git', :branch => 'fix'
+  #pod 'Protobuf'
+  #pod 'protobuf-c'
+  #pod 'Protobuf-C++', :git => 'https://github.com/codingrhythm/protobuf.git', :branch => 'cpp'
+  pod 'GoogleProtobuf'
 end

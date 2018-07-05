@@ -48,7 +48,7 @@ Pod::Spec.new do |s|
     ms.header_mappings_dir = dir
     ms.requires_arc = false
     # The generated files depend on the protobuf runtime.
-    ms.dependency 'Protobuf'
+    ms.dependency 'GoogleProtobuf'
   end
 
   # The --objcgrpc_out plugin generates a pair of .pbrpc.h/.pbrpc.m files for each .proto file with
