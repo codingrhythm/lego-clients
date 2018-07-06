@@ -12,7 +12,52 @@
 #include <grpcpp/grpcpp.h>
 #include <grpc/support/log.h>
 
+
+class LegoClient {
+public:
+    LegoClient(std::shared_ptr<grpc::Channel> channel)
+    : stub_(lego::Lego::NewStub(channel)) {
+    }
+
+    void GetTemplate() {
+        grpc::ClientContext context;
+        grpc::CompletionQueue cq;
+        grpc::Status status;
+        lego::GetRequest request;
+        request.set_flag("nice");
+        lego::Template response;
+        std::unique_ptr<grpc::ClientAsyncResponseReader<lego::Template>> rpc(stub_->PrepareAsyncGetData(&context, request, &cq));
+
+        rpc->StartCall();
+        rpc->Finish(&response, &status, (void*)1);
+        void* got_tag;
+        bool ok = false;
+        // Block until the next result is available in the completion queue "cq".
+        // The return value of Next should always be checked. This return value
+        // tells us whether there is any kind of event or the cq_ is shutting down.
+        GPR_ASSERT(cq.Next(&got_tag, &ok));
+
+        // Verify that the result from "cq" corresponds, by its tag, our previous
+        // request.
+        GPR_ASSERT(got_tag == (void*)1);
+        // ... and that the request was completed successfully. Note that "ok"
+        // corresponds solely to the request for updates introduced by Finish().
+        GPR_ASSERT(ok);
+
+        // Act upon the status of the actual RPC.
+        if (status.ok()) {
+            printf("win!!!!!!!!!!!!!!!!!!");
+            printf("%s", response.name().c_str());
+        } else {
+
+        }
+    }
+private:
+    std::unique_ptr<lego::Lego::Stub> stub_;
+};
+
 namespace lego {
+    std::unique_ptr<LegoClient> _client;
     std::shared_ptr<LegoCore> LegoCore::create(const std::shared_ptr<LegoPlatform> & platform) {
         return std::make_shared<LegoCoreImpl>(platform);
     }
@@ -24,6 +69,7 @@ namespace lego {
         _networkCallback->sendDataCallback = std::bind(&LegoCoreImpl::send_data_handler, this);
         _networkCallback->downloadCallback = std::bind(&LegoCoreImpl::download_handler, this, std::placeholders::_1);
         _networkCallback->uploadCallback = std::bind(&LegoCoreImpl::upload_handler, this);
+        _client = std::make_unique<LegoClient>(CreateChannel("localhost:8513", grpc::InsecureChannelCredentials()));
     }
 
     void LegoCoreImpl::get_data_handler(const std::string & template_id) {
@@ -81,7 +127,7 @@ namespace lego {
 
     void LegoCoreImpl::get_data(bool use_grpc) {
         if (use_grpc) {
-            _platform->grpc_get_data(_networkCallback);
+            _client->GetTemplate();
         } else {
             _platform->http_get_data(_networkCallback);
         }

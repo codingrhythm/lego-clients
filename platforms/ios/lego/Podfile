@@ -10,6 +10,6 @@ target 'lego' do
   pod 'gRPC-C++', :git => 'https://github.com/codingrhythm/grpc.git', :branch => 'fix'
   #pod 'Protobuf'
   #pod 'protobuf-c'
-  #pod 'Protobuf-C++', :git => 'https://github.com/codingrhythm/protobuf.git', :branch => 'cpp'
-  pod 'GoogleProtobuf'
+  pod 'Protobuf-C++', :git => 'https://github.com/codingrhythm/protobuf.git', :branch => 'cpp'
+  #pod 'GoogleProtobuf'
 end
