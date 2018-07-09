@@ -19,7 +19,7 @@ public:
     : stub_(lego::Lego::NewStub(channel)) {
     }
 
-    void GetTemplate() {
+    lego::Template GetTemplate() {
         grpc::ClientContext context;
         grpc::CompletionQueue cq;
         grpc::Status status;
@@ -45,11 +45,7 @@ public:
         GPR_ASSERT(ok);
 
         // Act upon the status of the actual RPC.
-        if (status.ok()) {
-            printf("%s\n", response.name().c_str());
-        } else {
-
-        }
+        return response;
     }
 private:
     std::unique_ptr<lego::Lego::Stub> stub_;
@@ -125,11 +121,12 @@ namespace lego {
     }
 
     void LegoCoreImpl::get_data() {
-        _client->GetTemplate();
+        lego::Template templateData = _client->GetTemplate();
+        printf("%s", templateData.name().c_str());
     }
 
     void LegoCoreImpl::send_data(const STemplate & data) {
-        
+
     }
 
     void LegoCoreImpl::upload_file(const std::vector<uint8_t> & file_data) {
