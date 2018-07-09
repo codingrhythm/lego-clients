@@ -14,7 +14,7 @@
 
 @end
 
-const int NUMBER_OF_REQUESTS = 1;
+const int NUMBER_OF_REQUESTS = 10;
 
 @implementation ViewController {
     LGLegoCore *_coreAPI;
@@ -44,9 +44,7 @@ const int NUMBER_OF_REQUESTS = 1;
 }
 
 - (void)getDataFromDjinni {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        [_coreAPI getData:true];
-    });
+    [_coreAPI getData:true];
 }
 
 - (NSString *)getStoragePath {

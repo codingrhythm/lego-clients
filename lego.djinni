@@ -72,10 +72,6 @@ lego_platform = interface +o +j {
   http_upload_file(path: string, callback: network_callback);
   http_get_data(callback: network_callback);
   http_send_data(data: s_template, callback: network_callback);
-
-  # grpc methods
-  grpc_get_data(callback: network_callback);
-  grpc_send_data(data: s_template, callback: network_callback);
 }
 
 # Callbacks
@@ -89,4 +85,19 @@ network_callback = interface +c {
   # grpc handlers
   on_grpc_get_data_success(data: s_template);
   on_grpc_send_data_success();
+}
+
+# Event loop
+async_task = interface +c {
+  execute();
+}
+
+event_loop = interface +o +j {
+  post(task: async_task);
+}
+
+# thread
+thread_launcher = interface +o +j {
+    # name is nullable
+    start_thread(name: optional<string>, run_fn: async_task);
 }

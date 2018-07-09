@@ -46,8 +46,7 @@ public:
 
         // Act upon the status of the actual RPC.
         if (status.ok()) {
-            printf("win!!!!!!!!!!!!!!!!!!");
-            printf("%s", response.name().c_str());
+            printf("%s\n", response.name().c_str());
         } else {
 
         }
