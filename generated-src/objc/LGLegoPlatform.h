@@ -25,15 +25,4 @@
 - (void)httpUploadFile:(nonnull NSString *)path
               callback:(nullable LGNetworkCallback *)callback;
 
-- (void)httpGetData:(nullable LGNetworkCallback *)callback;
-
-- (void)httpSendData:(nonnull LGSTemplate *)data
-            callback:(nullable LGNetworkCallback *)callback;
-
-/** grpc methods */
-- (void)grpcGetData:(nullable LGNetworkCallback *)callback;
-
-- (void)grpcSendData:(nonnull LGSTemplate *)data
-            callback:(nullable LGNetworkCallback *)callback;
-
 @end

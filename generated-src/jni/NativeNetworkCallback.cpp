@@ -3,7 +3,6 @@
 
 #include "NativeNetworkCallback.hpp"  // my header
 #include "Marshal.hpp"
-#include "NativeSTemplate.hpp"
 
 namespace djinni_generated {
 
@@ -35,42 +34,6 @@ CJNIEXPORT void JNICALL Java_com_mycompany_lego_NetworkCallback_00024CppProxy_na
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::lego::NetworkCallback>(nativeRef);
         ref->on_http_upload_file_success();
-    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
-}
-
-CJNIEXPORT void JNICALL Java_com_mycompany_lego_NetworkCallback_00024CppProxy_native_1onHttpGetDataSuccess(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_path)
-{
-    try {
-        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
-        const auto& ref = ::djinni::objectFromHandleAddress<::lego::NetworkCallback>(nativeRef);
-        ref->on_http_get_data_success(::djinni::String::toCpp(jniEnv, j_path));
-    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
-}
-
-CJNIEXPORT void JNICALL Java_com_mycompany_lego_NetworkCallback_00024CppProxy_native_1onHttpSendDataSuccess(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
-{
-    try {
-        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
-        const auto& ref = ::djinni::objectFromHandleAddress<::lego::NetworkCallback>(nativeRef);
-        ref->on_http_send_data_success();
-    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
-}
-
-CJNIEXPORT void JNICALL Java_com_mycompany_lego_NetworkCallback_00024CppProxy_native_1onGrpcGetDataSuccess(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jobject j_data)
-{
-    try {
-        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
-        const auto& ref = ::djinni::objectFromHandleAddress<::lego::NetworkCallback>(nativeRef);
-        ref->on_grpc_get_data_success(::djinni_generated::NativeSTemplate::toCpp(jniEnv, j_data));
-    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
-}
-
-CJNIEXPORT void JNICALL Java_com_mycompany_lego_NetworkCallback_00024CppProxy_native_1onGrpcSendDataSuccess(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
-{
-    try {
-        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
-        const auto& ref = ::djinni::objectFromHandleAddress<::lego::NetworkCallback>(nativeRef);
-        ref->on_grpc_send_data_success();
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 

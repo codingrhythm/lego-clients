@@ -6,7 +6,6 @@
 #import "DJICppWrapperCache+Private.h"
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
-#import "LGSTemplate+Private.h"
 #include <exception>
 #include <stdexcept>
 #include <utility>
@@ -40,30 +39,6 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 - (void)onHttpUploadFileSuccess {
     try {
         _cppRefHandle.get()->on_http_upload_file_success();
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)onHttpGetDataSuccess:(nonnull NSString *)path {
-    try {
-        _cppRefHandle.get()->on_http_get_data_success(::djinni::String::toCpp(path));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)onHttpSendDataSuccess {
-    try {
-        _cppRefHandle.get()->on_http_send_data_success();
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)onGrpcGetDataSuccess:(nonnull LGSTemplate *)data {
-    try {
-        _cppRefHandle.get()->on_grpc_get_data_success(::djinni_generated::STemplate::toCpp(data));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)onGrpcSendDataSuccess {
-    try {
-        _cppRefHandle.get()->on_grpc_send_data_success();
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

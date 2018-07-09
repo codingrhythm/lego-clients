@@ -44,7 +44,7 @@ const int NUMBER_OF_REQUESTS = 10;
 }
 
 - (void)getDataFromDjinni {
-    [_coreAPI getData:true];
+    [_coreAPI getData];
 }
 
 - (NSString *)getStoragePath {

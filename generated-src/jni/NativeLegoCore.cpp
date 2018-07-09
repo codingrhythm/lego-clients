@@ -30,22 +30,21 @@ CJNIEXPORT jobject JNICALL Java_com_mycompany_lego_LegoCore_create(JNIEnv* jniEn
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
-CJNIEXPORT void JNICALL Java_com_mycompany_lego_LegoCore_00024CppProxy_native_1getData(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jboolean j_useGrpc)
+CJNIEXPORT void JNICALL Java_com_mycompany_lego_LegoCore_00024CppProxy_native_1getData(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::lego::LegoCore>(nativeRef);
-        ref->get_data(::djinni::Bool::toCpp(jniEnv, j_useGrpc));
+        ref->get_data();
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 
-CJNIEXPORT void JNICALL Java_com_mycompany_lego_LegoCore_00024CppProxy_native_1sendData(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jobject j_data, jboolean j_useGrpc)
+CJNIEXPORT void JNICALL Java_com_mycompany_lego_LegoCore_00024CppProxy_native_1sendData(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jobject j_data)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::lego::LegoCore>(nativeRef);
-        ref->send_data(::djinni_generated::NativeSTemplate::toCpp(jniEnv, j_data),
-                       ::djinni::Bool::toCpp(jniEnv, j_useGrpc));
+        ref->send_data(::djinni_generated::NativeSTemplate::toCpp(jniEnv, j_data));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 

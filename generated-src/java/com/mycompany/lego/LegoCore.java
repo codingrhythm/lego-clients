@@ -8,10 +8,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /** Shared core APIs */
 public abstract class LegoCore {
     /** get data */
-    public abstract void getData(boolean useGrpc);
+    public abstract void getData();
 
     /** send data */
-    public abstract void sendData(STemplate data, boolean useGrpc);
+    public abstract void sendData(STemplate data);
 
     /** upload file */
     public abstract void uploadFile(byte[] fileData);
@@ -46,20 +46,20 @@ public abstract class LegoCore {
         }
 
         @Override
-        public void getData(boolean useGrpc)
+        public void getData()
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            native_getData(this.nativeRef, useGrpc);
+            native_getData(this.nativeRef);
         }
-        private native void native_getData(long _nativeRef, boolean useGrpc);
+        private native void native_getData(long _nativeRef);
 
         @Override
-        public void sendData(STemplate data, boolean useGrpc)
+        public void sendData(STemplate data)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            native_sendData(this.nativeRef, data, useGrpc);
+            native_sendData(this.nativeRef, data);
         }
-        private native void native_sendData(long _nativeRef, STemplate data, boolean useGrpc);
+        private native void native_sendData(long _nativeRef, STemplate data);
 
         @Override
         public void uploadFile(byte[] fileData)

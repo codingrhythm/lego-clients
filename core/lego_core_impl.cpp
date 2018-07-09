@@ -124,20 +124,12 @@ namespace lego {
 
     }
 
-    void LegoCoreImpl::get_data(bool use_grpc) {
-        if (use_grpc) {
-            _client->GetTemplate();
-        } else {
-            _platform->http_get_data(_networkCallback);
-        }
+    void LegoCoreImpl::get_data() {
+        _client->GetTemplate();
     }
 
-    void LegoCoreImpl::send_data(const STemplate & data, bool use_grpc) {
-        if (use_grpc) {
-            _platform->grpc_send_data(data, _networkCallback);
-        } else {
-            _platform->http_send_data(data, _networkCallback);
-        }
+    void LegoCoreImpl::send_data(const STemplate & data) {
+        
     }
 
     void LegoCoreImpl::upload_file(const std::vector<uint8_t> & file_data) {

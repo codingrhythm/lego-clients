@@ -15,8 +15,8 @@ namespace lego {
 
   public:
     LegoCoreImpl(const std::shared_ptr<LegoPlatform> & platform);
-    void get_data(bool use_grpc);
-    void send_data(const STemplate & data, bool use_grpc);
+    void get_data();
+    void send_data(const STemplate & data);
     void upload_file(const std::vector<uint8_t> & file_data);
     void download_file(const std::string & file_id);
   };

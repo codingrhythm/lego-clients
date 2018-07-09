@@ -18,13 +18,4 @@ public abstract class LegoPlatform {
     public abstract void httpDownloadFile(String fileId, NetworkCallback callback);
 
     public abstract void httpUploadFile(String path, NetworkCallback callback);
-
-    public abstract void httpGetData(NetworkCallback callback);
-
-    public abstract void httpSendData(STemplate data, NetworkCallback callback);
-
-    /** grpc methods */
-    public abstract void grpcGetData(NetworkCallback callback);
-
-    public abstract void grpcSendData(STemplate data, NetworkCallback callback);
 }

@@ -47,32 +47,6 @@ public:
                                                             callback:(::djinni_generated::NetworkCallback::fromCpp(c_callback))];
         }
     }
-    void http_get_data(const std::shared_ptr<::lego::NetworkCallback> & c_callback) override
-    {
-        @autoreleasepool {
-            [djinni_private_get_proxied_objc_object() httpGetData:(::djinni_generated::NetworkCallback::fromCpp(c_callback))];
-        }
-    }
-    void http_send_data(const ::lego::STemplate & c_data, const std::shared_ptr<::lego::NetworkCallback> & c_callback) override
-    {
-        @autoreleasepool {
-            [djinni_private_get_proxied_objc_object() httpSendData:(::djinni_generated::STemplate::fromCpp(c_data))
-                                                          callback:(::djinni_generated::NetworkCallback::fromCpp(c_callback))];
-        }
-    }
-    void grpc_get_data(const std::shared_ptr<::lego::NetworkCallback> & c_callback) override
-    {
-        @autoreleasepool {
-            [djinni_private_get_proxied_objc_object() grpcGetData:(::djinni_generated::NetworkCallback::fromCpp(c_callback))];
-        }
-    }
-    void grpc_send_data(const ::lego::STemplate & c_data, const std::shared_ptr<::lego::NetworkCallback> & c_callback) override
-    {
-        @autoreleasepool {
-            [djinni_private_get_proxied_objc_object() grpcSendData:(::djinni_generated::STemplate::fromCpp(c_data))
-                                                          callback:(::djinni_generated::NetworkCallback::fromCpp(c_callback))];
-        }
-    }
 };
 
 }  // namespace djinni_generated

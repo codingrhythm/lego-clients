@@ -29,15 +29,6 @@ public:
     virtual void http_download_file(const std::string & file_id, const std::shared_ptr<NetworkCallback> & callback) = 0;
 
     virtual void http_upload_file(const std::string & path, const std::shared_ptr<NetworkCallback> & callback) = 0;
-
-    virtual void http_get_data(const std::shared_ptr<NetworkCallback> & callback) = 0;
-
-    virtual void http_send_data(const STemplate & data, const std::shared_ptr<NetworkCallback> & callback) = 0;
-
-    /** grpc methods */
-    virtual void grpc_get_data(const std::shared_ptr<NetworkCallback> & callback) = 0;
-
-    virtual void grpc_send_data(const STemplate & data, const std::shared_ptr<NetworkCallback> & callback) = 0;
 };
 
 }  // namespace lego

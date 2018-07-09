@@ -12,15 +12,6 @@ public abstract class NetworkCallback {
 
     public abstract void onHttpUploadFileSuccess();
 
-    public abstract void onHttpGetDataSuccess(String path);
-
-    public abstract void onHttpSendDataSuccess();
-
-    /** grpc handlers */
-    public abstract void onGrpcGetDataSuccess(STemplate data);
-
-    public abstract void onGrpcSendDataSuccess();
-
     private static final class CppProxy extends NetworkCallback
     {
         private final long nativeRef;
@@ -59,37 +50,5 @@ public abstract class NetworkCallback {
             native_onHttpUploadFileSuccess(this.nativeRef);
         }
         private native void native_onHttpUploadFileSuccess(long _nativeRef);
-
-        @Override
-        public void onHttpGetDataSuccess(String path)
-        {
-            assert !this.destroyed.get() : "trying to use a destroyed object";
-            native_onHttpGetDataSuccess(this.nativeRef, path);
-        }
-        private native void native_onHttpGetDataSuccess(long _nativeRef, String path);
-
-        @Override
-        public void onHttpSendDataSuccess()
-        {
-            assert !this.destroyed.get() : "trying to use a destroyed object";
-            native_onHttpSendDataSuccess(this.nativeRef);
-        }
-        private native void native_onHttpSendDataSuccess(long _nativeRef);
-
-        @Override
-        public void onGrpcGetDataSuccess(STemplate data)
-        {
-            assert !this.destroyed.get() : "trying to use a destroyed object";
-            native_onGrpcGetDataSuccess(this.nativeRef, data);
-        }
-        private native void native_onGrpcGetDataSuccess(long _nativeRef, STemplate data);
-
-        @Override
-        public void onGrpcSendDataSuccess()
-        {
-            assert !this.destroyed.get() : "trying to use a destroyed object";
-            native_onGrpcSendDataSuccess(this.nativeRef);
-        }
-        private native void native_onGrpcSendDataSuccess(long _nativeRef);
     }
 }
