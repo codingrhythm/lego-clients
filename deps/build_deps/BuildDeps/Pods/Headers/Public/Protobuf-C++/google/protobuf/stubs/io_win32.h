@@ -1,0 +1,1 @@
+../../../../../../Protobuf-C++/src/google/protobuf/stubs/io_win32.h

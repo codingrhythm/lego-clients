@@ -20,6 +20,12 @@
 		B5E153FA20E5EB230025A759 /* DJIProxyCaches.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5E153F520E5EB220025A759 /* DJIProxyCaches.mm */; };
 		B5E153FB20E5EB230025A759 /* DJIError.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5E153F620E5EB220025A759 /* DJIError.mm */; };
 		B5E1543120E5EF470025A759 /* LGLegoPlatformImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E1543020E5EF470025A759 /* LGLegoPlatformImpl.m */; };
+		B5F5326320F83120000E3427 /* libBoringSSL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5325E20F83120000E3427 /* libBoringSSL.a */; };
+		B5F5326420F83120000E3427 /* libgRPC-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5325F20F83120000E3427 /* libgRPC-Core.a */; };
+		B5F5326520F83120000E3427 /* libgRPC-C++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326020F83120000E3427 /* libgRPC-C++.a */; };
+		B5F5326620F83120000E3427 /* libnanopb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326120F83120000E3427 /* libnanopb.a */; };
+		B5F5326720F83120000E3427 /* libProtobuf-C++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326220F83120000E3427 /* libProtobuf-C++.a */; };
+		B5F5326920F8319B000E3427 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326820F8319B000E3427 /* libz.tbd */; };
 		B5F532B220EDE47200AB6B53 /* lego.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5F532AE20EDE47200AB6B53 /* lego.pb.cc */; };
 		B5F532B320EDE47200AB6B53 /* lego.grpc.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5F532AF20EDE47200AB6B53 /* lego.grpc.pb.cc */; };
 		B5F532C920EDEC2300AB6B53 /* LGSPage+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532B420EDEC2100AB6B53 /* LGSPage+Private.mm */; };
@@ -31,7 +37,7 @@
 		B5F532CF20EDEC2300AB6B53 /* LGLegoCore+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532BF20EDEC2200AB6B53 /* LGLegoCore+Private.mm */; };
 		B5F532D020EDEC2300AB6B53 /* LGNetworkCallback+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532C520EDEC2200AB6B53 /* LGNetworkCallback+Private.mm */; };
 		B5F532D120EDEC2300AB6B53 /* LGSPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532C620EDEC2200AB6B53 /* LGSPage.mm */; };
-		D434C176FD454F7A69EC1B78 /* libPods-lego.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 717290BF3DBAAD3B8A500E5D /* libPods-lego.a */; };
+		F72BDB6C6264946964D93B79 /* libPods-lego.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B548E81620F468DF001589C6 /* libPods-lego.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +46,21 @@
 		B11EB63DFF84CE9BF09B034A /* Pods-lego.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lego.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lego/Pods-lego.debug.xcconfig"; sourceTree = "<group>"; };
 		B51AD1E720EF3BC4006467E2 /* lego-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lego-Bridging-Header.h"; sourceTree = "<group>"; };
 		B51AD1E820EF3BC4006467E2 /* TestBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBridge.swift; sourceTree = "<group>"; };
+		B548E81620F468DF001589C6 /* libPods-lego.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-lego.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B548E81820F469D1001589C6 /* libprotobuf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libprotobuf.a; path = ../../../deps/protobuf/libprotobuf.a; sourceTree = "<group>"; };
+		B548E81A20F478BA001589C6 /* libgpr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgpr.a; path = ../../../deps/protobuf/libgpr.a; sourceTree = "<group>"; };
+		B548E81B20F478BA001589C6 /* libgrpc++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgrpc++.a"; path = "../../../deps/protobuf/libgrpc++.a"; sourceTree = "<group>"; };
+		B548E81C20F478BA001589C6 /* libboringssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboringssl.a; path = ../../../deps/protobuf/libboringssl.a; sourceTree = "<group>"; };
+		B548E81D20F478BA001589C6 /* libgrpc++_core_stats.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgrpc++_core_stats.a"; path = "../../../deps/protobuf/libgrpc++_core_stats.a"; sourceTree = "<group>"; };
+		B548E81E20F478BA001589C6 /* libgrpc++_unsecure.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgrpc++_unsecure.a"; path = "../../../deps/protobuf/libgrpc++_unsecure.a"; sourceTree = "<group>"; };
+		B548E81F20F478BA001589C6 /* libgrpc++_error_details.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgrpc++_error_details.a"; path = "../../../deps/protobuf/libgrpc++_error_details.a"; sourceTree = "<group>"; };
+		B548E82020F478BA001589C6 /* libgrpc_unsecure.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgrpc_unsecure.a; path = ../../../deps/protobuf/libgrpc_unsecure.a; sourceTree = "<group>"; };
+		B548E82120F478BA001589C6 /* libgrpc_plugin_support.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgrpc_plugin_support.a; path = ../../../deps/protobuf/libgrpc_plugin_support.a; sourceTree = "<group>"; };
+		B548E82220F478BA001589C6 /* libgrpc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgrpc.a; path = ../../../deps/protobuf/libgrpc.a; sourceTree = "<group>"; };
+		B548E82320F478BA001589C6 /* libgrpc++_reflection.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgrpc++_reflection.a"; path = "../../../deps/protobuf/libgrpc++_reflection.a"; sourceTree = "<group>"; };
+		B548E82420F478BA001589C6 /* libgrpc_cronet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgrpc_cronet.a; path = ../../../deps/protobuf/libgrpc_cronet.a; sourceTree = "<group>"; };
+		B548E82520F478BA001589C6 /* libaddress_sorting.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libaddress_sorting.a; path = ../../../deps/protobuf/libaddress_sorting.a; sourceTree = "<group>"; };
+		B548E82620F478BA001589C6 /* libgrpc++_cronet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgrpc++_cronet.a"; path = "../../../deps/protobuf/libgrpc++_cronet.a"; sourceTree = "<group>"; };
 		B54B8B0A20E9A18000B06735 /* flatbuffers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = flatbuffers.h; path = ../../../../../deps/flatbuffers/include/flatbuffers/flatbuffers.h; sourceTree = "<group>"; };
 		B54B8B0B20E9A1C400B06735 /* util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = util.h; path = ../../../../../deps/flatbuffers/include/flatbuffers/util.h; sourceTree = "<group>"; };
 		B54B8B0C20E9A1C500B06735 /* idl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = idl.h; path = ../../../../../deps/flatbuffers/include/flatbuffers/idl.h; sourceTree = "<group>"; };
@@ -70,6 +91,22 @@
 		B5E153F920E5EB230025A759 /* DJIError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DJIError.h; path = "../../../../../deps/djinni/support-lib/objc/DJIError.h"; sourceTree = "<group>"; };
 		B5E1542F20E5EF470025A759 /* LGLegoPlatformImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGLegoPlatformImpl.h; sourceTree = "<group>"; };
 		B5E1543020E5EF470025A759 /* LGLegoPlatformImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGLegoPlatformImpl.m; sourceTree = "<group>"; };
+		B5F531F520F714A7000E3427 /* libaddress_sorting.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libaddress_sorting.a; path = ../../../../grpc/libs/opt/libaddress_sorting.a; sourceTree = "<group>"; };
+		B5F531F620F714A7000E3427 /* libgrpc_cronet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgrpc_cronet.a; path = ../../../../grpc/libs/opt/libgrpc_cronet.a; sourceTree = "<group>"; };
+		B5F531F720F714A7000E3427 /* libboringssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboringssl.a; path = ../../../../grpc/libs/opt/libboringssl.a; sourceTree = "<group>"; };
+		B5F531F820F714A7000E3427 /* libgrpc_unsecure.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgrpc_unsecure.a; path = ../../../../grpc/libs/opt/libgrpc_unsecure.a; sourceTree = "<group>"; };
+		B5F531F920F714A7000E3427 /* libgrpc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgrpc.a; path = ../../../../grpc/libs/opt/libgrpc.a; sourceTree = "<group>"; };
+		B5F531FA20F714A8000E3427 /* libares.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libares.a; path = ../../../../grpc/libs/opt/libares.a; sourceTree = "<group>"; };
+		B5F531FB20F714A8000E3427 /* libgpr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgpr.a; path = ../../../../grpc/libs/opt/libgpr.a; sourceTree = "<group>"; };
+		B5F531FC20F714A8000E3427 /* libz.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libz.a; path = ../../../../grpc/libs/opt/libz.a; sourceTree = "<group>"; };
+		B5F5321220F71577000E3427 /* libares.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libares.a; path = ../../../deps/protobuf/libares.a; sourceTree = "<group>"; };
+		B5F5321320F71577000E3427 /* libz.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libz.a; path = ../../../deps/protobuf/libz.a; sourceTree = "<group>"; };
+		B5F5325E20F83120000E3427 /* libBoringSSL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBoringSSL.a; path = ../../../deps/libs/libBoringSSL.a; sourceTree = "<group>"; };
+		B5F5325F20F83120000E3427 /* libgRPC-Core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgRPC-Core.a"; path = "../../../deps/libs/libgRPC-Core.a"; sourceTree = "<group>"; };
+		B5F5326020F83120000E3427 /* libgRPC-C++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgRPC-C++.a"; path = "../../../deps/libs/libgRPC-C++.a"; sourceTree = "<group>"; };
+		B5F5326120F83120000E3427 /* libnanopb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnanopb.a; path = ../../../deps/libs/libnanopb.a; sourceTree = "<group>"; };
+		B5F5326220F83120000E3427 /* libProtobuf-C++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libProtobuf-C++.a"; path = "../../../deps/libs/libProtobuf-C++.a"; sourceTree = "<group>"; };
+		B5F5326820F8319B000E3427 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B5F532AE20EDE47200AB6B53 /* lego.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lego.pb.cc; sourceTree = "<group>"; };
 		B5F532AF20EDE47200AB6B53 /* lego.grpc.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lego.grpc.pb.cc; sourceTree = "<group>"; };
 		B5F532B020EDE47200AB6B53 /* lego.grpc.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lego.grpc.pb.h; sourceTree = "<group>"; };
@@ -105,7 +142,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D434C176FD454F7A69EC1B78 /* libPods-lego.a in Frameworks */,
+				B5F5326920F8319B000E3427 /* libz.tbd in Frameworks */,
+				B5F5326320F83120000E3427 /* libBoringSSL.a in Frameworks */,
+				B5F5326420F83120000E3427 /* libgRPC-Core.a in Frameworks */,
+				B5F5326520F83120000E3427 /* libgRPC-C++.a in Frameworks */,
+				B5F5326620F83120000E3427 /* libnanopb.a in Frameworks */,
+				B5F5326720F83120000E3427 /* libProtobuf-C++.a in Frameworks */,
+				F72BDB6C6264946964D93B79 /* libPods-lego.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +323,37 @@
 		C048C21C07291745096BEC5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5F5326820F8319B000E3427 /* libz.tbd */,
+				B5F5325E20F83120000E3427 /* libBoringSSL.a */,
+				B5F5326020F83120000E3427 /* libgRPC-C++.a */,
+				B5F5325F20F83120000E3427 /* libgRPC-Core.a */,
+				B5F5326120F83120000E3427 /* libnanopb.a */,
+				B5F5326220F83120000E3427 /* libProtobuf-C++.a */,
+				B5F5321220F71577000E3427 /* libares.a */,
+				B5F5321320F71577000E3427 /* libz.a */,
+				B548E82520F478BA001589C6 /* libaddress_sorting.a */,
+				B5F531FA20F714A8000E3427 /* libares.a */,
+				B548E81C20F478BA001589C6 /* libboringssl.a */,
+				B548E81A20F478BA001589C6 /* libgpr.a */,
+				B5F531F720F714A7000E3427 /* libboringssl.a */,
+				B5F531FB20F714A8000E3427 /* libgpr.a */,
+				B548E82420F478BA001589C6 /* libgrpc_cronet.a */,
+				B5F531F520F714A7000E3427 /* libaddress_sorting.a */,
+				B5F531F620F714A7000E3427 /* libgrpc_cronet.a */,
+				B5F531F820F714A7000E3427 /* libgrpc_unsecure.a */,
+				B5F531F920F714A7000E3427 /* libgrpc.a */,
+				B5F531FC20F714A8000E3427 /* libz.a */,
+				B548E82120F478BA001589C6 /* libgrpc_plugin_support.a */,
+				B548E82020F478BA001589C6 /* libgrpc_unsecure.a */,
+				B548E82220F478BA001589C6 /* libgrpc.a */,
+				B548E81D20F478BA001589C6 /* libgrpc++_core_stats.a */,
+				B548E82620F478BA001589C6 /* libgrpc++_cronet.a */,
+				B548E81F20F478BA001589C6 /* libgrpc++_error_details.a */,
+				B548E82320F478BA001589C6 /* libgrpc++_reflection.a */,
+				B548E81E20F478BA001589C6 /* libgrpc++_unsecure.a */,
+				B548E81B20F478BA001589C6 /* libgrpc++.a */,
+				B548E81820F469D1001589C6 /* libprotobuf.a */,
+				B548E81620F468DF001589C6 /* libPods-lego.a */,
 				717290BF3DBAAD3B8A500E5D /* libPods-lego.a */,
 			);
 			name = Frameworks;
@@ -541,22 +615,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K825P6N3H5;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/BoringSSL\"",
-					"\"${PODS_ROOT}/Headers/Public/Protobuf\"",
-					"\"${PODS_ROOT}/Headers/Public/gRPC\"",
-					"\"${PODS_ROOT}/Headers/Public/gRPC-Core\"",
-					"\"${PODS_ROOT}/Headers/Public/gRPC-ProtoRPC\"",
-					"\"${PODS_ROOT}/Headers/Public/gRPC-RxLibrary\"",
-					"\"${PODS_ROOT}/Headers/Public/nanopb\"",
 					"${SRCROOT}/../../../deps/flatbuffers/include",
+					"${SRCROOT}/../../../deps/protobuf/include",
+					"${SRCROOT}/../../../deps/grpc/include",
 				);
 				INFOPLIST_FILE = lego/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"${SRCROOT}/../../../deps/libs",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cmsight.lego;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -574,22 +644,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K825P6N3H5;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/BoringSSL\"",
-					"\"${PODS_ROOT}/Headers/Public/Protobuf\"",
-					"\"${PODS_ROOT}/Headers/Public/gRPC\"",
-					"\"${PODS_ROOT}/Headers/Public/gRPC-Core\"",
-					"\"${PODS_ROOT}/Headers/Public/gRPC-ProtoRPC\"",
-					"\"${PODS_ROOT}/Headers/Public/gRPC-RxLibrary\"",
-					"\"${PODS_ROOT}/Headers/Public/nanopb\"",
 					"${SRCROOT}/../../../deps/flatbuffers/include",
+					"${SRCROOT}/../../../deps/protobuf/include",
+					"${SRCROOT}/../../../deps/grpc/include",
 				);
 				INFOPLIST_FILE = lego/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"${SRCROOT}/../../../deps/libs",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cmsight.lego;
 				PRODUCT_NAME = "$(TARGET_NAME)";

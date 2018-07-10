@@ -64,7 +64,7 @@ namespace lego {
         _networkCallback->sendDataCallback = std::bind(&LegoCoreImpl::send_data_handler, this);
         _networkCallback->downloadCallback = std::bind(&LegoCoreImpl::download_handler, this, std::placeholders::_1);
         _networkCallback->uploadCallback = std::bind(&LegoCoreImpl::upload_handler, this);
-        _client = std::make_unique<LegoClient>(CreateChannel("localhost:8513", grpc::InsecureChannelCredentials()));
+        grpc_init();
     }
 
     void LegoCoreImpl::get_data_handler(const std::string & template_id) {
@@ -121,6 +121,7 @@ namespace lego {
     }
 
     void LegoCoreImpl::get_data() {
+        _client = std::make_unique<LegoClient>(CreateChannel("localhost:8513", grpc::InsecureChannelCredentials()));
         lego::Template templateData = _client->GetTemplate();
         printf("%s", templateData.name().c_str());
     }

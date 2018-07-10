@@ -1,0 +1,66 @@
+PODS:
+  - BoringSSL (10.0.5):
+    - BoringSSL/Implementation (= 10.0.5)
+    - BoringSSL/Interface (= 10.0.5)
+  - BoringSSL/Implementation (10.0.5):
+    - BoringSSL/Interface (= 10.0.5)
+  - BoringSSL/Interface (10.0.5)
+  - "gRPC-C++ (0.0.2)":
+    - "gRPC-C++/Implementation (= 0.0.2)"
+    - "gRPC-C++/Interface (= 0.0.2)"
+  - "gRPC-C++/Implementation (0.0.2)":
+    - "gRPC-C++/Interface (= 0.0.2)"
+    - gRPC-Core (= 1.13.0)
+    - nanopb (~> 0.3)
+  - "gRPC-C++/Interface (0.0.2)"
+  - gRPC-Core (1.13.0):
+    - gRPC-Core/Implementation (= 1.13.0)
+    - gRPC-Core/Interface (= 1.13.0)
+  - gRPC-Core/Implementation (1.13.0):
+    - BoringSSL (~> 10.0)
+    - gRPC-Core/Interface (= 1.13.0)
+    - nanopb (~> 0.3)
+  - gRPC-Core/Interface (1.13.0)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - "Protobuf-C++ (3.6.0)"
+
+DEPENDENCIES:
+  - "gRPC-C++ (from `https://github.com/codingrhythm/grpc.git`, branch `fix`)"
+  - "Protobuf-C++ (from `https://github.com/codingrhythm/protobuf.git`, branch `cpp`)"
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BoringSSL
+    - gRPC-Core
+    - nanopb
+
+EXTERNAL SOURCES:
+  "gRPC-C++":
+    :branch: fix
+    :git: https://github.com/codingrhythm/grpc.git
+  "Protobuf-C++":
+    :branch: cpp
+    :git: https://github.com/codingrhythm/protobuf.git
+
+CHECKOUT OPTIONS:
+  "gRPC-C++":
+    :commit: 4340725fbd2b5af80b9492f7ce30a126f7642d68
+    :git: https://github.com/codingrhythm/grpc.git
+  "Protobuf-C++":
+    :commit: 73688e9be9c8efeb8ba91b014aa80a164ccf1ff5
+    :git: https://github.com/codingrhythm/protobuf.git
+
+SPEC CHECKSUMS:
+  BoringSSL: cf3f1793eb6e3c445c4d150456341f149c268a35
+  "gRPC-C++": 47f628b1c4d6a06e1eeb93960ecd055eaae23728
+  gRPC-Core: a56b086a8ef5ced6f6ba5be5bc0a63fca185015a
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  "Protobuf-C++": d8f1e0ad3d0340c070fed553da28e5a30ac891ec
+
+PODFILE CHECKSUM: 2d86aa12d5ace93da183e7592385404abaf82c3e
+
+COCOAPODS: 1.5.3

@@ -1,0 +1,56 @@
+{
+  "name": "Protobuf-C++",
+  "version": "3.6.0",
+  "summary": "Protocol Buffers v.3 runtime library for C++.",
+  "homepage": "https://github.com/google/protobuf",
+  "license": "3-Clause BSD License",
+  "authors": {
+    "The Protocol Buffers contributors": "protobuf@googlegroups.com"
+  },
+  "cocoapods_version": ">= 1.0",
+  "requires_arc": false,
+  "libraries": "c++",
+  "source": {
+    "git": "https://github.com/google/protobuf.git",
+    "tag": "v3.6.0"
+  },
+  "source_files": [
+    "config.h",
+    "src/google/protobuf/**/*.{h,cc}"
+  ],
+  "compiler_flags": [
+    "-D_THREAD_SAFE",
+    "-DHAVE_PTHREAD=1"
+  ],
+  "exclude_files": [
+    "src/**/compiler/cpp/**",
+    "src/**/compiler/python/**",
+    "src/**/compiler/java/**",
+    "src/**/compiler/csharp/**",
+    "src/**/compiler/js/**",
+    "src/**/compiler/objectivec/**",
+    "src/**/compiler/php/**",
+    "src/**/compiler/ruby/**",
+    "src/**/compiler/**",
+    "src/**/*unittest*",
+    "src/**/*test.cc",
+    "src/**/*test_util*",
+    "src/**/testdata/**",
+    "src/google/protobuf/any_test.cc"
+  ],
+  "header_mappings_dir": "src",
+  "user_target_xcconfig": {
+    "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1"
+  },
+  "pod_target_xcconfig": {
+    "USE_HEADERMAP": "NO",
+    "ALWAYS_SEARCH_USER_PATHS": "NO",
+    "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1"
+  },
+  "platforms": {
+    "ios": "7.0",
+    "osx": "10.9",
+    "tvos": "9.0",
+    "watchos": "2.0"
+  }
+}

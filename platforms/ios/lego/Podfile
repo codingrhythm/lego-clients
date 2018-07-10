@@ -7,9 +7,10 @@ target 'lego' do
   #pod 'GrpcLibrary', :path => '.'
   #pod 'gRPC-C++'
   #pod 'gRPC-C++', :path => '../../../deps/grpc/'
-  pod 'gRPC-C++', :git => 'https://github.com/codingrhythm/grpc.git', :branch => 'fix'
   #pod 'Protobuf'
   #pod 'protobuf-c'
-  pod 'Protobuf-C++', :git => 'https://github.com/codingrhythm/protobuf.git', :branch => 'cpp'
   #pod 'GoogleProtobuf'
+  # below worked
+  #pod 'gRPC-C++', :git => 'https://github.com/codingrhythm/grpc.git', :branch => 'fix'
+  #pod 'Protobuf-C++', :git => 'https://github.com/codingrhythm/protobuf.git', :branch => 'cpp'
 end

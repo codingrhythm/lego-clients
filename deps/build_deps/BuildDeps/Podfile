@@ -1,0 +1,9 @@
+source 'https://github.com/cocoapods/specs.git'
+platform :ios, '9.0'
+
+install! 'cocoapods', :deterministic_uuids => false
+
+target 'BuildDeps' do
+  pod 'gRPC-C++', :git => 'https://github.com/codingrhythm/grpc.git', :branch => 'fix'
+  pod 'Protobuf-C++', :git => 'https://github.com/codingrhythm/protobuf.git', :branch => 'cpp'
+end
