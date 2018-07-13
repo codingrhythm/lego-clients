@@ -37,7 +37,6 @@
 		B5F532CF20EDEC2300AB6B53 /* LGLegoCore+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532BF20EDEC2200AB6B53 /* LGLegoCore+Private.mm */; };
 		B5F532D020EDEC2300AB6B53 /* LGNetworkCallback+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532C520EDEC2200AB6B53 /* LGNetworkCallback+Private.mm */; };
 		B5F532D120EDEC2300AB6B53 /* LGSPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532C620EDEC2200AB6B53 /* LGSPage.mm */; };
-		F72BDB6C6264946964D93B79 /* libPods-lego.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B548E81620F468DF001589C6 /* libPods-lego.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,7 +147,6 @@
 				B5F5326520F83120000E3427 /* libgRPC-C++.a in Frameworks */,
 				B5F5326620F83120000E3427 /* libnanopb.a in Frameworks */,
 				B5F5326720F83120000E3427 /* libProtobuf-C++.a in Frameworks */,
-				F72BDB6C6264946964D93B79 /* libPods-lego.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,7 +621,10 @@
 					"${SRCROOT}/../../../deps/grpc/include",
 				);
 				INFOPLIST_FILE = lego/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/../../../deps/libs",
@@ -652,7 +653,10 @@
 					"${SRCROOT}/../../../deps/grpc/include",
 				);
 				INFOPLIST_FILE = lego/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/../../../deps/libs",
