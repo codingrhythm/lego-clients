@@ -11,6 +11,7 @@
 		B54B8B1120E9A4D900B06735 /* lego_core_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B0F20E9A4D900B06735 /* lego_core_impl.cpp */; };
 		B54B8B1220E9A4D900B06735 /* network_callback_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1020E9A4D900B06735 /* network_callback_impl.cpp */; };
 		B54B8B1B20E9B8B200B06735 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1A20E9B8B200B06735 /* util.cpp */; };
+		B5C591E120F8653900606A40 /* libnanopb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326120F83120000E3427 /* libnanopb.a */; };
 		B5E153DD20E5E83B0025A759 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E153DC20E5E83B0025A759 /* AppDelegate.m */; };
 		B5E153E020E5E83B0025A759 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E153DF20E5E83B0025A759 /* ViewController.m */; };
 		B5E153E320E5E83B0025A759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E153E120E5E83B0025A759 /* Main.storyboard */; };
@@ -23,7 +24,6 @@
 		B5F5326320F83120000E3427 /* libBoringSSL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5325E20F83120000E3427 /* libBoringSSL.a */; };
 		B5F5326420F83120000E3427 /* libgRPC-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5325F20F83120000E3427 /* libgRPC-Core.a */; };
 		B5F5326520F83120000E3427 /* libgRPC-C++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326020F83120000E3427 /* libgRPC-C++.a */; };
-		B5F5326620F83120000E3427 /* libnanopb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326120F83120000E3427 /* libnanopb.a */; };
 		B5F5326720F83120000E3427 /* libProtobuf-C++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326220F83120000E3427 /* libProtobuf-C++.a */; };
 		B5F5326920F8319B000E3427 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326820F8319B000E3427 /* libz.tbd */; };
 		B5F532B220EDE47200AB6B53 /* lego.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5F532AE20EDE47200AB6B53 /* lego.pb.cc */; };
@@ -141,11 +141,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C591E120F8653900606A40 /* libnanopb.a in Frameworks */,
 				B5F5326920F8319B000E3427 /* libz.tbd in Frameworks */,
 				B5F5326320F83120000E3427 /* libBoringSSL.a in Frameworks */,
 				B5F5326420F83120000E3427 /* libgRPC-Core.a in Frameworks */,
 				B5F5326520F83120000E3427 /* libgRPC-C++.a in Frameworks */,
-				B5F5326620F83120000E3427 /* libnanopb.a in Frameworks */,
 				B5F5326720F83120000E3427 /* libProtobuf-C++.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
