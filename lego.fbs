@@ -1,4 +1,4 @@
-namespace Lego;
+namespace LegoStorage;
 
 table QuestionRecord {
   id: string;

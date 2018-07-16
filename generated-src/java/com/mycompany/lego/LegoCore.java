@@ -7,8 +7,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 /** Shared core APIs */
 public abstract class LegoCore {
-    /** get data */
-    public abstract void getData();
+    /** get data, returns template id */
+    public abstract String getData();
 
     /** send data */
     public abstract void sendData(STemplate data);
@@ -18,6 +18,9 @@ public abstract class LegoCore {
 
     /** download file */
     public abstract void downloadFile(String fileId);
+
+    /** performance test code */
+    public abstract STemplate sendLargeDataOverBridge(String templateId);
 
     /** class method to create core API instance */
     public static native LegoCore create(LegoPlatform platform);
@@ -46,12 +49,12 @@ public abstract class LegoCore {
         }
 
         @Override
-        public void getData()
+        public String getData()
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            native_getData(this.nativeRef);
+            return native_getData(this.nativeRef);
         }
-        private native void native_getData(long _nativeRef);
+        private native String native_getData(long _nativeRef);
 
         @Override
         public void sendData(STemplate data)
@@ -76,5 +79,13 @@ public abstract class LegoCore {
             native_downloadFile(this.nativeRef, fileId);
         }
         private native void native_downloadFile(long _nativeRef, String fileId);
+
+        @Override
+        public STemplate sendLargeDataOverBridge(String templateId)
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            return native_sendLargeDataOverBridge(this.nativeRef, templateId);
+        }
+        private native STemplate native_sendLargeDataOverBridge(long _nativeRef, String templateId);
     }
 }

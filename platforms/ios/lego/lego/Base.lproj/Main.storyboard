@@ -19,16 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0j-PQ-aVR">
-                                <rect key="frame" x="170" y="617" width="34" height="30"/>
-                                <state key="normal" title="Start"/>
+                                <rect key="frame" x="113" y="20" width="149" height="30"/>
+                                <state key="normal" title="Get Data From Server"/>
                                 <connections>
-                                    <action selector="actionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6tg-Hx-cNF"/>
+                                    <action selector="getDataFromServerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6tg-Hx-cNF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHM-HV-VGb">
+                                <rect key="frame" x="101" y="58" width="173" height="30"/>
+                                <state key="normal" title="Get Data Over the Bridge"/>
+                                <connections>
+                                    <action selector="getDataOverTheBridgeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="suL-U1-8rl"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Z0j-PQ-aVR" secondAttribute="bottom" constant="20" id="z3A-CA-7zm"/>
+                            <constraint firstItem="hHM-HV-VGb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XIY-Xr-e8i"/>
+                            <constraint firstItem="hHM-HV-VGb" firstAttribute="top" secondItem="Z0j-PQ-aVR" secondAttribute="bottom" constant="8" id="XVE-Jk-vhx"/>
+                            <constraint firstItem="Z0j-PQ-aVR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nfC-5y-sOz"/>
                             <constraint firstItem="Z0j-PQ-aVR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zsj-sw-AUt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

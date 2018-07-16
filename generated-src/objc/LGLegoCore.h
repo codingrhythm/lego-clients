@@ -13,8 +13,8 @@
 /** class method to create core API instance */
 + (nullable LGLegoCore *)create:(nullable id<LGLegoPlatform>)platform;
 
-/** get data */
-- (void)getData;
+/** get data, returns template id */
+- (nonnull NSString *)getData;
 
 /** send data */
 - (void)sendData:(nonnull LGSTemplate *)data;
@@ -24,5 +24,8 @@
 
 /** download file */
 - (void)downloadFile:(nonnull NSString *)fileId;
+
+/** performance test code */
+- (nonnull LGSTemplate *)sendLargeDataOverBridge:(nonnull NSString *)templateId;
 
 @end

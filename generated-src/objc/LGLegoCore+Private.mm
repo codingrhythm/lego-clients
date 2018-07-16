@@ -39,9 +39,10 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)getData {
+- (nonnull NSString *)getData {
     try {
-        _cppRefHandle.get()->get_data();
+        auto objcpp_result_ = _cppRefHandle.get()->get_data();
+        return ::djinni::String::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
@@ -60,6 +61,13 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 - (void)downloadFile:(nonnull NSString *)fileId {
     try {
         _cppRefHandle.get()->download_file(::djinni::String::toCpp(fileId));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (nonnull LGSTemplate *)sendLargeDataOverBridge:(nonnull NSString *)templateId {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->send_large_data_over_bridge(::djinni::String::toCpp(templateId));
+        return ::djinni_generated::STemplate::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

@@ -16,7 +16,7 @@ You will need to install `flatc` in order to compile the fbs file. You can insta
 
 ### Compile flatbuffer file
 
-`flatc lego.fbs`
+`flatc -c lego.fbs`
 
 ### Compile Djinni file
 

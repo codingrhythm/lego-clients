@@ -21,8 +21,8 @@ public:
     /** class method to create core API instance */
     static std::shared_ptr<LegoCore> create(const std::shared_ptr<LegoPlatform> & platform);
 
-    /** get data */
-    virtual void get_data() = 0;
+    /** get data, returns template id */
+    virtual std::string get_data() = 0;
 
     /** send data */
     virtual void send_data(const STemplate & data) = 0;
@@ -32,6 +32,9 @@ public:
 
     /** download file */
     virtual void download_file(const std::string & file_id) = 0;
+
+    /** performance test code */
+    virtual STemplate send_large_data_over_bridge(const std::string & template_id) = 0;
 };
 
 }  // namespace lego

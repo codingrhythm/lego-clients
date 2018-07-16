@@ -11,7 +11,7 @@
 #import "LGLegoPlatformImpl.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) NSString *templateID;
 @end
 
 const int NUMBER_OF_REQUESTS = 10;
@@ -34,17 +34,25 @@ const int NUMBER_OF_REQUESTS = 10;
     _coreAPI = [LGLegoCore create:platform];
 }
 
-- (IBAction)actionButtonTapped:(id)sender {
+- (IBAction)getDataFromServerButtonTapped:(id)sender {
     _numOfRequests = 0;
-    startTime = [NSDate new];
-    for (int i = 0; i < NUMBER_OF_REQUESTS; i ++) {
-        [self getDataFromDjinni];
-        //[self getData];
+    [self getDataFromDjinni];
+}
+
+- (IBAction)getDataOverTheBridgeButtonTapped:(id)sender {
+    if (_templateID == nil) {
+        return;
     }
+
+    NSDate *start = [NSDate date];
+    LGSTemplate *template = [_coreAPI sendLargeDataOverBridge:_templateID];
+    NSLog(@"done: %0.5f", -[start timeIntervalSinceNow]);
 }
 
 - (void)getDataFromDjinni {
-    [_coreAPI getData];
+    NSDate *start = [NSDate date];
+    _templateID = [_coreAPI getData];
+    NSLog(@"done: %0.5f with template id: %@", -[start timeIntervalSinceNow], _templateID);
 }
 
 - (NSString *)getStoragePath {

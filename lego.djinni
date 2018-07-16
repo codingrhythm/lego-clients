@@ -45,8 +45,8 @@ lego_core = interface +c {
   # class method to create core API instance
   static create(platform: lego_platform): lego_core;
 
-  # get data
-  get_data();
+  # get data, returns template id
+  get_data(): string;
 
   # send data
   send_data(data: s_template);
@@ -56,6 +56,9 @@ lego_core = interface +c {
 
   # download file
   download_file(file_id: string);
+
+  # performance test code
+  send_large_data_over_bridge(template_id: string): s_template;
 }
 
 # Platform APIs

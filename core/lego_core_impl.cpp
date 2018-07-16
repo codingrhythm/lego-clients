@@ -1,16 +1,15 @@
 #include "lego_core_impl.hpp"
 #include "flatbuffers/idl.h"
 #include "flatbuffers/util.h"
-#include "lego_generated.h"
 #include "s_template.hpp"
 #include "s_page.hpp"
 #include "s_question.hpp"
 #include <string>
 
-#include "lego.pb.h"
 #include "lego.grpc.pb.h"
 #include <grpcpp/grpcpp.h>
 #include <grpc/support/log.h>
+#include "lego_generated.h"
 
 
 class LegoClient {
@@ -68,12 +67,46 @@ namespace lego {
     }
 
     void LegoCoreImpl::get_data_handler(const std::string & template_id) {
+
+    }
+
+    void LegoCoreImpl::send_data_handler() {
+
+    }
+
+    void LegoCoreImpl::upload_handler() {
+
+    }
+
+    void LegoCoreImpl::download_handler(const std::string & file_path) {
+
+    }
+
+    std::string LegoCoreImpl::get_data() {
+        _client = std::make_unique<LegoClient>(CreateChannel("localhost:8513", grpc::InsecureChannelCredentials()));
+        lego::Template templateData = _client->GetTemplate();
+        this->parse_and_store_data(templateData);
+        return templateData.id().c_str();
+    }
+
+    void LegoCoreImpl::send_data(const STemplate & data) {
+
+    }
+
+    void LegoCoreImpl::upload_file(const std::vector<uint8_t> & file_data) {
+    }
+
+    void LegoCoreImpl::download_file(const std::string & file_id) {
+
+    }
+
+    STemplate LegoCoreImpl::send_large_data_over_bridge(const std::string & template_id) {
         flatbuffers::FlatBufferBuilder builder;
         std::string loaded_file;
         std::string file_path = _platform->get_storage_path() + "/" + template_id + ".bin";
         flatbuffers::LoadFile(file_path.c_str(), true, &loaded_file);
         builder.PushBytes((uint8_t*)(loaded_file.c_str()), loaded_file.length());
-        auto record = ::Lego::GetTemplateRecord(builder.GetCurrentBufferPointer());
+        auto record = LegoStorage::GetTemplateRecord(builder.GetCurrentBufferPointer());
 
         std::vector<SPage> pages;
         for (const auto page:*record->pages()) {
@@ -98,42 +131,56 @@ namespace lego {
 
             pages.push_back(page_data);
         }
-        
+
         STemplate templateData = {
             record->id()->c_str(),
             record->name()->c_str(),
             pages
         };
 
-        _platform->data_updated(templateData);
+        return templateData;
     }
 
-    void LegoCoreImpl::send_data_handler() {
+    void LegoCoreImpl::parse_and_store_data(const Template & data) {
+        flatbuffers::FlatBufferBuilder builder;
 
-    }
+        std::vector<flatbuffers::Offset<LegoStorage::PageRecord>> pages_vector;
 
-    void LegoCoreImpl::upload_handler() {
+        for (const Page &page : data.pages()) {
+            std::vector<flatbuffers::Offset<LegoStorage::QuestionRecord>> questions_vector;
+            for (const Question &question: page.questions()) {
+                auto id = builder.CreateString(question.id());
+                auto title = builder.CreateString(question.title());
+                auto description = builder.CreateString(question.description());
+                auto questionRecord = LegoStorage::CreateQuestionRecord(builder,
+                                                                 id,
+                                                                 title,
+                                                                 question.response_type(),
+                                                                 description,
+                                                                 question.order());
+                questions_vector.push_back(questionRecord);
+            }
+            auto id = builder.CreateString(page.id());
+            auto title = builder.CreateString(page.title());
+            auto questions = builder.CreateVector(questions_vector);
+            auto pageRecord = LegoStorage::CreatePageRecord(builder,
+                                                     id,
+                                                     title,
+                                                     page.order(),
+                                                     questions);
+            pages_vector.push_back(pageRecord);
+        }
+        auto id = builder.CreateString(data.id());
+        auto name = builder.CreateString(data.name());
+        auto pages = builder.CreateVector(pages_vector);
+        LegoStorage::TemplateRecordBuilder templateBuilder(builder);
+        templateBuilder.add_id(id);
+        templateBuilder.add_name(name);
+        templateBuilder.add_pages(pages);
+        auto record = templateBuilder.Finish();
+        builder.Finish(record);
 
-    }
-
-    void LegoCoreImpl::download_handler(const std::string & file_path) {
-
-    }
-
-    void LegoCoreImpl::get_data() {
-        _client = std::make_unique<LegoClient>(CreateChannel("localhost:8513", grpc::InsecureChannelCredentials()));
-        lego::Template templateData = _client->GetTemplate();
-        printf("%s", templateData.name().c_str());
-    }
-
-    void LegoCoreImpl::send_data(const STemplate & data) {
-
-    }
-
-    void LegoCoreImpl::upload_file(const std::vector<uint8_t> & file_data) {
-    }
-
-    void LegoCoreImpl::download_file(const std::string & file_id) {
-
+        std::string file_path = _platform->get_storage_path() + "/" + data.id() + ".bin";
+        flatbuffers::SaveFile(file_path.c_str(), (char *)builder.GetBufferPointer(), builder.GetSize(), true);
     }
 }
