@@ -49,6 +49,12 @@ const int NUMBER_OF_REQUESTS = 10;
     NSLog(@"done: %0.5f", -[start timeIntervalSinceNow]);
 }
 
+- (IBAction)generateDataNativelyButtonTapped:(id)sender {
+    NSDate *start = [NSDate date];
+    LGSTemplate *template = [self generateLargeData];
+    NSLog(@"done: %0.5f, template: %@", -[start timeIntervalSinceNow], template.name);
+}
+
 - (void)getDataFromDjinni {
     NSDate *start = [NSDate date];
     _templateID = [_coreAPI getData];
@@ -120,6 +126,33 @@ const int NUMBER_OF_REQUESTS = 10;
     if (_numOfRequests == NUMBER_OF_REQUESTS) {
         NSLog(@"done: %0.5f", -[startTime timeIntervalSinceNow]);
     }
+}
+
+- (LGSTemplate *)generateLargeData {
+    NSUInteger numberOfPages = 50;
+    NSUInteger questionsPerPage = 1000;
+    NSMutableArray<LGSPage*> *pages = [[NSMutableArray alloc] initWithCapacity:numberOfPages];
+
+    for (NSUInteger page = 1; page <= numberOfPages; page++) {
+        NSMutableArray<LGSQuestion*> *questions = [[NSMutableArray alloc] initWithCapacity:questionsPerPage];
+
+        for (NSUInteger question = 1; question <= questionsPerPage; question++) {
+            [questions addObject:[[LGSQuestion alloc] initWithId:[NSString stringWithFormat:@"%lu", (unsigned long)question]
+                                                           title:[NSString stringWithFormat:@"This is title for question %lu", (unsigned long)question]
+                                                    responseType:question
+                                             questionDescription:[NSString stringWithFormat:@"This is description for question %lu", (unsigned long)question]
+                                                           order:question]];
+        }
+
+        [pages addObject:[[LGSPage alloc] initWithId:[NSString stringWithFormat:@"%lu", (unsigned long)page]
+                                               title:[NSString stringWithFormat:@"This is title for page %lu", (unsigned long)page]
+                                               order:page
+                                           questions:questions]];
+    }
+
+    return [[LGSTemplate alloc] initWithId:@"template id"
+                                      name:@"template name"
+                                     pages:pages];
 }
 
 @end
