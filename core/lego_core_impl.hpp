@@ -22,5 +22,6 @@ namespace lego {
     void upload_file(const std::vector<uint8_t> & file_data);
     void download_file(const std::string & file_id);
     STemplate send_large_data_over_bridge(const std::string & template_id);
+    STemplate generate_large_data();
   };
 }

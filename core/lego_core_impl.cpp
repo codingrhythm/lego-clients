@@ -183,4 +183,41 @@ namespace lego {
         std::string file_path = _platform->get_storage_path() + "/" + data.id() + ".bin";
         flatbuffers::SaveFile(file_path.c_str(), (char *)builder.GetBufferPointer(), builder.GetSize(), true);
     }
+
+    STemplate LegoCoreImpl::generate_large_data() {
+        int numberOfPages = 50;
+        int questionsPerPage = 1000;
+
+        std::vector<SPage> pages;
+        for (int page = 1; page <= numberOfPages; page++) {
+            std::vector<SQuestion> questions;
+            for (int question = 1; question <= questionsPerPage; question++) {
+                SQuestion question_data = {
+                    std::to_string(question),
+                    "This is title for question " + std::to_string(question),
+                    question,
+                    "This is description for question " + std::to_string(question),
+                    question
+                };
+                questions.push_back(question_data);
+            }
+
+            SPage page_data = {
+                std::to_string(page),
+                "This is title for page " + std::to_string(page),
+                page,
+                questions
+            };
+
+            pages.push_back(page_data);
+        }
+
+        STemplate templateData = {
+            "template id",
+            "template name",
+            pages
+        };
+
+        return templateData;
+    }
 }

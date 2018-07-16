@@ -28,4 +28,6 @@
 /** performance test code */
 - (nonnull LGSTemplate *)sendLargeDataOverBridge:(nonnull NSString *)templateId;
 
+- (nonnull LGSTemplate *)generateLargeData;
+
 @end

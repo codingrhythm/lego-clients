@@ -55,6 +55,13 @@ const int NUMBER_OF_REQUESTS = 10;
     NSLog(@"done: %0.5f, template: %@", -[start timeIntervalSinceNow], template.name);
 }
 
+- (IBAction)generateDataDjinniButtonTapped:(id)sender {
+    NSDate *start = [NSDate date];
+    LGSTemplate *template = [_coreAPI generateLargeData];
+    NSLog(@"done: %0.5f, template: %@", -[start timeIntervalSinceNow], template.name);
+}
+
+
 - (void)getDataFromDjinni {
     NSDate *start = [NSDate date];
     _templateID = [_coreAPI getData];
