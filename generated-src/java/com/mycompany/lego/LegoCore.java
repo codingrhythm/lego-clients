@@ -22,7 +22,7 @@ public abstract class LegoCore {
     /** performance test code */
     public abstract STemplate sendLargeDataOverBridge(String templateId);
 
-    public abstract STemplate generateLargeData();
+    public abstract STemplate generateLargeData(int numberOfPages, int questionsPerPage);
 
     /** class method to create core API instance */
     public static native LegoCore create(LegoPlatform platform);
@@ -91,11 +91,11 @@ public abstract class LegoCore {
         private native STemplate native_sendLargeDataOverBridge(long _nativeRef, String templateId);
 
         @Override
-        public STemplate generateLargeData()
+        public STemplate generateLargeData(int numberOfPages, int questionsPerPage)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            return native_generateLargeData(this.nativeRef);
+            return native_generateLargeData(this.nativeRef, numberOfPages, questionsPerPage);
         }
-        private native STemplate native_generateLargeData(long _nativeRef);
+        private native STemplate native_generateLargeData(long _nativeRef, int numberOfPages, int questionsPerPage);
     }
 }

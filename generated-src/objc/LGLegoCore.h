@@ -28,6 +28,7 @@
 /** performance test code */
 - (nonnull LGSTemplate *)sendLargeDataOverBridge:(nonnull NSString *)templateId;
 
-- (nonnull LGSTemplate *)generateLargeData;
+- (nonnull LGSTemplate *)generateLargeData:(int32_t)numberOfPages
+                          questionsPerPage:(int32_t)questionsPerPage;
 
 @end

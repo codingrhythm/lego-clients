@@ -71,9 +71,11 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nonnull LGSTemplate *)generateLargeData {
+- (nonnull LGSTemplate *)generateLargeData:(int32_t)numberOfPages
+                          questionsPerPage:(int32_t)questionsPerPage {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->generate_large_data();
+        auto objcpp_result_ = _cppRefHandle.get()->generate_large_data(::djinni::I32::toCpp(numberOfPages),
+                                                                       ::djinni::I32::toCpp(questionsPerPage));
         return ::djinni_generated::STemplate::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }

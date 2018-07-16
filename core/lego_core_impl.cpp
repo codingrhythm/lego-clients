@@ -184,14 +184,12 @@ namespace lego {
         flatbuffers::SaveFile(file_path.c_str(), (char *)builder.GetBufferPointer(), builder.GetSize(), true);
     }
 
-    STemplate LegoCoreImpl::generate_large_data() {
-        int numberOfPages = 50;
-        int questionsPerPage = 1000;
+    STemplate LegoCoreImpl::generate_large_data(int32_t number_of_pages, int32_t questions_per_page) {
 
         std::vector<SPage> pages;
-        for (int page = 1; page <= numberOfPages; page++) {
+        for (int page = 1; page <= number_of_pages; page++) {
             std::vector<SQuestion> questions;
-            for (int question = 1; question <= questionsPerPage; question++) {
+            for (int question = 1; question <= questions_per_page; question++) {
                 SQuestion question_data = {
                     std::to_string(question),
                     "This is title for question " + std::to_string(question),

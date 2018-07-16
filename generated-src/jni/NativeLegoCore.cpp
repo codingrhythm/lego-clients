@@ -77,12 +77,13 @@ CJNIEXPORT jobject JNICALL Java_com_mycompany_lego_LegoCore_00024CppProxy_native
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
-CJNIEXPORT jobject JNICALL Java_com_mycompany_lego_LegoCore_00024CppProxy_native_1generateLargeData(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+CJNIEXPORT jobject JNICALL Java_com_mycompany_lego_LegoCore_00024CppProxy_native_1generateLargeData(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jint j_numberOfPages, jint j_questionsPerPage)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::lego::LegoCore>(nativeRef);
-        auto r = ref->generate_large_data();
+        auto r = ref->generate_large_data(::djinni::I32::toCpp(jniEnv, j_numberOfPages),
+                                          ::djinni::I32::toCpp(jniEnv, j_questionsPerPage));
         return ::djinni::release(::djinni_generated::NativeSTemplate::fromCpp(jniEnv, r));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }

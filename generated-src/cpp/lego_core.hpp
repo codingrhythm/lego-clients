@@ -36,7 +36,7 @@ public:
     /** performance test code */
     virtual STemplate send_large_data_over_bridge(const std::string & template_id) = 0;
 
-    virtual STemplate generate_large_data() = 0;
+    virtual STemplate generate_large_data(int32_t number_of_pages, int32_t questions_per_page) = 0;
 };
 
 }  // namespace lego

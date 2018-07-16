@@ -12,12 +12,13 @@
 
 @interface ViewController ()
 @property (nonatomic, strong) NSString *templateID;
+@property (nonatomic, strong) LGLegoCore *coreAPI;
 @end
 
 const int NUMBER_OF_REQUESTS = 10;
 
 @implementation ViewController {
-    LGLegoCore *_coreAPI;
+
     int _numOfRequests;
     NSDate *startTime;
 }
@@ -26,10 +27,7 @@ const int NUMBER_OF_REQUESTS = 10;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     LGLegoPlatformImpl *platform = [[LGLegoPlatformImpl alloc] initWithCallback:^{
-        _numOfRequests ++;
-        if (_numOfRequests == NUMBER_OF_REQUESTS) {
-            NSLog(@"done: %0.5f", -[startTime timeIntervalSinceNow]);
-        }
+
     }];
     _coreAPI = [LGLegoCore create:platform];
 }
@@ -44,28 +42,42 @@ const int NUMBER_OF_REQUESTS = 10;
         return;
     }
 
-    NSDate *start = [NSDate date];
-    LGSTemplate *template = [_coreAPI sendLargeDataOverBridge:_templateID];
-    NSLog(@"done: %0.5f", -[start timeIntervalSinceNow]);
+    __weak ViewController *weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+        NSDate *start = [NSDate date];
+        LGSTemplate *template = [weakSelf.coreAPI sendLargeDataOverBridge:weakSelf.templateID];
+        NSLog(@"done: %0.5f", -[start timeIntervalSinceNow]);
+    });
+
 }
 
 - (IBAction)generateDataNativelyButtonTapped:(id)sender {
-    NSDate *start = [NSDate date];
-    LGSTemplate *template = [self generateLargeData];
-    NSLog(@"done: %0.5f, template: %@", -[start timeIntervalSinceNow], template.name);
+    __weak ViewController *weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSDate *start = [NSDate date];
+        LGSTemplate *template = [weakSelf generateLargeData: 500 and: 1000];
+        NSLog(@"done: %0.5f, template: %@", -[start timeIntervalSinceNow], template.name);
+    });
 }
 
 - (IBAction)generateDataDjinniButtonTapped:(id)sender {
-    NSDate *start = [NSDate date];
-    LGSTemplate *template = [_coreAPI generateLargeData];
-    NSLog(@"done: %0.5f, template: %@", -[start timeIntervalSinceNow], template.name);
+    __weak ViewController *weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSDate *start = [NSDate date];
+        LGSTemplate *template = [weakSelf.coreAPI generateLargeData:500 questionsPerPage:1000];
+        NSLog(@"done: %0.5f, template: %@", -[start timeIntervalSinceNow], template.name);
+    });
 }
 
 
 - (void)getDataFromDjinni {
-    NSDate *start = [NSDate date];
-    _templateID = [_coreAPI getData];
-    NSLog(@"done: %0.5f with template id: %@", -[start timeIntervalSinceNow], _templateID);
+    __weak ViewController *weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSDate *start = [NSDate date];
+        weakSelf.templateID = [weakSelf.coreAPI getData];
+        NSLog(@"done: %0.5f with template id: %@", -[start timeIntervalSinceNow], weakSelf.templateID);
+    });
 }
 
 - (NSString *)getStoragePath {
@@ -135,15 +147,13 @@ const int NUMBER_OF_REQUESTS = 10;
     }
 }
 
-- (LGSTemplate *)generateLargeData {
-    NSUInteger numberOfPages = 50;
-    NSUInteger questionsPerPage = 1000;
+- (LGSTemplate *)generateLargeData:(NSUInteger) numberOfPages and:(NSUInteger) questionPerPage {
     NSMutableArray<LGSPage*> *pages = [[NSMutableArray alloc] initWithCapacity:numberOfPages];
 
     for (NSUInteger page = 1; page <= numberOfPages; page++) {
-        NSMutableArray<LGSQuestion*> *questions = [[NSMutableArray alloc] initWithCapacity:questionsPerPage];
+        NSMutableArray<LGSQuestion*> *questions = [[NSMutableArray alloc] initWithCapacity:questionPerPage];
 
-        for (NSUInteger question = 1; question <= questionsPerPage; question++) {
+        for (NSUInteger question = 1; question <= questionPerPage; question++) {
             [questions addObject:[[LGSQuestion alloc] initWithId:[NSString stringWithFormat:@"%lu", (unsigned long)question]
                                                            title:[NSString stringWithFormat:@"This is title for question %lu", (unsigned long)question]
                                                     responseType:question
