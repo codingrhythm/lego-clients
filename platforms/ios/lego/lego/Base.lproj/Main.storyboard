@@ -46,16 +46,34 @@
                                     <action selector="generateDataDjinniButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="abk-a9-hq2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uG9-1E-djX">
+                                <rect key="frame" x="24" y="172" width="327" height="30"/>
+                                <state key="normal" title="Generate Large Data Natively Multiple Requests"/>
+                                <connections>
+                                    <action selector="generateDataNativelyMultipleRequestsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="91K-aw-4Nq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2M6-D2-ecd">
+                                <rect key="frame" x="32" y="210" width="311" height="30"/>
+                                <state key="normal" title="Generate Large Data Djinni Multiple Requests"/>
+                                <connections>
+                                    <action selector="generateDataDjinniMultipleRequestsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eoQ-6z-gwa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Y4Q-FJ-n6o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Amt-1j-IA3"/>
+                            <constraint firstItem="2M6-D2-ecd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H0Q-Gs-7QO"/>
                             <constraint firstItem="Y4Q-FJ-n6o" firstAttribute="top" secondItem="hHM-HV-VGb" secondAttribute="bottom" constant="8" id="LXX-NS-ZtF"/>
                             <constraint firstItem="6pH-78-u4p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RJW-CL-j7f"/>
                             <constraint firstItem="6pH-78-u4p" firstAttribute="top" secondItem="Y4Q-FJ-n6o" secondAttribute="bottom" constant="8" id="Rh2-b7-R6f"/>
+                            <constraint firstItem="2M6-D2-ecd" firstAttribute="top" secondItem="uG9-1E-djX" secondAttribute="bottom" constant="8" id="VSy-QE-Jsk"/>
                             <constraint firstItem="hHM-HV-VGb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XIY-Xr-e8i"/>
                             <constraint firstItem="hHM-HV-VGb" firstAttribute="top" secondItem="Z0j-PQ-aVR" secondAttribute="bottom" constant="8" id="XVE-Jk-vhx"/>
+                            <constraint firstItem="uG9-1E-djX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n3d-e0-NYc"/>
                             <constraint firstItem="Z0j-PQ-aVR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nfC-5y-sOz"/>
+                            <constraint firstItem="uG9-1E-djX" firstAttribute="top" secondItem="6pH-78-u4p" secondAttribute="bottom" constant="8" id="o5W-Ed-IRp"/>
                             <constraint firstItem="Z0j-PQ-aVR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zsj-sw-AUt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

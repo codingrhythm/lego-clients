@@ -47,7 +47,7 @@ const int NUMBER_OF_REQUESTS = 10;
 
         NSDate *start = [NSDate date];
         LGSTemplate *template = [weakSelf.coreAPI sendLargeDataOverBridge:weakSelf.templateID];
-        NSLog(@"done: %0.5f", -[start timeIntervalSinceNow]);
+        NSLog(@"done djinni: %0.5f", -[start timeIntervalSinceNow]);
     });
 
 }
@@ -57,7 +57,7 @@ const int NUMBER_OF_REQUESTS = 10;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSDate *start = [NSDate date];
         LGSTemplate *template = [weakSelf generateLargeData: 500 and: 1000];
-        NSLog(@"done: %0.5f, template: %@", -[start timeIntervalSinceNow], template.name);
+        NSLog(@"done native: %0.5f, template: %@", -[start timeIntervalSinceNow], template.name);
     });
 }
 
@@ -66,7 +66,31 @@ const int NUMBER_OF_REQUESTS = 10;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSDate *start = [NSDate date];
         LGSTemplate *template = [weakSelf.coreAPI generateLargeData:500 questionsPerPage:1000];
-        NSLog(@"done: %0.5f, template: %@", -[start timeIntervalSinceNow], template.name);
+        NSLog(@"done djinni: %0.5f, template: %@", -[start timeIntervalSinceNow], template.name);
+    });
+}
+
+- (IBAction)generateDataNativelyMultipleRequestsButtonTapped:(id)sender {
+    __weak ViewController *weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSDate *start = [NSDate date];
+        for (int i = 0; i < 100; i++) {
+            LGSTemplate *template = [weakSelf generateLargeData: 50 and: 100];
+            //NSLog(@"template: %@", template.name);
+        }
+        NSLog(@"done native: %0.5f", -[start timeIntervalSinceNow]);
+    });
+}
+
+- (IBAction)generateDataDjinniMultipleRequestsButtonTapped:(id)sender {
+    __weak ViewController *weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSDate *start = [NSDate date];
+        for (int i = 0; i < 100; i++) {
+            LGSTemplate *template = [weakSelf.coreAPI generateLargeData:50 questionsPerPage:100];
+            //NSLog(@"template: %@", template.name);
+        }
+        NSLog(@"done djinni: %0.5f", -[start timeIntervalSinceNow]);
     });
 }
 
