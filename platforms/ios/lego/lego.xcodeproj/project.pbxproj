@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50DDC8F20FD6EB500EB3C53 /* lego.grpc.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = B50DDC8B20FD6EB500EB3C53 /* lego.grpc.pb.cc */; };
+		B50DDC9020FD6EB500EB3C53 /* lego.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = B50DDC8D20FD6EB500EB3C53 /* lego.pb.cc */; };
 		B51AD1E920EF3BC4006467E2 /* TestBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51AD1E820EF3BC4006467E2 /* TestBridge.swift */; };
 		B54B8B1120E9A4D900B06735 /* lego_core_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B0F20E9A4D900B06735 /* lego_core_impl.cpp */; };
 		B54B8B1220E9A4D900B06735 /* network_callback_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1020E9A4D900B06735 /* network_callback_impl.cpp */; };
@@ -26,8 +28,6 @@
 		B5F5326520F83120000E3427 /* libgRPC-C++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326020F83120000E3427 /* libgRPC-C++.a */; };
 		B5F5326720F83120000E3427 /* libProtobuf-C++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326220F83120000E3427 /* libProtobuf-C++.a */; };
 		B5F5326920F8319B000E3427 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326820F8319B000E3427 /* libz.tbd */; };
-		B5F532B220EDE47200AB6B53 /* lego.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5F532AE20EDE47200AB6B53 /* lego.pb.cc */; };
-		B5F532B320EDE47200AB6B53 /* lego.grpc.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5F532AF20EDE47200AB6B53 /* lego.grpc.pb.cc */; };
 		B5F532C920EDEC2300AB6B53 /* LGSPage+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532B420EDEC2100AB6B53 /* LGSPage+Private.mm */; };
 		B5F532CA20EDEC2300AB6B53 /* LGLegoPlatform+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532B620EDEC2100AB6B53 /* LGLegoPlatform+Private.mm */; };
 		B5F532CB20EDEC2300AB6B53 /* LGSQuestion+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532B820EDEC2200AB6B53 /* LGSQuestion+Private.mm */; };
@@ -43,6 +43,10 @@
 		0BB43923ACF91B12C5D6AE99 /* Pods-lego.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lego.release.xcconfig"; path = "Pods/Target Support Files/Pods-lego/Pods-lego.release.xcconfig"; sourceTree = "<group>"; };
 		717290BF3DBAAD3B8A500E5D /* libPods-lego.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lego.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B11EB63DFF84CE9BF09B034A /* Pods-lego.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lego.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lego/Pods-lego.debug.xcconfig"; sourceTree = "<group>"; };
+		B50DDC8B20FD6EB500EB3C53 /* lego.grpc.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lego.grpc.pb.cc; path = "../../../../deps/generated-grpc/lego.grpc.pb.cc"; sourceTree = "<group>"; };
+		B50DDC8C20FD6EB500EB3C53 /* lego.grpc.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lego.grpc.pb.h; path = "../../../../deps/generated-grpc/lego.grpc.pb.h"; sourceTree = "<group>"; };
+		B50DDC8D20FD6EB500EB3C53 /* lego.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lego.pb.cc; path = "../../../../deps/generated-grpc/lego.pb.cc"; sourceTree = "<group>"; };
+		B50DDC8E20FD6EB500EB3C53 /* lego.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lego.pb.h; path = "../../../../deps/generated-grpc/lego.pb.h"; sourceTree = "<group>"; };
 		B51AD1E720EF3BC4006467E2 /* lego-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lego-Bridging-Header.h"; sourceTree = "<group>"; };
 		B51AD1E820EF3BC4006467E2 /* TestBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBridge.swift; sourceTree = "<group>"; };
 		B548E81620F468DF001589C6 /* libPods-lego.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-lego.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,10 +110,6 @@
 		B5F5326120F83120000E3427 /* libnanopb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnanopb.a; path = ../../../deps/libs/libnanopb.a; sourceTree = "<group>"; };
 		B5F5326220F83120000E3427 /* libProtobuf-C++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libProtobuf-C++.a"; path = "../../../deps/libs/libProtobuf-C++.a"; sourceTree = "<group>"; };
 		B5F5326820F8319B000E3427 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		B5F532AE20EDE47200AB6B53 /* lego.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lego.pb.cc; sourceTree = "<group>"; };
-		B5F532AF20EDE47200AB6B53 /* lego.grpc.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lego.grpc.pb.cc; sourceTree = "<group>"; };
-		B5F532B020EDE47200AB6B53 /* lego.grpc.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lego.grpc.pb.h; sourceTree = "<group>"; };
-		B5F532B120EDE47200AB6B53 /* lego.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lego.pb.h; sourceTree = "<group>"; };
 		B5F532B420EDEC2100AB6B53 /* LGSPage+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGSPage+Private.mm"; path = "../../../../../generated-src/objc/LGSPage+Private.mm"; sourceTree = "<group>"; };
 		B5F532B520EDEC2100AB6B53 /* LGNetworkCallback+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGNetworkCallback+Private.h"; path = "../../../../../generated-src/objc/LGNetworkCallback+Private.h"; sourceTree = "<group>"; };
 		B5F532B620EDEC2100AB6B53 /* LGLegoPlatform+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGLegoPlatform+Private.mm"; path = "../../../../../generated-src/objc/LGLegoPlatform+Private.mm"; sourceTree = "<group>"; };
@@ -160,6 +160,17 @@
 				0BB43923ACF91B12C5D6AE99 /* Pods-lego.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B50DDC8A20FD6EA200EB3C53 /* gRPC */ = {
+			isa = PBXGroup;
+			children = (
+				B50DDC8B20FD6EB500EB3C53 /* lego.grpc.pb.cc */,
+				B50DDC8C20FD6EB500EB3C53 /* lego.grpc.pb.h */,
+				B50DDC8D20FD6EB500EB3C53 /* lego.pb.cc */,
+				B50DDC8E20FD6EB500EB3C53 /* lego.pb.h */,
+			);
+			name = gRPC;
 			sourceTree = "<group>";
 		};
 		B54B8B0920E9A0F800B06735 /* FlatBuffers */ = {
@@ -214,8 +225,8 @@
 		B5E153F120E5EAA90025A759 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				B50DDC8A20FD6EA200EB3C53 /* gRPC */,
 				B54B8B0920E9A0F800B06735 /* FlatBuffers */,
-				B5E1543220E5F19B0025A759 /* GRPC */,
 				B5E153F320E5EAE10025A759 /* Bridge */,
 				B5E153F220E5EAD90025A759 /* Djinni */,
 			);
@@ -305,17 +316,6 @@
 				B5E1543020E5EF470025A759 /* LGLegoPlatformImpl.m */,
 			);
 			path = Platform;
-			sourceTree = "<group>";
-		};
-		B5E1543220E5F19B0025A759 /* GRPC */ = {
-			isa = PBXGroup;
-			children = (
-				B5F532AF20EDE47200AB6B53 /* lego.grpc.pb.cc */,
-				B5F532B020EDE47200AB6B53 /* lego.grpc.pb.h */,
-				B5F532AE20EDE47200AB6B53 /* lego.pb.cc */,
-				B5F532B120EDE47200AB6B53 /* lego.pb.h */,
-			);
-			path = GRPC;
 			sourceTree = "<group>";
 		};
 		C048C21C07291745096BEC5A /* Frameworks */ = {
@@ -428,11 +428,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50DDC8F20FD6EB500EB3C53 /* lego.grpc.pb.cc in Sources */,
 				B5F532CC20EDEC2300AB6B53 /* LGSQuestion.mm in Sources */,
-				B5F532B320EDE47200AB6B53 /* lego.grpc.pb.cc in Sources */,
 				B54B8B1120E9A4D900B06735 /* lego_core_impl.cpp in Sources */,
 				B5F532CA20EDEC2300AB6B53 /* LGLegoPlatform+Private.mm in Sources */,
-				B5F532B220EDE47200AB6B53 /* lego.pb.cc in Sources */,
 				B5F532CB20EDEC2300AB6B53 /* LGSQuestion+Private.mm in Sources */,
 				B5F532CD20EDEC2300AB6B53 /* LGSTemplate+Private.mm in Sources */,
 				B5E1543120E5EF470025A759 /* LGLegoPlatformImpl.m in Sources */,
@@ -444,6 +443,7 @@
 				B5E153E020E5E83B0025A759 /* ViewController.m in Sources */,
 				B5F532C920EDEC2300AB6B53 /* LGSPage+Private.mm in Sources */,
 				B5E153FB20E5EB230025A759 /* DJIError.mm in Sources */,
+				B50DDC9020FD6EB500EB3C53 /* lego.pb.cc in Sources */,
 				B5F532CF20EDEC2300AB6B53 /* LGLegoCore+Private.mm in Sources */,
 				B5E153FA20E5EB230025A759 /* DJIProxyCaches.mm in Sources */,
 				B5F532D120EDEC2300AB6B53 /* LGSPage.mm in Sources */,
