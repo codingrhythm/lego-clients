@@ -595,7 +595,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/../../../deps/flatbuffers/include",
-					"${SRCROOT}/../../../deps/protobuf/include",
+					"${SRCROOT}/../../../deps/protobuf/include3.5.x",
 					"${SRCROOT}/../../../deps/grpc/include",
 				);
 				INFOPLIST_FILE = lego/Info.plist;
@@ -627,7 +627,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/../../../deps/flatbuffers/include",
-					"${SRCROOT}/../../../deps/protobuf/include",
+					"${SRCROOT}/../../../deps/protobuf/include3.5.x",
 					"${SRCROOT}/../../../deps/grpc/include",
 				);
 				INFOPLIST_FILE = lego/Info.plist;
