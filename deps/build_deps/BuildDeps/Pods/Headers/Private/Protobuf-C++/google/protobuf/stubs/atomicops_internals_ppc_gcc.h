@@ -1,0 +1,1 @@
+../../../../../../Protobuf-C++/src/google/protobuf/stubs/atomicops_internals_ppc_gcc.h

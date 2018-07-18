@@ -3,4 +3,5 @@
 /platforms/ios/lego/Podfile.lock
 .DS_Store
 /deps/libs
+/deps/android_libs
 .idea

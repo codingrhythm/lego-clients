@@ -1,6 +1,6 @@
 {
   "name": "Protobuf-C++",
-  "version": "3.6.0",
+  "version": "3.5.2",
   "summary": "Protocol Buffers v.3 runtime library for C++.",
   "homepage": "https://github.com/google/protobuf",
   "license": "3-Clause BSD License",
@@ -12,7 +12,7 @@
   "libraries": "c++",
   "source": {
     "git": "https://github.com/google/protobuf.git",
-    "tag": "v3.6.0"
+    "tag": "v3.5.2"
   },
   "source_files": [
     "config.h",
@@ -26,6 +26,7 @@
     "src/**/compiler/cpp/**",
     "src/**/compiler/python/**",
     "src/**/compiler/java/**",
+    "src/**/compiler/javanano/**",
     "src/**/compiler/csharp/**",
     "src/**/compiler/js/**",
     "src/**/compiler/objectivec/**",
@@ -35,8 +36,7 @@
     "src/**/*unittest*",
     "src/**/*test.cc",
     "src/**/*test_util*",
-    "src/**/testdata/**",
-    "src/google/protobuf/any_test.cc"
+    "src/**/testdata/**"
   ],
   "header_mappings_dir": "src",
   "user_target_xcconfig": {

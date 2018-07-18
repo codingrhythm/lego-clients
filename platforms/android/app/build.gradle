@@ -16,6 +16,10 @@ android {
         externalNativeBuild {
             cmake {
                 cppFlags "-std=c++14 -frtti -fexceptions"
+                arguments '-DANDROID_STL=c++_static'
+                arguments '-DRUN_HAVE_POSIX_REGEX=0'
+                arguments '-DRUN_HAVE_STD_REGEX=0'
+                arguments '-DRUN_HAVE_STEADY_CLOCK=0'
             }
         }
     }

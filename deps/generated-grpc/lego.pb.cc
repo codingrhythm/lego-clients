@@ -7,6 +7,7 @@
 
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/stubs/port.h>
+#include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/descriptor.h>
@@ -18,13 +19,6 @@
 #include "third_party/protobuf/version.h"
 #endif
 // @@protoc_insertion_point(includes)
-
-namespace protobuf_lego_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_lego_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_LegoRecordField;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_lego_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Question;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_lego_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_LegoRecordSection;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_lego_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Page;
-}  // namespace protobuf_lego_2eproto
 namespace lego {
 class GetRequestDefaultTypeInternal {
  public:
@@ -68,9 +62,14 @@ class TemplateDefaultTypeInternal {
 } _Template_default_instance_;
 }  // namespace lego
 namespace protobuf_lego_2eproto {
-static void InitDefaultsGetRequest() {
+void InitDefaultsGetRequestImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
   {
     void* ptr = &::lego::_GetRequest_default_instance_;
     new (ptr) ::lego::GetRequest();
@@ -79,12 +78,19 @@ static void InitDefaultsGetRequest() {
   ::lego::GetRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_GetRequest =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGetRequest}, {}};
+void InitDefaultsGetRequest() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsGetRequestImpl);
+}
 
-static void InitDefaultsLegoRecordField() {
+void InitDefaultsLegoRecordFieldImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
   {
     void* ptr = &::lego::_LegoRecordField_default_instance_;
     new (ptr) ::lego::LegoRecordField();
@@ -93,12 +99,20 @@ static void InitDefaultsLegoRecordField() {
   ::lego::LegoRecordField::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_LegoRecordField =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsLegoRecordField}, {}};
+void InitDefaultsLegoRecordField() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsLegoRecordFieldImpl);
+}
 
-static void InitDefaultsLegoRecordSection() {
+void InitDefaultsLegoRecordSectionImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_lego_2eproto::InitDefaultsLegoRecordField();
   {
     void* ptr = &::lego::_LegoRecordSection_default_instance_;
     new (ptr) ::lego::LegoRecordSection();
@@ -107,13 +121,20 @@ static void InitDefaultsLegoRecordSection() {
   ::lego::LegoRecordSection::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_LegoRecordSection =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsLegoRecordSection}, {
-      &protobuf_lego_2eproto::scc_info_LegoRecordField.base,}};
+void InitDefaultsLegoRecordSection() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsLegoRecordSectionImpl);
+}
 
-static void InitDefaultsLegoRecord() {
+void InitDefaultsLegoRecordImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_lego_2eproto::InitDefaultsLegoRecordSection();
   {
     void* ptr = &::lego::_LegoRecord_default_instance_;
     new (ptr) ::lego::LegoRecord();
@@ -122,13 +143,19 @@ static void InitDefaultsLegoRecord() {
   ::lego::LegoRecord::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_LegoRecord =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsLegoRecord}, {
-      &protobuf_lego_2eproto::scc_info_LegoRecordSection.base,}};
+void InitDefaultsLegoRecord() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsLegoRecordImpl);
+}
 
-static void InitDefaultsLegoResponse() {
+void InitDefaultsLegoResponseImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
   {
     void* ptr = &::lego::_LegoResponse_default_instance_;
     new (ptr) ::lego::LegoResponse();
@@ -137,12 +164,19 @@ static void InitDefaultsLegoResponse() {
   ::lego::LegoResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_LegoResponse =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsLegoResponse}, {}};
+void InitDefaultsLegoResponse() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsLegoResponseImpl);
+}
 
-static void InitDefaultsQuestion() {
+void InitDefaultsQuestionImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
   {
     void* ptr = &::lego::_Question_default_instance_;
     new (ptr) ::lego::Question();
@@ -151,12 +185,20 @@ static void InitDefaultsQuestion() {
   ::lego::Question::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_Question =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsQuestion}, {}};
+void InitDefaultsQuestion() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsQuestionImpl);
+}
 
-static void InitDefaultsPage() {
+void InitDefaultsPageImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_lego_2eproto::InitDefaultsQuestion();
   {
     void* ptr = &::lego::_Page_default_instance_;
     new (ptr) ::lego::Page();
@@ -165,13 +207,20 @@ static void InitDefaultsPage() {
   ::lego::Page::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_Page =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsPage}, {
-      &protobuf_lego_2eproto::scc_info_Question.base,}};
+void InitDefaultsPage() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsPageImpl);
+}
 
-static void InitDefaultsTemplate() {
+void InitDefaultsTemplateImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_lego_2eproto::InitDefaultsPage();
   {
     void* ptr = &::lego::_Template_default_instance_;
     new (ptr) ::lego::Template();
@@ -180,19 +229,9 @@ static void InitDefaultsTemplate() {
   ::lego::Template::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_Template =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsTemplate}, {
-      &protobuf_lego_2eproto::scc_info_Page.base,}};
-
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_GetRequest.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_LegoRecordField.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_LegoRecordSection.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_LegoRecord.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_LegoResponse.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Question.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Page.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Template.base);
+void InitDefaultsTemplate() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsTemplateImpl);
 }
 
 ::google::protobuf::Metadata file_level_metadata[8];
@@ -286,14 +325,15 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 void protobuf_AssignDescriptors() {
   AddDescriptors();
+  ::google::protobuf::MessageFactory* factory = NULL;
   AssignDescriptors(
-      "lego.proto", schemas, file_default_instances, TableStruct::offsets,
+      "lego.proto", schemas, file_default_instances, TableStruct::offsets, factory,
       file_level_metadata, NULL, NULL);
 }
 
 void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &protobuf_AssignDescriptors);
 }
 
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
@@ -330,8 +370,8 @@ void AddDescriptorsImpl() {
 }
 
 void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &AddDescriptorsImpl);
 }
 // Force AddDescriptors() to be called at dynamic initialization time.
 struct StaticDescriptorInitializer {
@@ -352,14 +392,16 @@ const int GetRequest::kFlagFieldNumber;
 
 GetRequest::GetRequest()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_lego_2eproto::scc_info_GetRequest.base);
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_lego_2eproto::InitDefaultsGetRequest();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:lego.GetRequest)
 }
 GetRequest::GetRequest(const GetRequest& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   flag_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.flag().size() > 0) {
@@ -370,6 +412,7 @@ GetRequest::GetRequest(const GetRequest& from)
 
 void GetRequest::SharedCtor() {
   flag_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _cached_size_ = 0;
 }
 
 GetRequest::~GetRequest() {
@@ -382,7 +425,9 @@ void GetRequest::SharedDtor() {
 }
 
 void GetRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* GetRequest::descriptor() {
   ::protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
@@ -390,10 +435,17 @@ const ::google::protobuf::Descriptor* GetRequest::descriptor() {
 }
 
 const GetRequest& GetRequest::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_lego_2eproto::scc_info_GetRequest.base);
+  ::protobuf_lego_2eproto::InitDefaultsGetRequest();
   return *internal_default_instance();
 }
 
+GetRequest* GetRequest::New(::google::protobuf::Arena* arena) const {
+  GetRequest* n = new GetRequest;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
 
 void GetRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:lego.GetRequest)
@@ -411,7 +463,7 @@ bool GetRequest::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:lego.GetRequest)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -517,7 +569,9 @@ size_t GetRequest::ByteSizeLong() const {
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
@@ -573,9 +627,9 @@ void GetRequest::Swap(GetRequest* other) {
 }
 void GetRequest::InternalSwap(GetRequest* other) {
   using std::swap;
-  flag_.Swap(&other->flag_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  flag_.Swap(&other->flag_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata GetRequest::GetMetadata() const {
@@ -596,14 +650,16 @@ const int LegoRecordField::kDataFieldNumber;
 
 LegoRecordField::LegoRecordField()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_lego_2eproto::scc_info_LegoRecordField.base);
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_lego_2eproto::InitDefaultsLegoRecordField();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:lego.LegoRecordField)
 }
 LegoRecordField::LegoRecordField(const LegoRecordField& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.id().size() > 0) {
@@ -624,6 +680,7 @@ void LegoRecordField::SharedCtor() {
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _cached_size_ = 0;
 }
 
 LegoRecordField::~LegoRecordField() {
@@ -638,7 +695,9 @@ void LegoRecordField::SharedDtor() {
 }
 
 void LegoRecordField::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* LegoRecordField::descriptor() {
   ::protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
@@ -646,10 +705,17 @@ const ::google::protobuf::Descriptor* LegoRecordField::descriptor() {
 }
 
 const LegoRecordField& LegoRecordField::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_lego_2eproto::scc_info_LegoRecordField.base);
+  ::protobuf_lego_2eproto::InitDefaultsLegoRecordField();
   return *internal_default_instance();
 }
 
+LegoRecordField* LegoRecordField::New(::google::protobuf::Arena* arena) const {
+  LegoRecordField* n = new LegoRecordField;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
 
 void LegoRecordField::Clear() {
 // @@protoc_insertion_point(message_clear_start:lego.LegoRecordField)
@@ -669,7 +735,7 @@ bool LegoRecordField::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:lego.LegoRecordField)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -863,7 +929,9 @@ size_t LegoRecordField::ByteSizeLong() const {
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
@@ -927,13 +995,11 @@ void LegoRecordField::Swap(LegoRecordField* other) {
 }
 void LegoRecordField::InternalSwap(LegoRecordField* other) {
   using std::swap;
-  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  data_.Swap(&other->data_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  id_.Swap(&other->id_);
+  name_.Swap(&other->name_);
+  data_.Swap(&other->data_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata LegoRecordField::GetMetadata() const {
@@ -954,15 +1020,17 @@ const int LegoRecordSection::kFieldsFieldNumber;
 
 LegoRecordSection::LegoRecordSection()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_lego_2eproto::scc_info_LegoRecordSection.base);
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_lego_2eproto::InitDefaultsLegoRecordSection();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:lego.LegoRecordSection)
 }
 LegoRecordSection::LegoRecordSection(const LegoRecordSection& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
-      fields_(from.fields_) {
+      fields_(from.fields_),
+      _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.id().size() > 0) {
@@ -978,6 +1046,7 @@ LegoRecordSection::LegoRecordSection(const LegoRecordSection& from)
 void LegoRecordSection::SharedCtor() {
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _cached_size_ = 0;
 }
 
 LegoRecordSection::~LegoRecordSection() {
@@ -991,7 +1060,9 @@ void LegoRecordSection::SharedDtor() {
 }
 
 void LegoRecordSection::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* LegoRecordSection::descriptor() {
   ::protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
@@ -999,10 +1070,17 @@ const ::google::protobuf::Descriptor* LegoRecordSection::descriptor() {
 }
 
 const LegoRecordSection& LegoRecordSection::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_lego_2eproto::scc_info_LegoRecordSection.base);
+  ::protobuf_lego_2eproto::InitDefaultsLegoRecordSection();
   return *internal_default_instance();
 }
 
+LegoRecordSection* LegoRecordSection::New(::google::protobuf::Arena* arena) const {
+  LegoRecordSection* n = new LegoRecordSection;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
 
 void LegoRecordSection::Clear() {
 // @@protoc_insertion_point(message_clear_start:lego.LegoRecordSection)
@@ -1022,7 +1100,7 @@ bool LegoRecordSection::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:lego.LegoRecordSection)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -1062,8 +1140,7 @@ bool LegoRecordSection::MergePartialFromCodedStream(
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_fields()));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_fields()));
         } else {
           goto handle_unusual;
         }
@@ -1120,9 +1197,7 @@ void LegoRecordSection::SerializeWithCachedSizes(
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->fields_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3,
-      this->fields(static_cast<int>(i)),
-      output);
+      3, this->fields(static_cast<int>(i)), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1212,7 +1287,9 @@ size_t LegoRecordSection::ByteSizeLong() const {
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
@@ -1273,12 +1350,11 @@ void LegoRecordSection::Swap(LegoRecordSection* other) {
 }
 void LegoRecordSection::InternalSwap(LegoRecordSection* other) {
   using std::swap;
-  CastToBase(&fields_)->InternalSwap(CastToBase(&other->fields_));
-  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  fields_.InternalSwap(&other->fields_);
+  id_.Swap(&other->id_);
+  name_.Swap(&other->name_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata LegoRecordSection::GetMetadata() const {
@@ -1299,15 +1375,17 @@ const int LegoRecord::kSectionsFieldNumber;
 
 LegoRecord::LegoRecord()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_lego_2eproto::scc_info_LegoRecord.base);
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_lego_2eproto::InitDefaultsLegoRecord();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:lego.LegoRecord)
 }
 LegoRecord::LegoRecord(const LegoRecord& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
-      sections_(from.sections_) {
+      sections_(from.sections_),
+      _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.id().size() > 0) {
@@ -1323,6 +1401,7 @@ LegoRecord::LegoRecord(const LegoRecord& from)
 void LegoRecord::SharedCtor() {
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _cached_size_ = 0;
 }
 
 LegoRecord::~LegoRecord() {
@@ -1336,7 +1415,9 @@ void LegoRecord::SharedDtor() {
 }
 
 void LegoRecord::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* LegoRecord::descriptor() {
   ::protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
@@ -1344,10 +1425,17 @@ const ::google::protobuf::Descriptor* LegoRecord::descriptor() {
 }
 
 const LegoRecord& LegoRecord::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_lego_2eproto::scc_info_LegoRecord.base);
+  ::protobuf_lego_2eproto::InitDefaultsLegoRecord();
   return *internal_default_instance();
 }
 
+LegoRecord* LegoRecord::New(::google::protobuf::Arena* arena) const {
+  LegoRecord* n = new LegoRecord;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
 
 void LegoRecord::Clear() {
 // @@protoc_insertion_point(message_clear_start:lego.LegoRecord)
@@ -1367,7 +1455,7 @@ bool LegoRecord::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:lego.LegoRecord)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -1407,8 +1495,7 @@ bool LegoRecord::MergePartialFromCodedStream(
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_sections()));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_sections()));
         } else {
           goto handle_unusual;
         }
@@ -1465,9 +1552,7 @@ void LegoRecord::SerializeWithCachedSizes(
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->sections_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3,
-      this->sections(static_cast<int>(i)),
-      output);
+      3, this->sections(static_cast<int>(i)), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1557,7 +1642,9 @@ size_t LegoRecord::ByteSizeLong() const {
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
@@ -1618,12 +1705,11 @@ void LegoRecord::Swap(LegoRecord* other) {
 }
 void LegoRecord::InternalSwap(LegoRecord* other) {
   using std::swap;
-  CastToBase(&sections_)->InternalSwap(CastToBase(&other->sections_));
-  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  sections_.InternalSwap(&other->sections_);
+  id_.Swap(&other->id_);
+  name_.Swap(&other->name_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata LegoRecord::GetMetadata() const {
@@ -1642,14 +1728,16 @@ const int LegoResponse::kSuccessFieldNumber;
 
 LegoResponse::LegoResponse()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_lego_2eproto::scc_info_LegoResponse.base);
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_lego_2eproto::InitDefaultsLegoResponse();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:lego.LegoResponse)
 }
 LegoResponse::LegoResponse(const LegoResponse& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   success_ = from.success_;
   // @@protoc_insertion_point(copy_constructor:lego.LegoResponse)
@@ -1657,6 +1745,7 @@ LegoResponse::LegoResponse(const LegoResponse& from)
 
 void LegoResponse::SharedCtor() {
   success_ = 0;
+  _cached_size_ = 0;
 }
 
 LegoResponse::~LegoResponse() {
@@ -1668,7 +1757,9 @@ void LegoResponse::SharedDtor() {
 }
 
 void LegoResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* LegoResponse::descriptor() {
   ::protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
@@ -1676,10 +1767,17 @@ const ::google::protobuf::Descriptor* LegoResponse::descriptor() {
 }
 
 const LegoResponse& LegoResponse::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_lego_2eproto::scc_info_LegoResponse.base);
+  ::protobuf_lego_2eproto::InitDefaultsLegoResponse();
   return *internal_default_instance();
 }
 
+LegoResponse* LegoResponse::New(::google::protobuf::Arena* arena) const {
+  LegoResponse* n = new LegoResponse;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
 
 void LegoResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:lego.LegoResponse)
@@ -1697,7 +1795,7 @@ bool LegoResponse::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:lego.LegoResponse)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -1790,7 +1888,9 @@ size_t LegoResponse::ByteSizeLong() const {
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
@@ -1847,6 +1947,7 @@ void LegoResponse::InternalSwap(LegoResponse* other) {
   using std::swap;
   swap(success_, other->success_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata LegoResponse::GetMetadata() const {
@@ -1869,14 +1970,16 @@ const int Question::kOrderFieldNumber;
 
 Question::Question()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_lego_2eproto::scc_info_Question.base);
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_lego_2eproto::InitDefaultsQuestion();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:lego.Question)
 }
 Question::Question(const Question& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.id().size() > 0) {
@@ -1903,6 +2006,7 @@ void Question::SharedCtor() {
   ::memset(&response_type_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&order_) -
       reinterpret_cast<char*>(&response_type_)) + sizeof(order_));
+  _cached_size_ = 0;
 }
 
 Question::~Question() {
@@ -1917,7 +2021,9 @@ void Question::SharedDtor() {
 }
 
 void Question::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* Question::descriptor() {
   ::protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
@@ -1925,10 +2031,17 @@ const ::google::protobuf::Descriptor* Question::descriptor() {
 }
 
 const Question& Question::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_lego_2eproto::scc_info_Question.base);
+  ::protobuf_lego_2eproto::InitDefaultsQuestion();
   return *internal_default_instance();
 }
 
+Question* Question::New(::google::protobuf::Arena* arena) const {
+  Question* n = new Question;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
 
 void Question::Clear() {
 // @@protoc_insertion_point(message_clear_start:lego.Question)
@@ -1951,7 +2064,7 @@ bool Question::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:lego.Question)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -2207,7 +2320,9 @@ size_t Question::ByteSizeLong() const {
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
@@ -2277,15 +2392,13 @@ void Question::Swap(Question* other) {
 }
 void Question::InternalSwap(Question* other) {
   using std::swap;
-  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  title_.Swap(&other->title_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  description_.Swap(&other->description_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  id_.Swap(&other->id_);
+  title_.Swap(&other->title_);
+  description_.Swap(&other->description_);
   swap(response_type_, other->response_type_);
   swap(order_, other->order_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Question::GetMetadata() const {
@@ -2307,15 +2420,17 @@ const int Page::kQuestionsFieldNumber;
 
 Page::Page()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_lego_2eproto::scc_info_Page.base);
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_lego_2eproto::InitDefaultsPage();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:lego.Page)
 }
 Page::Page(const Page& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
-      questions_(from.questions_) {
+      questions_(from.questions_),
+      _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.id().size() > 0) {
@@ -2333,6 +2448,7 @@ void Page::SharedCtor() {
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   title_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   order_ = 0;
+  _cached_size_ = 0;
 }
 
 Page::~Page() {
@@ -2346,7 +2462,9 @@ void Page::SharedDtor() {
 }
 
 void Page::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* Page::descriptor() {
   ::protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
@@ -2354,10 +2472,17 @@ const ::google::protobuf::Descriptor* Page::descriptor() {
 }
 
 const Page& Page::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_lego_2eproto::scc_info_Page.base);
+  ::protobuf_lego_2eproto::InitDefaultsPage();
   return *internal_default_instance();
 }
 
+Page* Page::New(::google::protobuf::Arena* arena) const {
+  Page* n = new Page;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
 
 void Page::Clear() {
 // @@protoc_insertion_point(message_clear_start:lego.Page)
@@ -2378,7 +2503,7 @@ bool Page::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:lego.Page)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -2432,8 +2557,7 @@ bool Page::MergePartialFromCodedStream(
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_questions()));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_questions()));
         } else {
           goto handle_unusual;
         }
@@ -2495,9 +2619,7 @@ void Page::SerializeWithCachedSizes(
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->questions_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4,
-      this->questions(static_cast<int>(i)),
-      output);
+      4, this->questions(static_cast<int>(i)), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -2599,7 +2721,9 @@ size_t Page::ByteSizeLong() const {
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
@@ -2663,13 +2787,12 @@ void Page::Swap(Page* other) {
 }
 void Page::InternalSwap(Page* other) {
   using std::swap;
-  CastToBase(&questions_)->InternalSwap(CastToBase(&other->questions_));
-  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  title_.Swap(&other->title_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  questions_.InternalSwap(&other->questions_);
+  id_.Swap(&other->id_);
+  title_.Swap(&other->title_);
   swap(order_, other->order_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Page::GetMetadata() const {
@@ -2690,15 +2813,17 @@ const int Template::kPagesFieldNumber;
 
 Template::Template()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_lego_2eproto::scc_info_Template.base);
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_lego_2eproto::InitDefaultsTemplate();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:lego.Template)
 }
 Template::Template(const Template& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
-      pages_(from.pages_) {
+      pages_(from.pages_),
+      _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.id().size() > 0) {
@@ -2714,6 +2839,7 @@ Template::Template(const Template& from)
 void Template::SharedCtor() {
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _cached_size_ = 0;
 }
 
 Template::~Template() {
@@ -2727,7 +2853,9 @@ void Template::SharedDtor() {
 }
 
 void Template::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* Template::descriptor() {
   ::protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
@@ -2735,10 +2863,17 @@ const ::google::protobuf::Descriptor* Template::descriptor() {
 }
 
 const Template& Template::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_lego_2eproto::scc_info_Template.base);
+  ::protobuf_lego_2eproto::InitDefaultsTemplate();
   return *internal_default_instance();
 }
 
+Template* Template::New(::google::protobuf::Arena* arena) const {
+  Template* n = new Template;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
 
 void Template::Clear() {
 // @@protoc_insertion_point(message_clear_start:lego.Template)
@@ -2758,7 +2893,7 @@ bool Template::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:lego.Template)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -2798,8 +2933,7 @@ bool Template::MergePartialFromCodedStream(
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_pages()));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_pages()));
         } else {
           goto handle_unusual;
         }
@@ -2856,9 +2990,7 @@ void Template::SerializeWithCachedSizes(
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->pages_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3,
-      this->pages(static_cast<int>(i)),
-      output);
+      3, this->pages(static_cast<int>(i)), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -2948,7 +3080,9 @@ size_t Template::ByteSizeLong() const {
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
@@ -3009,12 +3143,11 @@ void Template::Swap(Template* other) {
 }
 void Template::InternalSwap(Template* other) {
   using std::swap;
-  CastToBase(&pages_)->InternalSwap(CastToBase(&other->pages_));
-  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  pages_.InternalSwap(&other->pages_);
+  id_.Swap(&other->id_);
+  name_.Swap(&other->name_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Template::GetMetadata() const {
@@ -3025,33 +3158,5 @@ void Template::InternalSwap(Template* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace lego
-namespace google {
-namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::lego::GetRequest* Arena::CreateMaybeMessage< ::lego::GetRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::lego::GetRequest >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::lego::LegoRecordField* Arena::CreateMaybeMessage< ::lego::LegoRecordField >(Arena* arena) {
-  return Arena::CreateInternal< ::lego::LegoRecordField >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::lego::LegoRecordSection* Arena::CreateMaybeMessage< ::lego::LegoRecordSection >(Arena* arena) {
-  return Arena::CreateInternal< ::lego::LegoRecordSection >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::lego::LegoRecord* Arena::CreateMaybeMessage< ::lego::LegoRecord >(Arena* arena) {
-  return Arena::CreateInternal< ::lego::LegoRecord >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::lego::LegoResponse* Arena::CreateMaybeMessage< ::lego::LegoResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::lego::LegoResponse >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::lego::Question* Arena::CreateMaybeMessage< ::lego::Question >(Arena* arena) {
-  return Arena::CreateInternal< ::lego::Question >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::lego::Page* Arena::CreateMaybeMessage< ::lego::Page >(Arena* arena) {
-  return Arena::CreateInternal< ::lego::Page >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::lego::Template* Arena::CreateMaybeMessage< ::lego::Template >(Arena* arena) {
-  return Arena::CreateInternal< ::lego::Template >(arena);
-}
-}  // namespace protobuf
-}  // namespace google
 
 // @@protoc_insertion_point(global_scope)

@@ -5,5 +5,5 @@ install! 'cocoapods', :deterministic_uuids => false
 
 target 'BuildDeps' do
   pod 'gRPC-C++', :git => 'https://github.com/codingrhythm/grpc.git', :branch => 'fix'
-  pod 'Protobuf-C++', :git => 'https://github.com/codingrhythm/protobuf.git', :branch => 'cpp'
+  pod 'Protobuf-C++', :git => 'https://github.com/codingrhythm/protobuf.git', :branch => '3.5.x'
 end
