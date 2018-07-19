@@ -10,6 +10,23 @@
 		B50DDC8F20FD6EB500EB3C53 /* lego.grpc.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = B50DDC8B20FD6EB500EB3C53 /* lego.grpc.pb.cc */; };
 		B50DDC9020FD6EB500EB3C53 /* lego.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = B50DDC8D20FD6EB500EB3C53 /* lego.pb.cc */; };
 		B51AD1E920EF3BC4006467E2 /* TestBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51AD1E820EF3BC4006467E2 /* TestBridge.swift */; };
+		B524AB402100664800CD1A90 /* LGSPage+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB1C2100664400CD1A90 /* LGSPage+Private.mm */; };
+		B524AB412100664800CD1A90 /* LGLegoPlatform+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB1D2100664400CD1A90 /* LGLegoPlatform+Private.mm */; };
+		B524AB422100664800CD1A90 /* LGSQuestion+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB1F2100664400CD1A90 /* LGSQuestion+Private.mm */; };
+		B524AB432100664800CD1A90 /* LGUiManager+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB202100664400CD1A90 /* LGUiManager+Private.mm */; };
+		B524AB442100664800CD1A90 /* LGSTemplate+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB222100664400CD1A90 /* LGSTemplate+Private.mm */; };
+		B524AB452100664800CD1A90 /* LGPeople.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB232100664400CD1A90 /* LGPeople.mm */; };
+		B524AB462100664800CD1A90 /* LGAppObserver+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB242100664400CD1A90 /* LGAppObserver+Private.mm */; };
+		B524AB472100664800CD1A90 /* LGLegoCore+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB252100664400CD1A90 /* LGLegoCore+Private.mm */; };
+		B524AB482100664800CD1A90 /* LGUiObserver+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB2A2100664500CD1A90 /* LGUiObserver+Private.mm */; };
+		B524AB492100664800CD1A90 /* LGSQuestion.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB322100664600CD1A90 /* LGSQuestion.mm */; };
+		B524AB4A2100664800CD1A90 /* LGSTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB362100664600CD1A90 /* LGSTemplate.mm */; };
+		B524AB4B2100664800CD1A90 /* LGPeople+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB392100664700CD1A90 /* LGPeople+Private.mm */; };
+		B524AB4C2100664800CD1A90 /* LGAppManager+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB3C2100664700CD1A90 /* LGAppManager+Private.mm */; };
+		B524AB4D2100664800CD1A90 /* LGNetworkCallback+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB3D2100664700CD1A90 /* LGNetworkCallback+Private.mm */; };
+		B524AB4E2100664800CD1A90 /* LGSPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB3E2100664700CD1A90 /* LGSPage.mm */; };
+		B524AB5321006B1700CD1A90 /* app_manager_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B524AB4F21006B1700CD1A90 /* app_manager_impl.cpp */; };
+		B524AB5421006B1700CD1A90 /* ui_manager_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B524AB5121006B1700CD1A90 /* ui_manager_impl.cpp */; };
 		B54B8B1120E9A4D900B06735 /* lego_core_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B0F20E9A4D900B06735 /* lego_core_impl.cpp */; };
 		B54B8B1220E9A4D900B06735 /* network_callback_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1020E9A4D900B06735 /* network_callback_impl.cpp */; };
 		B54B8B1B20E9B8B200B06735 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1A20E9B8B200B06735 /* util.cpp */; };
@@ -28,15 +45,6 @@
 		B5F5326520F83120000E3427 /* libgRPC-C++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326020F83120000E3427 /* libgRPC-C++.a */; };
 		B5F5326720F83120000E3427 /* libProtobuf-C++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326220F83120000E3427 /* libProtobuf-C++.a */; };
 		B5F5326920F8319B000E3427 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326820F8319B000E3427 /* libz.tbd */; };
-		B5F532C920EDEC2300AB6B53 /* LGSPage+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532B420EDEC2100AB6B53 /* LGSPage+Private.mm */; };
-		B5F532CA20EDEC2300AB6B53 /* LGLegoPlatform+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532B620EDEC2100AB6B53 /* LGLegoPlatform+Private.mm */; };
-		B5F532CB20EDEC2300AB6B53 /* LGSQuestion+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532B820EDEC2200AB6B53 /* LGSQuestion+Private.mm */; };
-		B5F532CC20EDEC2300AB6B53 /* LGSQuestion.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532BA20EDEC2200AB6B53 /* LGSQuestion.mm */; };
-		B5F532CD20EDEC2300AB6B53 /* LGSTemplate+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532BC20EDEC2200AB6B53 /* LGSTemplate+Private.mm */; };
-		B5F532CE20EDEC2300AB6B53 /* LGSTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532BD20EDEC2200AB6B53 /* LGSTemplate.mm */; };
-		B5F532CF20EDEC2300AB6B53 /* LGLegoCore+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532BF20EDEC2200AB6B53 /* LGLegoCore+Private.mm */; };
-		B5F532D020EDEC2300AB6B53 /* LGNetworkCallback+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532C520EDEC2200AB6B53 /* LGNetworkCallback+Private.mm */; };
-		B5F532D120EDEC2300AB6B53 /* LGSPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5F532C620EDEC2200AB6B53 /* LGSPage.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +57,58 @@
 		B50DDC8E20FD6EB500EB3C53 /* lego.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lego.pb.h; path = "../../../../deps/generated-grpc/lego.pb.h"; sourceTree = "<group>"; };
 		B51AD1E720EF3BC4006467E2 /* lego-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lego-Bridging-Header.h"; sourceTree = "<group>"; };
 		B51AD1E820EF3BC4006467E2 /* TestBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBridge.swift; sourceTree = "<group>"; };
+		B524AB102100662F00CD1A90 /* ui_manager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ui_manager.hpp; path = "../../../../../../generated-src/cpp/ui_manager.hpp"; sourceTree = "<group>"; };
+		B524AB112100662F00CD1A90 /* lego_platform.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = lego_platform.hpp; path = "../../../../../../generated-src/cpp/lego_platform.hpp"; sourceTree = "<group>"; };
+		B524AB122100662F00CD1A90 /* s_page.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = s_page.hpp; path = "../../../../../../generated-src/cpp/s_page.hpp"; sourceTree = "<group>"; };
+		B524AB132100662F00CD1A90 /* s_template.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = s_template.hpp; path = "../../../../../../generated-src/cpp/s_template.hpp"; sourceTree = "<group>"; };
+		B524AB142100662F00CD1A90 /* app_observer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = app_observer.hpp; path = "../../../../../../generated-src/cpp/app_observer.hpp"; sourceTree = "<group>"; };
+		B524AB152100662F00CD1A90 /* app_manager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = app_manager.hpp; path = "../../../../../../generated-src/cpp/app_manager.hpp"; sourceTree = "<group>"; };
+		B524AB162100662F00CD1A90 /* s_question.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = s_question.hpp; path = "../../../../../../generated-src/cpp/s_question.hpp"; sourceTree = "<group>"; };
+		B524AB172100662F00CD1A90 /* ui_observer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ui_observer.hpp; path = "../../../../../../generated-src/cpp/ui_observer.hpp"; sourceTree = "<group>"; };
+		B524AB182100662F00CD1A90 /* people.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = people.hpp; path = "../../../../../../generated-src/cpp/people.hpp"; sourceTree = "<group>"; };
+		B524AB192100662F00CD1A90 /* network_callback.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = network_callback.hpp; path = "../../../../../../generated-src/cpp/network_callback.hpp"; sourceTree = "<group>"; };
+		B524AB1A2100662F00CD1A90 /* lego_core.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = lego_core.hpp; path = "../../../../../../generated-src/cpp/lego_core.hpp"; sourceTree = "<group>"; };
+		B524AB1B2100664400CD1A90 /* LGUiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGUiManager.h; path = "../../../../../generated-src/objc/LGUiManager.h"; sourceTree = "<group>"; };
+		B524AB1C2100664400CD1A90 /* LGSPage+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGSPage+Private.mm"; path = "../../../../../generated-src/objc/LGSPage+Private.mm"; sourceTree = "<group>"; };
+		B524AB1D2100664400CD1A90 /* LGLegoPlatform+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGLegoPlatform+Private.mm"; path = "../../../../../generated-src/objc/LGLegoPlatform+Private.mm"; sourceTree = "<group>"; };
+		B524AB1E2100664400CD1A90 /* LGSQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGSQuestion.h; path = "../../../../../generated-src/objc/LGSQuestion.h"; sourceTree = "<group>"; };
+		B524AB1F2100664400CD1A90 /* LGSQuestion+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGSQuestion+Private.mm"; path = "../../../../../generated-src/objc/LGSQuestion+Private.mm"; sourceTree = "<group>"; };
+		B524AB202100664400CD1A90 /* LGUiManager+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGUiManager+Private.mm"; path = "../../../../../generated-src/objc/LGUiManager+Private.mm"; sourceTree = "<group>"; };
+		B524AB212100664400CD1A90 /* LGPeople.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGPeople.h; path = "../../../../../generated-src/objc/LGPeople.h"; sourceTree = "<group>"; };
+		B524AB222100664400CD1A90 /* LGSTemplate+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGSTemplate+Private.mm"; path = "../../../../../generated-src/objc/LGSTemplate+Private.mm"; sourceTree = "<group>"; };
+		B524AB232100664400CD1A90 /* LGPeople.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LGPeople.mm; path = "../../../../../generated-src/objc/LGPeople.mm"; sourceTree = "<group>"; };
+		B524AB242100664400CD1A90 /* LGAppObserver+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGAppObserver+Private.mm"; path = "../../../../../generated-src/objc/LGAppObserver+Private.mm"; sourceTree = "<group>"; };
+		B524AB252100664400CD1A90 /* LGLegoCore+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGLegoCore+Private.mm"; path = "../../../../../generated-src/objc/LGLegoCore+Private.mm"; sourceTree = "<group>"; };
+		B524AB262100664500CD1A90 /* LGPeople+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGPeople+Private.h"; path = "../../../../../generated-src/objc/LGPeople+Private.h"; sourceTree = "<group>"; };
+		B524AB272100664500CD1A90 /* LGLegoCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGLegoCore.h; path = "../../../../../generated-src/objc/LGLegoCore.h"; sourceTree = "<group>"; };
+		B524AB282100664500CD1A90 /* LGUiManager+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGUiManager+Private.h"; path = "../../../../../generated-src/objc/LGUiManager+Private.h"; sourceTree = "<group>"; };
+		B524AB292100664500CD1A90 /* LGAppObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGAppObserver.h; path = "../../../../../generated-src/objc/LGAppObserver.h"; sourceTree = "<group>"; };
+		B524AB2A2100664500CD1A90 /* LGUiObserver+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGUiObserver+Private.mm"; path = "../../../../../generated-src/objc/LGUiObserver+Private.mm"; sourceTree = "<group>"; };
+		B524AB2B2100664500CD1A90 /* LGSPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGSPage.h; path = "../../../../../generated-src/objc/LGSPage.h"; sourceTree = "<group>"; };
+		B524AB2C2100664500CD1A90 /* LGSTemplate+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGSTemplate+Private.h"; path = "../../../../../generated-src/objc/LGSTemplate+Private.h"; sourceTree = "<group>"; };
+		B524AB2D2100664500CD1A90 /* LGNetworkCallback+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGNetworkCallback+Private.h"; path = "../../../../../generated-src/objc/LGNetworkCallback+Private.h"; sourceTree = "<group>"; };
+		B524AB2E2100664500CD1A90 /* LGAppObserver+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGAppObserver+Private.h"; path = "../../../../../generated-src/objc/LGAppObserver+Private.h"; sourceTree = "<group>"; };
+		B524AB2F2100664500CD1A90 /* LGUiObserver+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGUiObserver+Private.h"; path = "../../../../../generated-src/objc/LGUiObserver+Private.h"; sourceTree = "<group>"; };
+		B524AB302100664600CD1A90 /* LGLegoCore+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGLegoCore+Private.h"; path = "../../../../../generated-src/objc/LGLegoCore+Private.h"; sourceTree = "<group>"; };
+		B524AB312100664600CD1A90 /* LGUiObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGUiObserver.h; path = "../../../../../generated-src/objc/LGUiObserver.h"; sourceTree = "<group>"; };
+		B524AB322100664600CD1A90 /* LGSQuestion.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LGSQuestion.mm; path = "../../../../../generated-src/objc/LGSQuestion.mm"; sourceTree = "<group>"; };
+		B524AB332100664600CD1A90 /* LGAppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGAppManager.h; path = "../../../../../generated-src/objc/LGAppManager.h"; sourceTree = "<group>"; };
+		B524AB342100664600CD1A90 /* LGSQuestion+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGSQuestion+Private.h"; path = "../../../../../generated-src/objc/LGSQuestion+Private.h"; sourceTree = "<group>"; };
+		B524AB352100664600CD1A90 /* LGAppManager+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGAppManager+Private.h"; path = "../../../../../generated-src/objc/LGAppManager+Private.h"; sourceTree = "<group>"; };
+		B524AB362100664600CD1A90 /* LGSTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LGSTemplate.mm; path = "../../../../../generated-src/objc/LGSTemplate.mm"; sourceTree = "<group>"; };
+		B524AB372100664600CD1A90 /* LGLegoPlatform+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGLegoPlatform+Private.h"; path = "../../../../../generated-src/objc/LGLegoPlatform+Private.h"; sourceTree = "<group>"; };
+		B524AB382100664600CD1A90 /* LGSPage+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGSPage+Private.h"; path = "../../../../../generated-src/objc/LGSPage+Private.h"; sourceTree = "<group>"; };
+		B524AB392100664700CD1A90 /* LGPeople+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGPeople+Private.mm"; path = "../../../../../generated-src/objc/LGPeople+Private.mm"; sourceTree = "<group>"; };
+		B524AB3A2100664700CD1A90 /* LGSTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGSTemplate.h; path = "../../../../../generated-src/objc/LGSTemplate.h"; sourceTree = "<group>"; };
+		B524AB3B2100664700CD1A90 /* LGNetworkCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGNetworkCallback.h; path = "../../../../../generated-src/objc/LGNetworkCallback.h"; sourceTree = "<group>"; };
+		B524AB3C2100664700CD1A90 /* LGAppManager+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGAppManager+Private.mm"; path = "../../../../../generated-src/objc/LGAppManager+Private.mm"; sourceTree = "<group>"; };
+		B524AB3D2100664700CD1A90 /* LGNetworkCallback+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGNetworkCallback+Private.mm"; path = "../../../../../generated-src/objc/LGNetworkCallback+Private.mm"; sourceTree = "<group>"; };
+		B524AB3E2100664700CD1A90 /* LGSPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LGSPage.mm; path = "../../../../../generated-src/objc/LGSPage.mm"; sourceTree = "<group>"; };
+		B524AB3F2100664700CD1A90 /* LGLegoPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGLegoPlatform.h; path = "../../../../../generated-src/objc/LGLegoPlatform.h"; sourceTree = "<group>"; };
+		B524AB4F21006B1700CD1A90 /* app_manager_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = app_manager_impl.cpp; path = ../../../../../core/app_manager_impl.cpp; sourceTree = "<group>"; };
+		B524AB5021006B1700CD1A90 /* ui_manager_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ui_manager_impl.hpp; path = ../../../../../core/ui_manager_impl.hpp; sourceTree = "<group>"; };
+		B524AB5121006B1700CD1A90 /* ui_manager_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ui_manager_impl.cpp; path = ../../../../../core/ui_manager_impl.cpp; sourceTree = "<group>"; };
+		B524AB5221006B1700CD1A90 /* app_manager_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = app_manager_impl.hpp; path = ../../../../../core/app_manager_impl.hpp; sourceTree = "<group>"; };
 		B548E81620F468DF001589C6 /* libPods-lego.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-lego.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B548E81820F469D1001589C6 /* libprotobuf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libprotobuf.a; path = ../../../deps/protobuf/libprotobuf.a; sourceTree = "<group>"; };
 		B548E81A20F478BA001589C6 /* libgpr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgpr.a; path = ../../../deps/protobuf/libgpr.a; sourceTree = "<group>"; };
@@ -71,10 +131,6 @@
 		B54B8B0E20E9A4D800B06735 /* lego_core_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = lego_core_impl.hpp; path = ../../../../../core/lego_core_impl.hpp; sourceTree = "<group>"; };
 		B54B8B0F20E9A4D900B06735 /* lego_core_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lego_core_impl.cpp; path = ../../../../../core/lego_core_impl.cpp; sourceTree = "<group>"; };
 		B54B8B1020E9A4D900B06735 /* network_callback_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = network_callback_impl.cpp; path = ../../../../../core/network_callback_impl.cpp; sourceTree = "<group>"; };
-		B54B8B1420E9A50900B06735 /* lego_platform.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = lego_platform.hpp; path = "../../../../../../generated-src/cpp/lego_platform.hpp"; sourceTree = "<group>"; };
-		B54B8B1620E9A50900B06735 /* network_callback.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = network_callback.hpp; path = "../../../../../../generated-src/cpp/network_callback.hpp"; sourceTree = "<group>"; };
-		B54B8B1720E9A50900B06735 /* lego_core.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = lego_core.hpp; path = "../../../../../../generated-src/cpp/lego_core.hpp"; sourceTree = "<group>"; };
-		B54B8B1920E9A66300B06735 /* lego_generated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lego_generated.h; path = ../../../../../../lego_generated.h; sourceTree = "<group>"; };
 		B54B8B1A20E9B8B200B06735 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = ../../../../../deps/flatbuffers/src/util.cpp; sourceTree = "<group>"; };
 		B5E153D820E5E83B0025A759 /* lego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lego.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E153DB20E5E83B0025A759 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,30 +166,6 @@
 		B5F5326120F83120000E3427 /* libnanopb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnanopb.a; path = ../../../deps/libs/libnanopb.a; sourceTree = "<group>"; };
 		B5F5326220F83120000E3427 /* libProtobuf-C++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libProtobuf-C++.a"; path = "../../../deps/libs/libProtobuf-C++.a"; sourceTree = "<group>"; };
 		B5F5326820F8319B000E3427 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		B5F532B420EDEC2100AB6B53 /* LGSPage+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGSPage+Private.mm"; path = "../../../../../generated-src/objc/LGSPage+Private.mm"; sourceTree = "<group>"; };
-		B5F532B520EDEC2100AB6B53 /* LGNetworkCallback+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGNetworkCallback+Private.h"; path = "../../../../../generated-src/objc/LGNetworkCallback+Private.h"; sourceTree = "<group>"; };
-		B5F532B620EDEC2100AB6B53 /* LGLegoPlatform+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGLegoPlatform+Private.mm"; path = "../../../../../generated-src/objc/LGLegoPlatform+Private.mm"; sourceTree = "<group>"; };
-		B5F532B720EDEC2100AB6B53 /* LGSQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGSQuestion.h; path = "../../../../../generated-src/objc/LGSQuestion.h"; sourceTree = "<group>"; };
-		B5F532B820EDEC2200AB6B53 /* LGSQuestion+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGSQuestion+Private.mm"; path = "../../../../../generated-src/objc/LGSQuestion+Private.mm"; sourceTree = "<group>"; };
-		B5F532B920EDEC2200AB6B53 /* LGLegoCore+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGLegoCore+Private.h"; path = "../../../../../generated-src/objc/LGLegoCore+Private.h"; sourceTree = "<group>"; };
-		B5F532BA20EDEC2200AB6B53 /* LGSQuestion.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LGSQuestion.mm; path = "../../../../../generated-src/objc/LGSQuestion.mm"; sourceTree = "<group>"; };
-		B5F532BB20EDEC2200AB6B53 /* LGSQuestion+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGSQuestion+Private.h"; path = "../../../../../generated-src/objc/LGSQuestion+Private.h"; sourceTree = "<group>"; };
-		B5F532BC20EDEC2200AB6B53 /* LGSTemplate+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGSTemplate+Private.mm"; path = "../../../../../generated-src/objc/LGSTemplate+Private.mm"; sourceTree = "<group>"; };
-		B5F532BD20EDEC2200AB6B53 /* LGSTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LGSTemplate.mm; path = "../../../../../generated-src/objc/LGSTemplate.mm"; sourceTree = "<group>"; };
-		B5F532BE20EDEC2200AB6B53 /* LGLegoPlatform+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGLegoPlatform+Private.h"; path = "../../../../../generated-src/objc/LGLegoPlatform+Private.h"; sourceTree = "<group>"; };
-		B5F532BF20EDEC2200AB6B53 /* LGLegoCore+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGLegoCore+Private.mm"; path = "../../../../../generated-src/objc/LGLegoCore+Private.mm"; sourceTree = "<group>"; };
-		B5F532C020EDEC2200AB6B53 /* LGSPage+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGSPage+Private.h"; path = "../../../../../generated-src/objc/LGSPage+Private.h"; sourceTree = "<group>"; };
-		B5F532C120EDEC2200AB6B53 /* LGLegoCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGLegoCore.h; path = "../../../../../generated-src/objc/LGLegoCore.h"; sourceTree = "<group>"; };
-		B5F532C220EDEC2200AB6B53 /* LGSTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGSTemplate.h; path = "../../../../../generated-src/objc/LGSTemplate.h"; sourceTree = "<group>"; };
-		B5F532C320EDEC2200AB6B53 /* LGNetworkCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGNetworkCallback.h; path = "../../../../../generated-src/objc/LGNetworkCallback.h"; sourceTree = "<group>"; };
-		B5F532C420EDEC2200AB6B53 /* LGSPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGSPage.h; path = "../../../../../generated-src/objc/LGSPage.h"; sourceTree = "<group>"; };
-		B5F532C520EDEC2200AB6B53 /* LGNetworkCallback+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGNetworkCallback+Private.mm"; path = "../../../../../generated-src/objc/LGNetworkCallback+Private.mm"; sourceTree = "<group>"; };
-		B5F532C620EDEC2200AB6B53 /* LGSPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LGSPage.mm; path = "../../../../../generated-src/objc/LGSPage.mm"; sourceTree = "<group>"; };
-		B5F532C720EDEC2300AB6B53 /* LGSTemplate+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGSTemplate+Private.h"; path = "../../../../../generated-src/objc/LGSTemplate+Private.h"; sourceTree = "<group>"; };
-		B5F532C820EDEC2300AB6B53 /* LGLegoPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGLegoPlatform.h; path = "../../../../../generated-src/objc/LGLegoPlatform.h"; sourceTree = "<group>"; };
-		B5F532D220EDEC3800AB6B53 /* s_question.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = s_question.hpp; path = "../../../../../../generated-src/cpp/s_question.hpp"; sourceTree = "<group>"; };
-		B5F532D320EDEC3800AB6B53 /* s_template.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = s_template.hpp; path = "../../../../../../generated-src/cpp/s_template.hpp"; sourceTree = "<group>"; };
-		B5F532D420EDEC3800AB6B53 /* s_page.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = s_page.hpp; path = "../../../../../../generated-src/cpp/s_page.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,27 +281,43 @@
 		B5E153F320E5EAE10025A759 /* Bridge */ = {
 			isa = PBXGroup;
 			children = (
-				B5F532C120EDEC2200AB6B53 /* LGLegoCore.h */,
-				B5F532B920EDEC2200AB6B53 /* LGLegoCore+Private.h */,
-				B5F532BF20EDEC2200AB6B53 /* LGLegoCore+Private.mm */,
-				B5F532C820EDEC2300AB6B53 /* LGLegoPlatform.h */,
-				B5F532BE20EDEC2200AB6B53 /* LGLegoPlatform+Private.h */,
-				B5F532B620EDEC2100AB6B53 /* LGLegoPlatform+Private.mm */,
-				B5F532C320EDEC2200AB6B53 /* LGNetworkCallback.h */,
-				B5F532B520EDEC2100AB6B53 /* LGNetworkCallback+Private.h */,
-				B5F532C520EDEC2200AB6B53 /* LGNetworkCallback+Private.mm */,
-				B5F532C420EDEC2200AB6B53 /* LGSPage.h */,
-				B5F532C620EDEC2200AB6B53 /* LGSPage.mm */,
-				B5F532C020EDEC2200AB6B53 /* LGSPage+Private.h */,
-				B5F532B420EDEC2100AB6B53 /* LGSPage+Private.mm */,
-				B5F532B720EDEC2100AB6B53 /* LGSQuestion.h */,
-				B5F532BA20EDEC2200AB6B53 /* LGSQuestion.mm */,
-				B5F532BB20EDEC2200AB6B53 /* LGSQuestion+Private.h */,
-				B5F532B820EDEC2200AB6B53 /* LGSQuestion+Private.mm */,
-				B5F532C220EDEC2200AB6B53 /* LGSTemplate.h */,
-				B5F532BD20EDEC2200AB6B53 /* LGSTemplate.mm */,
-				B5F532C720EDEC2300AB6B53 /* LGSTemplate+Private.h */,
-				B5F532BC20EDEC2200AB6B53 /* LGSTemplate+Private.mm */,
+				B524AB332100664600CD1A90 /* LGAppManager.h */,
+				B524AB352100664600CD1A90 /* LGAppManager+Private.h */,
+				B524AB3C2100664700CD1A90 /* LGAppManager+Private.mm */,
+				B524AB292100664500CD1A90 /* LGAppObserver.h */,
+				B524AB2E2100664500CD1A90 /* LGAppObserver+Private.h */,
+				B524AB242100664400CD1A90 /* LGAppObserver+Private.mm */,
+				B524AB272100664500CD1A90 /* LGLegoCore.h */,
+				B524AB302100664600CD1A90 /* LGLegoCore+Private.h */,
+				B524AB252100664400CD1A90 /* LGLegoCore+Private.mm */,
+				B524AB3F2100664700CD1A90 /* LGLegoPlatform.h */,
+				B524AB372100664600CD1A90 /* LGLegoPlatform+Private.h */,
+				B524AB1D2100664400CD1A90 /* LGLegoPlatform+Private.mm */,
+				B524AB3B2100664700CD1A90 /* LGNetworkCallback.h */,
+				B524AB2D2100664500CD1A90 /* LGNetworkCallback+Private.h */,
+				B524AB3D2100664700CD1A90 /* LGNetworkCallback+Private.mm */,
+				B524AB212100664400CD1A90 /* LGPeople.h */,
+				B524AB232100664400CD1A90 /* LGPeople.mm */,
+				B524AB262100664500CD1A90 /* LGPeople+Private.h */,
+				B524AB392100664700CD1A90 /* LGPeople+Private.mm */,
+				B524AB2B2100664500CD1A90 /* LGSPage.h */,
+				B524AB3E2100664700CD1A90 /* LGSPage.mm */,
+				B524AB382100664600CD1A90 /* LGSPage+Private.h */,
+				B524AB1C2100664400CD1A90 /* LGSPage+Private.mm */,
+				B524AB1E2100664400CD1A90 /* LGSQuestion.h */,
+				B524AB322100664600CD1A90 /* LGSQuestion.mm */,
+				B524AB342100664600CD1A90 /* LGSQuestion+Private.h */,
+				B524AB1F2100664400CD1A90 /* LGSQuestion+Private.mm */,
+				B524AB3A2100664700CD1A90 /* LGSTemplate.h */,
+				B524AB362100664600CD1A90 /* LGSTemplate.mm */,
+				B524AB2C2100664500CD1A90 /* LGSTemplate+Private.h */,
+				B524AB222100664400CD1A90 /* LGSTemplate+Private.mm */,
+				B524AB1B2100664400CD1A90 /* LGUiManager.h */,
+				B524AB282100664500CD1A90 /* LGUiManager+Private.h */,
+				B524AB202100664400CD1A90 /* LGUiManager+Private.mm */,
+				B524AB312100664600CD1A90 /* LGUiObserver.h */,
+				B524AB2F2100664500CD1A90 /* LGUiObserver+Private.h */,
+				B524AB2A2100664500CD1A90 /* LGUiObserver+Private.mm */,
 			);
 			path = Bridge;
 			sourceTree = "<group>";
@@ -286,13 +334,17 @@
 		B5E1542C20E5ED460025A759 /* Includes */ = {
 			isa = PBXGroup;
 			children = (
-				B5F532D420EDEC3800AB6B53 /* s_page.hpp */,
-				B5F532D220EDEC3800AB6B53 /* s_question.hpp */,
-				B5F532D320EDEC3800AB6B53 /* s_template.hpp */,
-				B54B8B1920E9A66300B06735 /* lego_generated.h */,
-				B54B8B1720E9A50900B06735 /* lego_core.hpp */,
-				B54B8B1420E9A50900B06735 /* lego_platform.hpp */,
-				B54B8B1620E9A50900B06735 /* network_callback.hpp */,
+				B524AB152100662F00CD1A90 /* app_manager.hpp */,
+				B524AB142100662F00CD1A90 /* app_observer.hpp */,
+				B524AB1A2100662F00CD1A90 /* lego_core.hpp */,
+				B524AB112100662F00CD1A90 /* lego_platform.hpp */,
+				B524AB192100662F00CD1A90 /* network_callback.hpp */,
+				B524AB182100662F00CD1A90 /* people.hpp */,
+				B524AB122100662F00CD1A90 /* s_page.hpp */,
+				B524AB162100662F00CD1A90 /* s_question.hpp */,
+				B524AB132100662F00CD1A90 /* s_template.hpp */,
+				B524AB102100662F00CD1A90 /* ui_manager.hpp */,
+				B524AB172100662F00CD1A90 /* ui_observer.hpp */,
 			);
 			path = Includes;
 			sourceTree = "<group>";
@@ -300,6 +352,10 @@
 		B5E1542D20E5EEEE0025A759 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				B524AB4F21006B1700CD1A90 /* app_manager_impl.cpp */,
+				B524AB5221006B1700CD1A90 /* app_manager_impl.hpp */,
+				B524AB5121006B1700CD1A90 /* ui_manager_impl.cpp */,
+				B524AB5021006B1700CD1A90 /* ui_manager_impl.hpp */,
 				B54B8B0F20E9A4D900B06735 /* lego_core_impl.cpp */,
 				B54B8B0E20E9A4D800B06735 /* lego_core_impl.hpp */,
 				B54B8B1020E9A4D900B06735 /* network_callback_impl.cpp */,
@@ -428,27 +484,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B524AB4D2100664800CD1A90 /* LGNetworkCallback+Private.mm in Sources */,
+				B524AB432100664800CD1A90 /* LGUiManager+Private.mm in Sources */,
+				B524AB4B2100664800CD1A90 /* LGPeople+Private.mm in Sources */,
+				B524AB4A2100664800CD1A90 /* LGSTemplate.mm in Sources */,
+				B524AB412100664800CD1A90 /* LGLegoPlatform+Private.mm in Sources */,
 				B50DDC8F20FD6EB500EB3C53 /* lego.grpc.pb.cc in Sources */,
-				B5F532CC20EDEC2300AB6B53 /* LGSQuestion.mm in Sources */,
 				B54B8B1120E9A4D900B06735 /* lego_core_impl.cpp in Sources */,
-				B5F532CA20EDEC2300AB6B53 /* LGLegoPlatform+Private.mm in Sources */,
-				B5F532CB20EDEC2300AB6B53 /* LGSQuestion+Private.mm in Sources */,
-				B5F532CD20EDEC2300AB6B53 /* LGSTemplate+Private.mm in Sources */,
 				B5E1543120E5EF470025A759 /* LGLegoPlatformImpl.m in Sources */,
 				B54B8B1B20E9B8B200B06735 /* util.cpp in Sources */,
-				B5F532D020EDEC2300AB6B53 /* LGNetworkCallback+Private.mm in Sources */,
+				B524AB5321006B1700CD1A90 /* app_manager_impl.cpp in Sources */,
 				B51AD1E920EF3BC4006467E2 /* TestBridge.swift in Sources */,
 				B54B8B1220E9A4D900B06735 /* network_callback_impl.cpp in Sources */,
-				B5F532CE20EDEC2300AB6B53 /* LGSTemplate.mm in Sources */,
+				B524AB4C2100664800CD1A90 /* LGAppManager+Private.mm in Sources */,
 				B5E153E020E5E83B0025A759 /* ViewController.m in Sources */,
-				B5F532C920EDEC2300AB6B53 /* LGSPage+Private.mm in Sources */,
+				B524AB4E2100664800CD1A90 /* LGSPage.mm in Sources */,
 				B5E153FB20E5EB230025A759 /* DJIError.mm in Sources */,
+				B524AB472100664800CD1A90 /* LGLegoCore+Private.mm in Sources */,
+				B524AB482100664800CD1A90 /* LGUiObserver+Private.mm in Sources */,
+				B524AB442100664800CD1A90 /* LGSTemplate+Private.mm in Sources */,
 				B50DDC9020FD6EB500EB3C53 /* lego.pb.cc in Sources */,
-				B5F532CF20EDEC2300AB6B53 /* LGLegoCore+Private.mm in Sources */,
+				B524AB462100664800CD1A90 /* LGAppObserver+Private.mm in Sources */,
+				B524AB422100664800CD1A90 /* LGSQuestion+Private.mm in Sources */,
+				B524AB5421006B1700CD1A90 /* ui_manager_impl.cpp in Sources */,
+				B524AB492100664800CD1A90 /* LGSQuestion.mm in Sources */,
 				B5E153FA20E5EB230025A759 /* DJIProxyCaches.mm in Sources */,
-				B5F532D120EDEC2300AB6B53 /* LGSPage.mm in Sources */,
 				B5E153EB20E5E83D0025A759 /* main.mm in Sources */,
 				B5E153DD20E5E83B0025A759 /* AppDelegate.m in Sources */,
+				B524AB402100664800CD1A90 /* LGSPage+Private.mm in Sources */,
+				B524AB452100664800CD1A90 /* LGPeople.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
