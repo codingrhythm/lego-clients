@@ -24,6 +24,8 @@ public abstract class LegoCore {
 
     public abstract STemplate generateLargeData(int numberOfPages, int questionsPerPage);
 
+    public abstract String prefixString(String input);
+
     /** class method to create core API instance */
     public static native LegoCore create(LegoPlatform platform);
 
@@ -97,5 +99,13 @@ public abstract class LegoCore {
             return native_generateLargeData(this.nativeRef, numberOfPages, questionsPerPage);
         }
         private native STemplate native_generateLargeData(long _nativeRef, int numberOfPages, int questionsPerPage);
+
+        @Override
+        public String prefixString(String input)
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            return native_prefixString(this.nativeRef, input);
+        }
+        private native String native_prefixString(long _nativeRef, String input);
     }
 }

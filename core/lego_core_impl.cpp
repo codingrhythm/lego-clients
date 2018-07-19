@@ -218,4 +218,8 @@ namespace lego {
 
         return templateData;
     }
+
+    std::string LegoCoreImpl::prefix_string(const std::string & input) {
+        return "Hello " + input;
+    }
 }

@@ -88,4 +88,14 @@ CJNIEXPORT jobject JNICALL Java_com_mycompany_lego_LegoCore_00024CppProxy_native
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
+CJNIEXPORT jstring JNICALL Java_com_mycompany_lego_LegoCore_00024CppProxy_native_1prefixString(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_input)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
+        const auto& ref = ::djinni::objectFromHandleAddress<::lego::LegoCore>(nativeRef);
+        auto r = ref->prefix_string(::djinni::String::toCpp(jniEnv, j_input));
+        return ::djinni::release(::djinni::String::fromCpp(jniEnv, r));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
+}
+
 }  // namespace djinni_generated

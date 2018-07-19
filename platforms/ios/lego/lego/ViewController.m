@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "LGLegoCore.h"
 #import "LGLegoPlatformImpl.h"
+#import "lego-Swift.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSString *templateID;
@@ -56,7 +57,8 @@ const int NUMBER_OF_REQUESTS = 10;
     __weak ViewController *weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSDate *start = [NSDate date];
-        LGSTemplate *template = [weakSelf generateLargeData: 500 and: 1000];
+        DataGenerator *dataGen = [DataGenerator new];
+        LGSTemplate *template = [dataGen createLargeDataWithNumberOfPages:500 questionsPerPage:1000];
         NSLog(@"done native: %0.5f, template: %@", -[start timeIntervalSinceNow], template.name);
     });
 }
@@ -74,8 +76,8 @@ const int NUMBER_OF_REQUESTS = 10;
     __weak ViewController *weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSDate *start = [NSDate date];
-        for (int i = 0; i < 100; i++) {
-            LGSTemplate *template = [weakSelf generateLargeData: 50 and: 100];
+        for (int i = 0; i < 10000; i++) {
+            LGSTemplate *template = [weakSelf generateLargeData: 10 and: 10];
             //NSLog(@"template: %@", template.name);
         }
         NSLog(@"done native: %0.5f", -[start timeIntervalSinceNow]);
@@ -86,8 +88,32 @@ const int NUMBER_OF_REQUESTS = 10;
     __weak ViewController *weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSDate *start = [NSDate date];
-        for (int i = 0; i < 100; i++) {
-            LGSTemplate *template = [weakSelf.coreAPI generateLargeData:50 questionsPerPage:100];
+        for (int i = 0; i < 10000; i++) {
+            LGSTemplate *template = [weakSelf.coreAPI generateLargeData:10 questionsPerPage:10];
+            //NSLog(@"template: %@", template.name);
+        }
+        NSLog(@"done djinni: %0.5f", -[start timeIntervalSinceNow]);
+    });
+}
+
+- (IBAction)callMethodNativelyNativelyButtonTapped:(id)sender {
+    __weak ViewController *weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSDate *start = [NSDate date];
+        for (int i = 0; i < 10000; i++) {
+            NSString *result = [weakSelf prefixString:@"Native"];
+            //NSLog(@"template: %@", template.name);
+        }
+        NSLog(@"done native: %0.5f", -[start timeIntervalSinceNow]);
+    });
+}
+
+- (IBAction)callMethodDjinniButtonTapped:(id)sender {
+    __weak ViewController *weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSDate *start = [NSDate date];
+        for (int i = 0; i < 10000; i++) {
+            NSString *result = [weakSelf.coreAPI prefixString:@"Djinni"];
             //NSLog(@"template: %@", template.name);
         }
         NSLog(@"done djinni: %0.5f", -[start timeIntervalSinceNow]);
@@ -194,6 +220,10 @@ const int NUMBER_OF_REQUESTS = 10;
     return [[LGSTemplate alloc] initWithId:@"template id"
                                       name:@"template name"
                                      pages:pages];
+}
+
+- (NSString *)prefixString:(NSString *) input {
+    return [NSString stringWithFormat:@"Hello %@", input];
 }
 
 @end

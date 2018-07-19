@@ -80,6 +80,13 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
+- (nonnull NSString *)prefixString:(nonnull NSString *)input {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->prefix_string(::djinni::String::toCpp(input));
+        return ::djinni::String::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
 namespace djinni_generated {
 
 auto LegoCore::toCpp(ObjcType objc) -> CppType

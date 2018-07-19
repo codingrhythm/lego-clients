@@ -60,6 +60,20 @@
                                     <action selector="generateDataDjinniMultipleRequestsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eoQ-6z-gwa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFb-zJ-Dy6">
+                                <rect key="frame" x="116" y="248" width="142" height="30"/>
+                                <state key="normal" title="Call Method Natively"/>
+                                <connections>
+                                    <action selector="callMethodNativelyNativelyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ldf-oN-0pp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nda-pF-vES">
+                                <rect key="frame" x="124.5" y="286" width="125" height="30"/>
+                                <state key="normal" title="Call Method Djinni"/>
+                                <connections>
+                                    <action selector="callMethodDjinniButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1cg-ft-u1q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -71,6 +85,10 @@
                             <constraint firstItem="2M6-D2-ecd" firstAttribute="top" secondItem="uG9-1E-djX" secondAttribute="bottom" constant="8" id="VSy-QE-Jsk"/>
                             <constraint firstItem="hHM-HV-VGb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XIY-Xr-e8i"/>
                             <constraint firstItem="hHM-HV-VGb" firstAttribute="top" secondItem="Z0j-PQ-aVR" secondAttribute="bottom" constant="8" id="XVE-Jk-vhx"/>
+                            <constraint firstItem="nda-pF-vES" firstAttribute="top" secondItem="MFb-zJ-Dy6" secondAttribute="bottom" constant="8" id="dKW-Zu-b9v"/>
+                            <constraint firstItem="MFb-zJ-Dy6" firstAttribute="top" secondItem="2M6-D2-ecd" secondAttribute="bottom" constant="8" id="etm-22-we6"/>
+                            <constraint firstItem="MFb-zJ-Dy6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hXY-2y-ZhW"/>
+                            <constraint firstItem="nda-pF-vES" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i2w-AX-x31"/>
                             <constraint firstItem="uG9-1E-djX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n3d-e0-NYc"/>
                             <constraint firstItem="Z0j-PQ-aVR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nfC-5y-sOz"/>
                             <constraint firstItem="uG9-1E-djX" firstAttribute="top" secondItem="6pH-78-u4p" secondAttribute="bottom" constant="8" id="o5W-Ed-IRp"/>

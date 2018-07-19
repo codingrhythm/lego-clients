@@ -23,5 +23,6 @@ namespace lego {
     void download_file(const std::string & file_id);
     STemplate send_large_data_over_bridge(const std::string & template_id);
     STemplate generate_large_data(int32_t number_of_pages, int32_t questions_per_page);
+    std::string prefix_string(const std::string & input);
   };
 }

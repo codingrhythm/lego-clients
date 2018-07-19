@@ -60,6 +60,7 @@ lego_core = interface +c {
   # performance test code
   send_large_data_over_bridge(template_id: string): s_template;
   generate_large_data(number_of_pages: i32, questions_per_page: i32): s_template;
+  prefix_string(input: string) : string;
 }
 
 # Platform APIs

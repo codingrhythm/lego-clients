@@ -31,4 +31,6 @@
 - (nonnull LGSTemplate *)generateLargeData:(int32_t)numberOfPages
                           questionsPerPage:(int32_t)questionsPerPage;
 
+- (nonnull NSString *)prefixString:(nonnull NSString *)input;
+
 @end
