@@ -83,3 +83,34 @@ network_callback = interface +c {
   on_http_download_file_success(path: string);
   on_http_upload_file_success();
 }
+
+#######################################
+# App Architecture Related Interfaces #
+#######################################
+
+people = record {
+  first_name: string;
+  last_name: string;
+}
+
+ui_observer = interface +o +j {
+  title_updated(title: string);
+  time_string_updated(time_string: string);
+  people_updated(people: people);
+}
+
+ui_manager = interface +c {
+  static create(observer: ui_observer): ui_manager;
+  update_title(new_title: string);
+  update_first_name(first_name: string);
+  update_last_name(last_name: string);
+}
+
+app_observer = interface +o +j {
+
+}
+
+app_manager = interface +c {
+  static create(observer: app_observer): app_manager;
+  update_time_string(time_string: string);
+}
