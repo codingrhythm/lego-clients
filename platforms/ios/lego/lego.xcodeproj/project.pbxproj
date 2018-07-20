@@ -27,6 +27,8 @@
 		B524AB4E2100664800CD1A90 /* LGSPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = B524AB3E2100664700CD1A90 /* LGSPage.mm */; };
 		B524AB5321006B1700CD1A90 /* app_manager_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B524AB4F21006B1700CD1A90 /* app_manager_impl.cpp */; };
 		B524AB5421006B1700CD1A90 /* ui_manager_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B524AB5121006B1700CD1A90 /* ui_manager_impl.cpp */; };
+		B524AB5721015DF300CD1A90 /* LGAppObserverImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B524AB5621015DF300CD1A90 /* LGAppObserverImpl.m */; };
+		B524AB5D2101647500CD1A90 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B524AB5C2101647500CD1A90 /* AppViewController.swift */; };
 		B54B8B1120E9A4D900B06735 /* lego_core_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B0F20E9A4D900B06735 /* lego_core_impl.cpp */; };
 		B54B8B1220E9A4D900B06735 /* network_callback_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1020E9A4D900B06735 /* network_callback_impl.cpp */; };
 		B54B8B1B20E9B8B200B06735 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1A20E9B8B200B06735 /* util.cpp */; };
@@ -109,6 +111,10 @@
 		B524AB5021006B1700CD1A90 /* ui_manager_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ui_manager_impl.hpp; path = ../../../../../core/ui_manager_impl.hpp; sourceTree = "<group>"; };
 		B524AB5121006B1700CD1A90 /* ui_manager_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ui_manager_impl.cpp; path = ../../../../../core/ui_manager_impl.cpp; sourceTree = "<group>"; };
 		B524AB5221006B1700CD1A90 /* app_manager_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = app_manager_impl.hpp; path = ../../../../../core/app_manager_impl.hpp; sourceTree = "<group>"; };
+		B524AB5521015DF300CD1A90 /* LGAppObserverImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGAppObserverImpl.h; sourceTree = "<group>"; };
+		B524AB5621015DF300CD1A90 /* LGAppObserverImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGAppObserverImpl.m; sourceTree = "<group>"; };
+		B524AB5B2101613600CD1A90 /* lego_generated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lego_generated.h; path = ../../../../../lego_generated.h; sourceTree = "<group>"; };
+		B524AB5C2101647500CD1A90 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		B548E81620F468DF001589C6 /* libPods-lego.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-lego.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B548E81820F469D1001589C6 /* libprotobuf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libprotobuf.a; path = ../../../deps/protobuf/libprotobuf.a; sourceTree = "<group>"; };
 		B548E81A20F478BA001589C6 /* libgpr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgpr.a; path = ../../../deps/protobuf/libgpr.a; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 		B54B8B0920E9A0F800B06735 /* FlatBuffers */ = {
 			isa = PBXGroup;
 			children = (
+				B524AB5B2101613600CD1A90 /* lego_generated.h */,
 				B54B8B1A20E9B8B200B06735 /* util.cpp */,
 				B54B8B0C20E9A1C500B06735 /* idl.h */,
 				B54B8B0B20E9A1C400B06735 /* util.h */,
@@ -250,6 +257,7 @@
 				B5E153EA20E5E83D0025A759 /* main.mm */,
 				B51AD1E820EF3BC4006467E2 /* TestBridge.swift */,
 				B51AD1E720EF3BC4006467E2 /* lego-Bridging-Header.h */,
+				B524AB5C2101647500CD1A90 /* AppViewController.swift */,
 			);
 			path = lego;
 			sourceTree = "<group>";
@@ -370,6 +378,8 @@
 			children = (
 				B5E1542F20E5EF470025A759 /* LGLegoPlatformImpl.h */,
 				B5E1543020E5EF470025A759 /* LGLegoPlatformImpl.m */,
+				B524AB5521015DF300CD1A90 /* LGAppObserverImpl.h */,
+				B524AB5621015DF300CD1A90 /* LGAppObserverImpl.m */,
 			);
 			path = Platform;
 			sourceTree = "<group>";
@@ -501,9 +511,11 @@
 				B524AB4E2100664800CD1A90 /* LGSPage.mm in Sources */,
 				B5E153FB20E5EB230025A759 /* DJIError.mm in Sources */,
 				B524AB472100664800CD1A90 /* LGLegoCore+Private.mm in Sources */,
+				B524AB5D2101647500CD1A90 /* AppViewController.swift in Sources */,
 				B524AB482100664800CD1A90 /* LGUiObserver+Private.mm in Sources */,
 				B524AB442100664800CD1A90 /* LGSTemplate+Private.mm in Sources */,
 				B50DDC9020FD6EB500EB3C53 /* lego.pb.cc in Sources */,
+				B524AB5721015DF300CD1A90 /* LGAppObserverImpl.m in Sources */,
 				B524AB462100664800CD1A90 /* LGAppObserver+Private.mm in Sources */,
 				B524AB422100664800CD1A90 /* LGSQuestion+Private.mm in Sources */,
 				B524AB5421006B1700CD1A90 /* ui_manager_impl.cpp in Sources */,

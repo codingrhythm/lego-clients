@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ye6-oK-f4x">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Performance-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -96,9 +96,86 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Performance" id="rEG-Mz-0XB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1018" y="613"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="kMS-ff-pZC">
+            <objects>
+                <tabBarController id="Ye6-oK-f4x" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DBb-NY-tV6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="CMw-mV-zKw"/>
+                        <segue destination="uJt-Bc-THe" kind="relationship" relationship="viewControllers" id="Vqa-uJ-Pxe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WxN-ce-dyu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="220"/>
+        </scene>
+        <!--App-->
+        <scene sceneID="gYy-zx-k4F">
+            <objects>
+                <navigationController id="uJt-Bc-THe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="App" id="ZaL-bW-E7d"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="awf-Vr-PE4">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="omb-TZ-Ggr" kind="relationship" relationship="rootViewController" id="Ghe-fi-zQ3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRg-pS-7QH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007" y="-113"/>
+        </scene>
+        <!--App View Controller-->
+        <scene sceneID="yWs-5D-CiL">
+            <objects>
+                <viewController id="omb-TZ-Ggr" customClass="AppViewController" customModule="lego" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1pX-uc-amv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lL9-8v-Hj8">
+                                <rect key="frame" x="16" y="79" width="33.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lm8-6v-6hd">
+                                <rect key="frame" x="57.5" y="74" width="301.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="titleFieldDidChange:" destination="omb-TZ-Ggr" eventType="editingChanged" id="h2P-sZ-yPs"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lm8-6v-6hd" firstAttribute="centerY" secondItem="lL9-8v-Hj8" secondAttribute="centerY" id="AKb-cu-0uH"/>
+                            <constraint firstItem="lL9-8v-Hj8" firstAttribute="top" secondItem="JSO-9x-3qR" secondAttribute="top" constant="15" id="Dy1-ub-jAz"/>
+                            <constraint firstItem="JSO-9x-3qR" firstAttribute="trailing" secondItem="Lm8-6v-6hd" secondAttribute="trailing" constant="16" id="WuD-Ig-C3y"/>
+                            <constraint firstItem="lL9-8v-Hj8" firstAttribute="leading" secondItem="JSO-9x-3qR" secondAttribute="leading" constant="16" id="asf-Gf-dac"/>
+                            <constraint firstItem="Lm8-6v-6hd" firstAttribute="leading" secondItem="lL9-8v-Hj8" secondAttribute="trailing" constant="8" id="eAw-5r-KHZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JSO-9x-3qR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SH5-aN-MNf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wJZ-og-BZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1848.8" y="-114.69265367316342"/>
         </scene>
     </scenes>
 </document>

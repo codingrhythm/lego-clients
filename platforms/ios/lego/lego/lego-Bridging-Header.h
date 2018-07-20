@@ -4,3 +4,5 @@
 
 #import "LGLegoCore.h"
 #import "LGLegoPlatformImpl.h"
+#import "LGUiManager.h"
+#import "LGUiObserver.h"
