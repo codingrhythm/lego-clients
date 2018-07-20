@@ -12,7 +12,9 @@ public abstract class UiManager {
 
     public abstract void updateLastName(String lastName);
 
-    public static native UiManager create(UiObserver observer);
+    public abstract String getTimeString();
+
+    public static native UiManager create(UiObserver observer, UiPlatformSupport platform);
 
     private static final class CppProxy extends UiManager
     {
@@ -60,5 +62,13 @@ public abstract class UiManager {
             native_updateLastName(this.nativeRef, lastName);
         }
         private native void native_updateLastName(long _nativeRef, String lastName);
+
+        @Override
+        public String getTimeString()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            return native_getTimeString(this.nativeRef);
+        }
+        private native String native_getTimeString(long _nativeRef);
     }
 }

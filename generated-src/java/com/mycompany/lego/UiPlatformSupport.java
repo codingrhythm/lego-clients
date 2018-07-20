@@ -3,5 +3,6 @@
 
 package com.mycompany.lego;
 
-public abstract class AppObserver {
+public abstract class UiPlatformSupport {
+    public abstract String getTimeString();
 }

@@ -3,11 +3,15 @@
 
 #pragma once
 
+#include <string>
+
 namespace lego {
 
-class AppObserver {
+class UiPlatformSupport {
 public:
-    virtual ~AppObserver() {}
+    virtual ~UiPlatformSupport() {}
+
+    virtual std::string get_time_string() = 0;
 };
 
 }  // namespace lego

@@ -25,12 +25,6 @@ public:
             [djinni_private_get_proxied_objc_object() titleUpdated:(::djinni::String::fromCpp(c_title))];
         }
     }
-    void time_string_updated(const std::string & c_time_string) override
-    {
-        @autoreleasepool {
-            [djinni_private_get_proxied_objc_object() timeStringUpdated:(::djinni::String::fromCpp(c_time_string))];
-        }
-    }
     void people_updated(const ::lego::People & c_people) override
     {
         @autoreleasepool {

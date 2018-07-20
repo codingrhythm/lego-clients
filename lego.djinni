@@ -95,22 +95,17 @@ people = record {
 
 ui_observer = interface +o +j {
   title_updated(title: string);
-  time_string_updated(time_string: string);
   people_updated(people: people);
 }
 
 ui_manager = interface +c {
-  static create(observer: ui_observer): ui_manager;
+  static create(observer: ui_observer, platform: ui_platform_support): ui_manager;
   update_title(new_title: string);
   update_first_name(first_name: string);
   update_last_name(last_name: string);
+  get_time_string(): string;
 }
 
-app_observer = interface +o +j {
-
-}
-
-app_manager = interface +c {
-  static create(observer: app_observer): app_manager;
-  update_time_string(time_string: string);
+ui_platform_support = interface +o +j {
+  get_time_string(): string;
 }

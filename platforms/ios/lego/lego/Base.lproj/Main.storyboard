@@ -160,18 +160,29 @@
                                     <action selector="titleFieldDidChange:" destination="omb-TZ-Ggr" eventType="editingChanged" id="h2P-sZ-yPs"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11j-sN-zvj">
+                                <rect key="frame" x="166" y="112" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Lm8-6v-6hd" firstAttribute="centerY" secondItem="lL9-8v-Hj8" secondAttribute="centerY" id="AKb-cu-0uH"/>
                             <constraint firstItem="lL9-8v-Hj8" firstAttribute="top" secondItem="JSO-9x-3qR" secondAttribute="top" constant="15" id="Dy1-ub-jAz"/>
+                            <constraint firstItem="11j-sN-zvj" firstAttribute="top" secondItem="Lm8-6v-6hd" secondAttribute="bottom" constant="8" id="WW0-12-9gG"/>
                             <constraint firstItem="JSO-9x-3qR" firstAttribute="trailing" secondItem="Lm8-6v-6hd" secondAttribute="trailing" constant="16" id="WuD-Ig-C3y"/>
                             <constraint firstItem="lL9-8v-Hj8" firstAttribute="leading" secondItem="JSO-9x-3qR" secondAttribute="leading" constant="16" id="asf-Gf-dac"/>
                             <constraint firstItem="Lm8-6v-6hd" firstAttribute="leading" secondItem="lL9-8v-Hj8" secondAttribute="trailing" constant="8" id="eAw-5r-KHZ"/>
+                            <constraint firstItem="11j-sN-zvj" firstAttribute="centerX" secondItem="1pX-uc-amv" secondAttribute="centerX" id="t5H-sI-PdA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JSO-9x-3qR"/>
                     </view>
                     <navigationItem key="navigationItem" id="SH5-aN-MNf"/>
+                    <connections>
+                        <outlet property="timeLabel" destination="11j-sN-zvj" id="S1m-SK-0Z2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJZ-og-BZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

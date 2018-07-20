@@ -4,6 +4,8 @@
 #import <Foundation/Foundation.h>
 
 
-@protocol LGAppObserver
+@protocol LGUiPlatformSupport
+
+- (nonnull NSString *)getTimeString;
 
 @end

@@ -23,14 +23,6 @@ void NativeUiObserver::JavaProxy::title_updated(const std::string & c_title) {
                            ::djinni::get(::djinni::String::fromCpp(jniEnv, c_title)));
     ::djinni::jniExceptionCheck(jniEnv);
 }
-void NativeUiObserver::JavaProxy::time_string_updated(const std::string & c_time_string) {
-    auto jniEnv = ::djinni::jniGetThreadEnv();
-    ::djinni::JniLocalScope jscope(jniEnv, 10);
-    const auto& data = ::djinni::JniClass<::djinni_generated::NativeUiObserver>::get();
-    jniEnv->CallVoidMethod(Handle::get().get(), data.method_timeStringUpdated,
-                           ::djinni::get(::djinni::String::fromCpp(jniEnv, c_time_string)));
-    ::djinni::jniExceptionCheck(jniEnv);
-}
 void NativeUiObserver::JavaProxy::people_updated(const ::lego::People & c_people) {
     auto jniEnv = ::djinni::jniGetThreadEnv();
     ::djinni::JniLocalScope jscope(jniEnv, 10);

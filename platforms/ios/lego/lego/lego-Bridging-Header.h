@@ -6,3 +6,4 @@
 #import "LGLegoPlatformImpl.h"
 #import "LGUiManager.h"
 #import "LGUiObserver.h"
+#import "LGUiPlatformSupport.h"

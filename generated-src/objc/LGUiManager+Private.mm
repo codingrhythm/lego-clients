@@ -7,6 +7,7 @@
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
 #import "LGUiObserver+Private.h"
+#import "LGUiPlatformSupport+Private.h"
 #include <exception>
 #include <stdexcept>
 #include <utility>
@@ -31,9 +32,11 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     return self;
 }
 
-+ (nullable LGUiManager *)create:(nullable id<LGUiObserver>)observer {
++ (nullable LGUiManager *)create:(nullable id<LGUiObserver>)observer
+                        platform:(nullable id<LGUiPlatformSupport>)platform {
     try {
-        auto objcpp_result_ = ::lego::UiManager::create(::djinni_generated::UiObserver::toCpp(observer));
+        auto objcpp_result_ = ::lego::UiManager::create(::djinni_generated::UiObserver::toCpp(observer),
+                                                        ::djinni_generated::UiPlatformSupport::toCpp(platform));
         return ::djinni_generated::UiManager::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
@@ -53,6 +56,13 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 - (void)updateLastName:(nonnull NSString *)lastName {
     try {
         _cppRefHandle.get()->update_last_name(::djinni::String::toCpp(lastName));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (nonnull NSString *)getTimeString {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->get_time_string();
+        return ::djinni::String::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

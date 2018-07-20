@@ -4,6 +4,7 @@
 #include "NativeUiManager.hpp"  // my header
 #include "Marshal.hpp"
 #include "NativeUiObserver.hpp"
+#include "NativeUiPlatformSupport.hpp"
 
 namespace djinni_generated {
 
@@ -20,11 +21,12 @@ CJNIEXPORT void JNICALL Java_com_mycompany_lego_UiManager_00024CppProxy_nativeDe
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 
-CJNIEXPORT jobject JNICALL Java_com_mycompany_lego_UiManager_create(JNIEnv* jniEnv, jobject /*this*/, jobject j_observer)
+CJNIEXPORT jobject JNICALL Java_com_mycompany_lego_UiManager_create(JNIEnv* jniEnv, jobject /*this*/, jobject j_observer, jobject j_platform)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE0(jniEnv);
-        auto r = ::lego::UiManager::create(::djinni_generated::NativeUiObserver::toCpp(jniEnv, j_observer));
+        auto r = ::lego::UiManager::create(::djinni_generated::NativeUiObserver::toCpp(jniEnv, j_observer),
+                                           ::djinni_generated::NativeUiPlatformSupport::toCpp(jniEnv, j_platform));
         return ::djinni::release(::djinni_generated::NativeUiManager::fromCpp(jniEnv, r));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
@@ -54,6 +56,16 @@ CJNIEXPORT void JNICALL Java_com_mycompany_lego_UiManager_00024CppProxy_native_1
         const auto& ref = ::djinni::objectFromHandleAddress<::lego::UiManager>(nativeRef);
         ref->update_last_name(::djinni::String::toCpp(jniEnv, j_lastName));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
+}
+
+CJNIEXPORT jstring JNICALL Java_com_mycompany_lego_UiManager_00024CppProxy_native_1getTimeString(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
+        const auto& ref = ::djinni::objectFromHandleAddress<::lego::UiManager>(nativeRef);
+        auto r = ref->get_time_string();
+        return ::djinni::release(::djinni::String::fromCpp(jniEnv, r));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
 }  // namespace djinni_generated

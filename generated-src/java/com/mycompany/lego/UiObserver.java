@@ -6,7 +6,5 @@ package com.mycompany.lego;
 public abstract class UiObserver {
     public abstract void titleUpdated(String title);
 
-    public abstract void timeStringUpdated(String timeString);
-
     public abstract void peopleUpdated(People people);
 }

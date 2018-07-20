@@ -9,8 +9,6 @@
 
 - (void)titleUpdated:(nonnull NSString *)title;
 
-- (void)timeStringUpdated:(nonnull NSString *)timeString;
-
 - (void)peopleUpdated:(nonnull LGPeople *)people;
 
 @end
