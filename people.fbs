@@ -1,0 +1,8 @@
+namespace UIStorage;
+
+table PeopleRecord {
+  first_name: string;
+  last_name: string;
+}
+
+root_type PeopleRecord;

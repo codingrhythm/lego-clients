@@ -34,6 +34,7 @@ private:
         ~JavaProxy();
 
         std::string get_time_string() override;
+        std::string get_storage_path() override;
 
     private:
         friend ::djinni::JniInterface<::lego::UiPlatformSupport, ::djinni_generated::NativeUiPlatformSupport>;
@@ -41,6 +42,7 @@ private:
 
     const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("com/mycompany/lego/UiPlatformSupport") };
     const jmethodID method_getTimeString { ::djinni::jniGetMethodID(clazz.get(), "getTimeString", "()Ljava/lang/String;") };
+    const jmethodID method_getStoragePath { ::djinni::jniGetMethodID(clazz.get(), "getStoragePath", "()Ljava/lang/String;") };
 };
 
 }  // namespace djinni_generated

@@ -12,6 +12,10 @@
 + (nullable LGUiManager *)create:(nullable id<LGUiObserver>)observer
                         platform:(nullable id<LGUiPlatformSupport>)platform;
 
+- (void)start;
+
+- (void)stop;
+
 - (void)updateTitle:(nonnull NSString *)newTitle;
 
 - (void)updateFirstName:(nonnull NSString *)firstName;

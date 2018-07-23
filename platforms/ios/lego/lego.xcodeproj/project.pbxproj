@@ -30,6 +30,7 @@
 		B54B8B1120E9A4D900B06735 /* lego_core_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B0F20E9A4D900B06735 /* lego_core_impl.cpp */; };
 		B54B8B1220E9A4D900B06735 /* network_callback_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1020E9A4D900B06735 /* network_callback_impl.cpp */; };
 		B54B8B1B20E9B8B200B06735 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1A20E9B8B200B06735 /* util.cpp */; };
+		B565D91921055AC300CD9F98 /* storage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B565D91721055AC300CD9F98 /* storage.cpp */; };
 		B5C591E120F8653900606A40 /* libnanopb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326120F83120000E3427 /* libnanopb.a */; };
 		B5E153DD20E5E83B0025A759 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E153DC20E5E83B0025A759 /* AppDelegate.m */; };
 		B5E153E020E5E83B0025A759 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E153DF20E5E83B0025A759 /* ViewController.m */; };
@@ -130,6 +131,10 @@
 		B54B8B0F20E9A4D900B06735 /* lego_core_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lego_core_impl.cpp; path = ../../../../../core/lego_core_impl.cpp; sourceTree = "<group>"; };
 		B54B8B1020E9A4D900B06735 /* network_callback_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = network_callback_impl.cpp; path = ../../../../../core/network_callback_impl.cpp; sourceTree = "<group>"; };
 		B54B8B1A20E9B8B200B06735 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = ../../../../../deps/flatbuffers/src/util.cpp; sourceTree = "<group>"; };
+		B565D91721055AC300CD9F98 /* storage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = storage.cpp; sourceTree = "<group>"; };
+		B565D91821055AC300CD9F98 /* storage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = storage.hpp; sourceTree = "<group>"; };
+		B565D91A2105605F00CD9F98 /* people_generated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = people_generated.h; path = ../../../../../people_generated.h; sourceTree = "<group>"; };
+		B565D91C210567E300CD9F98 /* storage_observer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = storage_observer.hpp; sourceTree = "<group>"; };
 		B5E153D820E5E83B0025A759 /* lego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lego.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E153DB20E5E83B0025A759 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5E153DC20E5E83B0025A759 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -206,6 +211,7 @@
 		B54B8B0920E9A0F800B06735 /* FlatBuffers */ = {
 			isa = PBXGroup;
 			children = (
+				B565D91A2105605F00CD9F98 /* people_generated.h */,
 				B524AB5B2101613600CD1A90 /* lego_generated.h */,
 				B54B8B1A20E9B8B200B06735 /* util.cpp */,
 				B54B8B0C20E9A1C500B06735 /* idl.h */,
@@ -357,6 +363,9 @@
 				B54B8B1020E9A4D900B06735 /* network_callback_impl.cpp */,
 				B54B8B0D20E9A4D800B06735 /* network_callback_impl.hpp */,
 				B5E1542C20E5ED460025A759 /* Includes */,
+				B565D91721055AC300CD9F98 /* storage.cpp */,
+				B565D91821055AC300CD9F98 /* storage.hpp */,
+				B565D91C210567E300CD9F98 /* storage_observer.hpp */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -507,6 +516,7 @@
 				B5E153EB20E5E83D0025A759 /* main.mm in Sources */,
 				B5E153DD20E5E83B0025A759 /* AppDelegate.m in Sources */,
 				B524AB402100664800CD1A90 /* LGSPage+Private.mm in Sources */,
+				B565D91921055AC300CD9F98 /* storage.cpp in Sources */,
 				B524AB6B2101AADD00CD1A90 /* UIPlatformSupport.swift in Sources */,
 				B524AB452100664800CD1A90 /* LGPeople.mm in Sources */,
 			);

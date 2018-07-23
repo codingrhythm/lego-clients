@@ -8,4 +8,6 @@
 
 - (nonnull NSString *)getTimeString;
 
+- (nonnull NSString *)getStoragePath;
+
 @end

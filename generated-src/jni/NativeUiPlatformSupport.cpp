@@ -22,5 +22,13 @@ std::string NativeUiPlatformSupport::JavaProxy::get_time_string() {
     ::djinni::jniExceptionCheck(jniEnv);
     return ::djinni::String::toCpp(jniEnv, jret);
 }
+std::string NativeUiPlatformSupport::JavaProxy::get_storage_path() {
+    auto jniEnv = ::djinni::jniGetThreadEnv();
+    ::djinni::JniLocalScope jscope(jniEnv, 10);
+    const auto& data = ::djinni::JniClass<::djinni_generated::NativeUiPlatformSupport>::get();
+    auto jret = (jstring)jniEnv->CallObjectMethod(Handle::get().get(), data.method_getStoragePath);
+    ::djinni::jniExceptionCheck(jniEnv);
+    return ::djinni::String::toCpp(jniEnv, jret);
+}
 
 }  // namespace djinni_generated

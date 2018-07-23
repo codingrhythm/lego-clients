@@ -25,6 +25,13 @@ public:
             return ::djinni::String::toCpp(objcpp_result_);
         }
     }
+    std::string get_storage_path() override
+    {
+        @autoreleasepool {
+            auto objcpp_result_ = [djinni_private_get_proxied_objc_object() getStoragePath];
+            return ::djinni::String::toCpp(objcpp_result_);
+        }
+    }
 };
 
 }  // namespace djinni_generated

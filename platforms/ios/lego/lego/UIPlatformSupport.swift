@@ -9,6 +9,10 @@
 import Foundation
 
 class UIPlatformSupport: LGUiPlatformSupport {
+    func getStoragePath() -> String {
+        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+    }
+    
     func getTimeString() -> String {
         return String(format: "System time: %@", Date() as CVarArg)
     }

@@ -31,6 +31,24 @@ CJNIEXPORT jobject JNICALL Java_com_mycompany_lego_UiManager_create(JNIEnv* jniE
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
+CJNIEXPORT void JNICALL Java_com_mycompany_lego_UiManager_00024CppProxy_native_1start(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
+        const auto& ref = ::djinni::objectFromHandleAddress<::lego::UiManager>(nativeRef);
+        ref->start();
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
+}
+
+CJNIEXPORT void JNICALL Java_com_mycompany_lego_UiManager_00024CppProxy_native_1stop(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
+        const auto& ref = ::djinni::objectFromHandleAddress<::lego::UiManager>(nativeRef);
+        ref->stop();
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
+}
+
 CJNIEXPORT void JNICALL Java_com_mycompany_lego_UiManager_00024CppProxy_native_1updateTitle(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_newTitle)
 {
     try {

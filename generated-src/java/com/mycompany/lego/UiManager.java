@@ -6,6 +6,10 @@ package com.mycompany.lego;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public abstract class UiManager {
+    public abstract void start();
+
+    public abstract void stop();
+
     public abstract void updateTitle(String newTitle);
 
     public abstract void updateFirstName(String firstName);
@@ -38,6 +42,22 @@ public abstract class UiManager {
             destroy();
             super.finalize();
         }
+
+        @Override
+        public void start()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            native_start(this.nativeRef);
+        }
+        private native void native_start(long _nativeRef);
+
+        @Override
+        public void stop()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            native_stop(this.nativeRef);
+        }
+        private native void native_stop(long _nativeRef);
 
         @Override
         public void updateTitle(String newTitle)

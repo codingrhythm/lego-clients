@@ -100,6 +100,8 @@ ui_observer = interface +o +j {
 
 ui_manager = interface +c {
   static create(observer: ui_observer, platform: ui_platform_support): ui_manager;
+  start();
+  stop();
   update_title(new_title: string);
   update_first_name(first_name: string);
   update_last_name(last_name: string);
@@ -108,4 +110,5 @@ ui_manager = interface +c {
 
 ui_platform_support = interface +o +j {
   get_time_string(): string;
+  get_storage_path(): string;
 }

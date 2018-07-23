@@ -13,15 +13,33 @@ class AppViewController: UIViewController {
     var manager: LGUiManager?
     let platformSupport = UIPlatformSupport()
     @IBOutlet fileprivate var timeLabel: UILabel!
+    @IBOutlet fileprivate var firstNameField: UITextField!
+    @IBOutlet fileprivate var lastNameField: UITextField!
+    @IBOutlet fileprivate var nameLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         manager = LGUiManager.create(self, platform: platformSupport)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        manager?.start()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        manager?.stop()
+    }
+
     @IBAction func titleFieldDidChange(_ sender: UITextField) {
         manager?.updateTitle(sender.text!)
         timeLabel.text = manager?.getTimeString()
+    }
+
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
+        manager?.updateLastName(lastNameField.text!)
+        manager?.updateFirstName(firstNameField.text!)
     }
 }
 
@@ -31,6 +49,6 @@ extension AppViewController: LGUiObserver {
     }
 
     func peopleUpdated(_ people: LGPeople) {
-
+        nameLabel.text = people.firstName + " " + people.lastName
     }
 }

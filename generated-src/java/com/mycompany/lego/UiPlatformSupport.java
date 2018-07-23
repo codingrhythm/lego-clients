@@ -5,4 +5,6 @@ package com.mycompany.lego;
 
 public abstract class UiPlatformSupport {
     public abstract String getTimeString();
+
+    public abstract String getStoragePath();
 }
