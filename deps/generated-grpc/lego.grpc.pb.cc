@@ -18,6 +18,8 @@ namespace lego {
 static const char* Lego_method_names[] = {
   "/lego.Lego/SendRecord",
   "/lego.Lego/GetData",
+  "/lego.Lego/GetPeople",
+  "/lego.Lego/SavePeople",
 };
 
 std::unique_ptr< Lego::Stub> Lego::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -29,6 +31,8 @@ std::unique_ptr< Lego::Stub> Lego::NewStub(const std::shared_ptr< ::grpc::Channe
 Lego::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_SendRecord_(Lego_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetData_(Lego_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetPeople_(Lego_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SavePeople_(Lego_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status Lego::Stub::SendRecord(::grpc::ClientContext* context, const ::lego::LegoRecord& request, ::lego::LegoResponse* response) {
@@ -55,6 +59,30 @@ Lego::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::lego::Template>::Create(channel_.get(), cq, rpcmethod_GetData_, context, request, false);
 }
 
+::grpc::Status Lego::Stub::GetPeople(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::lego::PeopleData* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetPeople_, context, request, response);
+}
+
+::grpc::ClientAsyncResponseReader< ::lego::PeopleData>* Lego::Stub::AsyncGetPeopleRaw(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::lego::PeopleData>::Create(channel_.get(), cq, rpcmethod_GetPeople_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::lego::PeopleData>* Lego::Stub::PrepareAsyncGetPeopleRaw(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::lego::PeopleData>::Create(channel_.get(), cq, rpcmethod_GetPeople_, context, request, false);
+}
+
+::grpc::Status Lego::Stub::SavePeople(::grpc::ClientContext* context, const ::lego::PeopleData& request, ::lego::LegoResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SavePeople_, context, request, response);
+}
+
+::grpc::ClientAsyncResponseReader< ::lego::LegoResponse>* Lego::Stub::AsyncSavePeopleRaw(::grpc::ClientContext* context, const ::lego::PeopleData& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::lego::LegoResponse>::Create(channel_.get(), cq, rpcmethod_SavePeople_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::lego::LegoResponse>* Lego::Stub::PrepareAsyncSavePeopleRaw(::grpc::ClientContext* context, const ::lego::PeopleData& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::lego::LegoResponse>::Create(channel_.get(), cq, rpcmethod_SavePeople_, context, request, false);
+}
+
 Lego::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Lego_method_names[0],
@@ -66,6 +94,16 @@ Lego::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Lego::Service, ::lego::GetRequest, ::lego::Template>(
           std::mem_fn(&Lego::Service::GetData), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Lego_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Lego::Service, ::lego::GetRequest, ::lego::PeopleData>(
+          std::mem_fn(&Lego::Service::GetPeople), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Lego_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Lego::Service, ::lego::PeopleData, ::lego::LegoResponse>(
+          std::mem_fn(&Lego::Service::SavePeople), this)));
 }
 
 Lego::Service::~Service() {
@@ -79,6 +117,20 @@ Lego::Service::~Service() {
 }
 
 ::grpc::Status Lego::Service::GetData(::grpc::ServerContext* context, const ::lego::GetRequest* request, ::lego::Template* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Lego::Service::GetPeople(::grpc::ServerContext* context, const ::lego::GetRequest* request, ::lego::PeopleData* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Lego::Service::SavePeople(::grpc::ServerContext* context, const ::lego::PeopleData* request, ::lego::LegoResponse* response) {
   (void) context;
   (void) request;
   (void) response;

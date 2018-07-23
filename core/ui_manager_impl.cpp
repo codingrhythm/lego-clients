@@ -15,6 +15,7 @@ namespace lego {
 
     void UIManagerImpl::start() {
         _storage->setObserver(shared_from_this());
+        _storage->getPeople();
     }
 
     void UIManagerImpl::stop() {

@@ -13,7 +13,7 @@
 namespace lego {
     Storage::Storage(const std::string storage_path) {
         _storage_path = storage_path;
-
+        _network = std::make_shared<Network>(CreateChannel("localhost:8513", grpc::InsecureChannelCredentials()));
     }
 
     void Storage::setObserver(const std::shared_ptr<StorageObserver> observer) {
@@ -25,25 +25,62 @@ namespace lego {
     }
 
     void Storage::getPeople() {
+        notifyObserver();
+        getDataFromServer();
+    }
+
+    void Storage::save_people(const std::string first_name, const std::string last_name) {
+        this->saveDataToCache(first_name, last_name);
+
+        this->sendDataToServer();
+
+        // optimistic state update
+        this->getPeople();
+    }
+
+    void Storage::getDataFromServer() {
+        auto response = _network->getPeople();
+        this->saveDataToCache(response.first_name(), response.last_name());
+        notifyObserver();
+    }
+
+    void Storage::sendDataToServer() {
+        const UIStorage::PeopleRecord * record = this->getCachedData();
+
+        if (record != nullptr) {
+            lego::PeopleData peopleData;
+            peopleData.set_first_name(record->first_name()->c_str());
+            peopleData.set_last_name(record->last_name()->c_str());
+            _network->savePeople(peopleData);
+        }
+    }
+
+    void Storage::notifyObserver() {
+        const UIStorage::PeopleRecord * record = this->getCachedData();
+
+        if (record != nullptr) {
+            try {
+                auto p = _observer.lock();
+                p->people_updated(record);
+            } catch (std::bad_weak_ptr b) {
+                printf("bad weak prt");
+            }
+        }
+    }
+
+    const UIStorage::PeopleRecord * Storage::getCachedData() {
         flatbuffers::FlatBufferBuilder builder;
         std::string loaded_file;
         std::string file_path = _storage_path + "/people.bin";
         flatbuffers::LoadFile(file_path.c_str(), true, &loaded_file);
         if (loaded_file.length() == 0) {
-            return;
+            return nullptr;
         }
         builder.PushBytes((uint8_t*)(loaded_file.c_str()), loaded_file.length());
-        auto record = UIStorage::GetPeopleRecord(builder.GetCurrentBufferPointer());
-
-        try {
-            auto p = _observer.lock();
-            p->people_updated(record);
-        } catch (std::bad_weak_ptr b) {
-            printf("bad weak prt");
-        }
+        return UIStorage::GetPeopleRecord(builder.GetCurrentBufferPointer());
     }
 
-    void Storage::save_people(const std::string first_name, const std::string last_name) {
+    void Storage::saveDataToCache(const std::string first_name, const std::string last_name) {
         flatbuffers::FlatBufferBuilder builder;
 
         auto first_name_str = builder.CreateString(first_name);
@@ -56,7 +93,6 @@ namespace lego {
 
         std::string file_path = _storage_path + "/people.bin";
         flatbuffers::SaveFile(file_path.c_str(), (char *)builder.GetBufferPointer(), builder.GetSize(), true);
-
-        this->getPeople();
     }
+    
 }

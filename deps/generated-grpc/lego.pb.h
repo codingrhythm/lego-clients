@@ -36,7 +36,7 @@ namespace protobuf_lego_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[8];
+  static const ::google::protobuf::internal::ParseTable schema[9];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -58,6 +58,8 @@ void InitDefaultsPageImpl();
 void InitDefaultsPage();
 void InitDefaultsTemplateImpl();
 void InitDefaultsTemplate();
+void InitDefaultsPeopleDataImpl();
+void InitDefaultsPeopleData();
 inline void InitDefaults() {
   InitDefaultsGetRequest();
   InitDefaultsLegoRecordField();
@@ -67,6 +69,7 @@ inline void InitDefaults() {
   InitDefaultsQuestion();
   InitDefaultsPage();
   InitDefaultsTemplate();
+  InitDefaultsPeopleData();
 }
 }  // namespace protobuf_lego_2eproto
 namespace lego {
@@ -88,6 +91,9 @@ extern LegoResponseDefaultTypeInternal _LegoResponse_default_instance_;
 class Page;
 class PageDefaultTypeInternal;
 extern PageDefaultTypeInternal _Page_default_instance_;
+class PeopleData;
+class PeopleDataDefaultTypeInternal;
+extern PeopleDataDefaultTypeInternal _PeopleData_default_instance_;
 class Question;
 class QuestionDefaultTypeInternal;
 extern QuestionDefaultTypeInternal _Question_default_instance_;
@@ -1138,6 +1144,128 @@ class Template : public ::google::protobuf::Message /* @@protoc_insertion_point(
   friend struct ::protobuf_lego_2eproto::TableStruct;
   friend void ::protobuf_lego_2eproto::InitDefaultsTemplateImpl();
 };
+// -------------------------------------------------------------------
+
+class PeopleData : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:lego.PeopleData) */ {
+ public:
+  PeopleData();
+  virtual ~PeopleData();
+
+  PeopleData(const PeopleData& from);
+
+  inline PeopleData& operator=(const PeopleData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PeopleData(PeopleData&& from) noexcept
+    : PeopleData() {
+    *this = ::std::move(from);
+  }
+
+  inline PeopleData& operator=(PeopleData&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const PeopleData& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PeopleData* internal_default_instance() {
+    return reinterpret_cast<const PeopleData*>(
+               &_PeopleData_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    8;
+
+  void Swap(PeopleData* other);
+  friend void swap(PeopleData& a, PeopleData& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PeopleData* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  PeopleData* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const PeopleData& from);
+  void MergeFrom(const PeopleData& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(PeopleData* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string first_name = 1;
+  void clear_first_name();
+  static const int kFirstNameFieldNumber = 1;
+  const ::std::string& first_name() const;
+  void set_first_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_first_name(::std::string&& value);
+  #endif
+  void set_first_name(const char* value);
+  void set_first_name(const char* value, size_t size);
+  ::std::string* mutable_first_name();
+  ::std::string* release_first_name();
+  void set_allocated_first_name(::std::string* first_name);
+
+  // string last_name = 2;
+  void clear_last_name();
+  static const int kLastNameFieldNumber = 2;
+  const ::std::string& last_name() const;
+  void set_last_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_last_name(::std::string&& value);
+  #endif
+  void set_last_name(const char* value);
+  void set_last_name(const char* value, size_t size);
+  ::std::string* mutable_last_name();
+  ::std::string* release_last_name();
+  void set_allocated_last_name(::std::string* last_name);
+
+  // @@protoc_insertion_point(class_scope:lego.PeopleData)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr first_name_;
+  ::google::protobuf::internal::ArenaStringPtr last_name_;
+  mutable int _cached_size_;
+  friend struct ::protobuf_lego_2eproto::TableStruct;
+  friend void ::protobuf_lego_2eproto::InitDefaultsPeopleDataImpl();
+};
 // ===================================================================
 
 
@@ -2148,9 +2276,121 @@ Template::pages() const {
   return pages_;
 }
 
+// -------------------------------------------------------------------
+
+// PeopleData
+
+// string first_name = 1;
+inline void PeopleData::clear_first_name() {
+  first_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& PeopleData::first_name() const {
+  // @@protoc_insertion_point(field_get:lego.PeopleData.first_name)
+  return first_name_.GetNoArena();
+}
+inline void PeopleData::set_first_name(const ::std::string& value) {
+  
+  first_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.PeopleData.first_name)
+}
+#if LANG_CXX11
+inline void PeopleData::set_first_name(::std::string&& value) {
+  
+  first_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.PeopleData.first_name)
+}
+#endif
+inline void PeopleData::set_first_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  first_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.PeopleData.first_name)
+}
+inline void PeopleData::set_first_name(const char* value, size_t size) {
+  
+  first_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.PeopleData.first_name)
+}
+inline ::std::string* PeopleData::mutable_first_name() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.PeopleData.first_name)
+  return first_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* PeopleData::release_first_name() {
+  // @@protoc_insertion_point(field_release:lego.PeopleData.first_name)
+  
+  return first_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void PeopleData::set_allocated_first_name(::std::string* first_name) {
+  if (first_name != NULL) {
+    
+  } else {
+    
+  }
+  first_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), first_name);
+  // @@protoc_insertion_point(field_set_allocated:lego.PeopleData.first_name)
+}
+
+// string last_name = 2;
+inline void PeopleData::clear_last_name() {
+  last_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& PeopleData::last_name() const {
+  // @@protoc_insertion_point(field_get:lego.PeopleData.last_name)
+  return last_name_.GetNoArena();
+}
+inline void PeopleData::set_last_name(const ::std::string& value) {
+  
+  last_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.PeopleData.last_name)
+}
+#if LANG_CXX11
+inline void PeopleData::set_last_name(::std::string&& value) {
+  
+  last_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.PeopleData.last_name)
+}
+#endif
+inline void PeopleData::set_last_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  last_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.PeopleData.last_name)
+}
+inline void PeopleData::set_last_name(const char* value, size_t size) {
+  
+  last_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.PeopleData.last_name)
+}
+inline ::std::string* PeopleData::mutable_last_name() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.PeopleData.last_name)
+  return last_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* PeopleData::release_last_name() {
+  // @@protoc_insertion_point(field_release:lego.PeopleData.last_name)
+  
+  return last_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void PeopleData::set_allocated_last_name(::std::string* last_name) {
+  if (last_name != NULL) {
+    
+  } else {
+    
+  }
+  last_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), last_name);
+  // @@protoc_insertion_point(field_set_allocated:lego.PeopleData.last_name)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

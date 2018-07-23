@@ -60,6 +60,11 @@ class TemplateDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<Template>
       _instance;
 } _Template_default_instance_;
+class PeopleDataDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<PeopleData>
+      _instance;
+} _PeopleData_default_instance_;
 }  // namespace lego
 namespace protobuf_lego_2eproto {
 void InitDefaultsGetRequestImpl() {
@@ -234,7 +239,28 @@ void InitDefaultsTemplate() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsTemplateImpl);
 }
 
-::google::protobuf::Metadata file_level_metadata[8];
+void InitDefaultsPeopleDataImpl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  {
+    void* ptr = &::lego::_PeopleData_default_instance_;
+    new (ptr) ::lego::PeopleData();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::lego::PeopleData::InitAsDefaultInstance();
+}
+
+void InitDefaultsPeopleData() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsPeopleDataImpl);
+}
+
+::google::protobuf::Metadata file_level_metadata[9];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -300,6 +326,13 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::lego::Template, id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::lego::Template, name_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::lego::Template, pages_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::lego::PeopleData, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::lego::PeopleData, first_name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::lego::PeopleData, last_name_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::lego::GetRequest)},
@@ -310,6 +343,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 36, -1, sizeof(::lego::Question)},
   { 46, -1, sizeof(::lego::Page)},
   { 55, -1, sizeof(::lego::Template)},
+  { 63, -1, sizeof(::lego::PeopleData)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -321,6 +355,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::lego::_Question_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::lego::_Page_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::lego::_Template_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::lego::_PeopleData_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -339,7 +374,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 8);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 9);
 }
 
 void AddDescriptorsImpl() {
@@ -358,13 +393,17 @@ void AddDescriptorsImpl() {
       "\005 \001(\005\"S\n\004Page\022\n\n\002id\030\001 \001(\t\022\r\n\005title\030\002 \001(\t"
       "\022\r\n\005order\030\003 \001(\005\022!\n\tquestions\030\004 \003(\0132\016.leg"
       "o.Question\"\?\n\010Template\022\n\n\002id\030\001 \001(\t\022\014\n\004na"
-      "me\030\002 \001(\t\022\031\n\005pages\030\003 \003(\0132\n.lego.Page2k\n\004L"
-      "ego\0224\n\nSendRecord\022\020.lego.LegoRecord\032\022.le"
-      "go.LegoResponse\"\000\022-\n\007GetData\022\020.lego.GetR"
-      "equest\032\016.lego.Template\"\000b\006proto3"
+      "me\030\002 \001(\t\022\031\n\005pages\030\003 \003(\0132\n.lego.Page\"3\n\nP"
+      "eopleData\022\022\n\nfirst_name\030\001 \001(\t\022\021\n\tlast_na"
+      "me\030\002 \001(\t2\324\001\n\004Lego\0224\n\nSendRecord\022\020.lego.L"
+      "egoRecord\032\022.lego.LegoResponse\"\000\022-\n\007GetDa"
+      "ta\022\020.lego.GetRequest\032\016.lego.Template\"\000\0221"
+      "\n\tGetPeople\022\020.lego.GetRequest\032\020.lego.Peo"
+      "pleData\"\000\0224\n\nSavePeople\022\020.lego.PeopleDat"
+      "a\032\022.lego.LegoResponse\"\000b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 672);
+      descriptor, 831);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "lego.proto", &protobuf_RegisterTypes);
 }
@@ -3151,6 +3190,319 @@ void Template::InternalSwap(Template* other) {
 }
 
 ::google::protobuf::Metadata Template::GetMetadata() const {
+  protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_lego_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void PeopleData::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int PeopleData::kFirstNameFieldNumber;
+const int PeopleData::kLastNameFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+PeopleData::PeopleData()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_lego_2eproto::InitDefaultsPeopleData();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:lego.PeopleData)
+}
+PeopleData::PeopleData(const PeopleData& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  first_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.first_name().size() > 0) {
+    first_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.first_name_);
+  }
+  last_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.last_name().size() > 0) {
+    last_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.last_name_);
+  }
+  // @@protoc_insertion_point(copy_constructor:lego.PeopleData)
+}
+
+void PeopleData::SharedCtor() {
+  first_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  last_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _cached_size_ = 0;
+}
+
+PeopleData::~PeopleData() {
+  // @@protoc_insertion_point(destructor:lego.PeopleData)
+  SharedDtor();
+}
+
+void PeopleData::SharedDtor() {
+  first_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  last_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void PeopleData::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* PeopleData::descriptor() {
+  ::protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_lego_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const PeopleData& PeopleData::default_instance() {
+  ::protobuf_lego_2eproto::InitDefaultsPeopleData();
+  return *internal_default_instance();
+}
+
+PeopleData* PeopleData::New(::google::protobuf::Arena* arena) const {
+  PeopleData* n = new PeopleData;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void PeopleData::Clear() {
+// @@protoc_insertion_point(message_clear_start:lego.PeopleData)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  first_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  last_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+bool PeopleData::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:lego.PeopleData)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string first_name = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_first_name()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->first_name().data(), static_cast<int>(this->first_name().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "lego.PeopleData.first_name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string last_name = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_last_name()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->last_name().data(), static_cast<int>(this->last_name().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "lego.PeopleData.last_name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:lego.PeopleData)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:lego.PeopleData)
+  return false;
+#undef DO_
+}
+
+void PeopleData::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:lego.PeopleData)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string first_name = 1;
+  if (this->first_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->first_name().data(), static_cast<int>(this->first_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.PeopleData.first_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->first_name(), output);
+  }
+
+  // string last_name = 2;
+  if (this->last_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->last_name().data(), static_cast<int>(this->last_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.PeopleData.last_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->last_name(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:lego.PeopleData)
+}
+
+::google::protobuf::uint8* PeopleData::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:lego.PeopleData)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string first_name = 1;
+  if (this->first_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->first_name().data(), static_cast<int>(this->first_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.PeopleData.first_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->first_name(), target);
+  }
+
+  // string last_name = 2;
+  if (this->last_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->last_name().data(), static_cast<int>(this->last_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.PeopleData.last_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->last_name(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:lego.PeopleData)
+  return target;
+}
+
+size_t PeopleData::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:lego.PeopleData)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string first_name = 1;
+  if (this->first_name().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->first_name());
+  }
+
+  // string last_name = 2;
+  if (this->last_name().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->last_name());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void PeopleData::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:lego.PeopleData)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PeopleData* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const PeopleData>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:lego.PeopleData)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:lego.PeopleData)
+    MergeFrom(*source);
+  }
+}
+
+void PeopleData::MergeFrom(const PeopleData& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:lego.PeopleData)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.first_name().size() > 0) {
+
+    first_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.first_name_);
+  }
+  if (from.last_name().size() > 0) {
+
+    last_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.last_name_);
+  }
+}
+
+void PeopleData::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:lego.PeopleData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PeopleData::CopyFrom(const PeopleData& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:lego.PeopleData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PeopleData::IsInitialized() const {
+  return true;
+}
+
+void PeopleData::Swap(PeopleData* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PeopleData::InternalSwap(PeopleData* other) {
+  using std::swap;
+  first_name_.Swap(&other->first_name_);
+  last_name_.Swap(&other->last_name_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata PeopleData::GetMetadata() const {
   protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_lego_2eproto::file_level_metadata[kIndexInFileMessages];
 }

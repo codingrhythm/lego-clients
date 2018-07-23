@@ -47,11 +47,29 @@ class Lego final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::lego::Template>> PrepareAsyncGetData(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::lego::Template>>(PrepareAsyncGetDataRaw(context, request, cq));
     }
+    virtual ::grpc::Status GetPeople(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::lego::PeopleData* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::lego::PeopleData>> AsyncGetPeople(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::lego::PeopleData>>(AsyncGetPeopleRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::lego::PeopleData>> PrepareAsyncGetPeople(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::lego::PeopleData>>(PrepareAsyncGetPeopleRaw(context, request, cq));
+    }
+    virtual ::grpc::Status SavePeople(::grpc::ClientContext* context, const ::lego::PeopleData& request, ::lego::LegoResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::lego::LegoResponse>> AsyncSavePeople(::grpc::ClientContext* context, const ::lego::PeopleData& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::lego::LegoResponse>>(AsyncSavePeopleRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::lego::LegoResponse>> PrepareAsyncSavePeople(::grpc::ClientContext* context, const ::lego::PeopleData& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::lego::LegoResponse>>(PrepareAsyncSavePeopleRaw(context, request, cq));
+    }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::lego::LegoResponse>* AsyncSendRecordRaw(::grpc::ClientContext* context, const ::lego::LegoRecord& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::lego::LegoResponse>* PrepareAsyncSendRecordRaw(::grpc::ClientContext* context, const ::lego::LegoRecord& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::lego::Template>* AsyncGetDataRaw(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::lego::Template>* PrepareAsyncGetDataRaw(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::lego::PeopleData>* AsyncGetPeopleRaw(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::lego::PeopleData>* PrepareAsyncGetPeopleRaw(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::lego::LegoResponse>* AsyncSavePeopleRaw(::grpc::ClientContext* context, const ::lego::PeopleData& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::lego::LegoResponse>* PrepareAsyncSavePeopleRaw(::grpc::ClientContext* context, const ::lego::PeopleData& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -70,6 +88,20 @@ class Lego final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::lego::Template>> PrepareAsyncGetData(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::lego::Template>>(PrepareAsyncGetDataRaw(context, request, cq));
     }
+    ::grpc::Status GetPeople(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::lego::PeopleData* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::lego::PeopleData>> AsyncGetPeople(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::lego::PeopleData>>(AsyncGetPeopleRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::lego::PeopleData>> PrepareAsyncGetPeople(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::lego::PeopleData>>(PrepareAsyncGetPeopleRaw(context, request, cq));
+    }
+    ::grpc::Status SavePeople(::grpc::ClientContext* context, const ::lego::PeopleData& request, ::lego::LegoResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::lego::LegoResponse>> AsyncSavePeople(::grpc::ClientContext* context, const ::lego::PeopleData& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::lego::LegoResponse>>(AsyncSavePeopleRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::lego::LegoResponse>> PrepareAsyncSavePeople(::grpc::ClientContext* context, const ::lego::PeopleData& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::lego::LegoResponse>>(PrepareAsyncSavePeopleRaw(context, request, cq));
+    }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
@@ -77,8 +109,14 @@ class Lego final {
     ::grpc::ClientAsyncResponseReader< ::lego::LegoResponse>* PrepareAsyncSendRecordRaw(::grpc::ClientContext* context, const ::lego::LegoRecord& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::lego::Template>* AsyncGetDataRaw(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::lego::Template>* PrepareAsyncGetDataRaw(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::lego::PeopleData>* AsyncGetPeopleRaw(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::lego::PeopleData>* PrepareAsyncGetPeopleRaw(::grpc::ClientContext* context, const ::lego::GetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::lego::LegoResponse>* AsyncSavePeopleRaw(::grpc::ClientContext* context, const ::lego::PeopleData& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::lego::LegoResponse>* PrepareAsyncSavePeopleRaw(::grpc::ClientContext* context, const ::lego::PeopleData& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_SendRecord_;
     const ::grpc::internal::RpcMethod rpcmethod_GetData_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetPeople_;
+    const ::grpc::internal::RpcMethod rpcmethod_SavePeople_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -88,6 +126,8 @@ class Lego final {
     virtual ~Service();
     virtual ::grpc::Status SendRecord(::grpc::ServerContext* context, const ::lego::LegoRecord* request, ::lego::LegoResponse* response);
     virtual ::grpc::Status GetData(::grpc::ServerContext* context, const ::lego::GetRequest* request, ::lego::Template* response);
+    virtual ::grpc::Status GetPeople(::grpc::ServerContext* context, const ::lego::GetRequest* request, ::lego::PeopleData* response);
+    virtual ::grpc::Status SavePeople(::grpc::ServerContext* context, const ::lego::PeopleData* request, ::lego::LegoResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_SendRecord : public BaseClass {
@@ -129,7 +169,47 @@ class Lego final {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_SendRecord<WithAsyncMethod_GetData<Service > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GetPeople : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetPeople() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_GetPeople() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetPeople(::grpc::ServerContext* context, const ::lego::GetRequest* request, ::lego::PeopleData* response) final override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetPeople(::grpc::ServerContext* context, ::lego::GetRequest* request, ::grpc::ServerAsyncResponseWriter< ::lego::PeopleData>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_SavePeople : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_SavePeople() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_SavePeople() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SavePeople(::grpc::ServerContext* context, const ::lego::PeopleData* request, ::lego::LegoResponse* response) final override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSavePeople(::grpc::ServerContext* context, ::lego::PeopleData* request, ::grpc::ServerAsyncResponseWriter< ::lego::LegoResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_SendRecord<WithAsyncMethod_GetData<WithAsyncMethod_GetPeople<WithAsyncMethod_SavePeople<Service > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_SendRecord : public BaseClass {
    private:
@@ -160,6 +240,40 @@ class Lego final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetData(::grpc::ServerContext* context, const ::lego::GetRequest* request, ::lego::Template* response) final override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetPeople : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetPeople() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_GetPeople() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetPeople(::grpc::ServerContext* context, const ::lego::GetRequest* request, ::lego::PeopleData* response) final override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_SavePeople : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_SavePeople() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_SavePeople() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SavePeople(::grpc::ServerContext* context, const ::lego::PeopleData* request, ::lego::LegoResponse* response) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -204,9 +318,49 @@ class Lego final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetData(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::lego::GetRequest,::lego::Template>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_SendRecord<WithStreamedUnaryMethod_GetData<Service > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetPeople : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetPeople() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler< ::lego::GetRequest, ::lego::PeopleData>(std::bind(&WithStreamedUnaryMethod_GetPeople<BaseClass>::StreamedGetPeople, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetPeople() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetPeople(::grpc::ServerContext* context, const ::lego::GetRequest* request, ::lego::PeopleData* response) final override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetPeople(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::lego::GetRequest,::lego::PeopleData>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_SavePeople : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_SavePeople() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler< ::lego::PeopleData, ::lego::LegoResponse>(std::bind(&WithStreamedUnaryMethod_SavePeople<BaseClass>::StreamedSavePeople, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_SavePeople() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SavePeople(::grpc::ServerContext* context, const ::lego::PeopleData* request, ::lego::LegoResponse* response) final override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedSavePeople(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::lego::PeopleData,::lego::LegoResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_SendRecord<WithStreamedUnaryMethod_GetData<WithStreamedUnaryMethod_GetPeople<WithStreamedUnaryMethod_SavePeople<Service > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_SendRecord<WithStreamedUnaryMethod_GetData<Service > > StreamedService;
+  typedef WithStreamedUnaryMethod_SendRecord<WithStreamedUnaryMethod_GetData<WithStreamedUnaryMethod_GetPeople<WithStreamedUnaryMethod_SavePeople<Service > > > > StreamedService;
 };
 
 }  // namespace lego

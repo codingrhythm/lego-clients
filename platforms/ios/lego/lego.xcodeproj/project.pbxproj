@@ -31,6 +31,7 @@
 		B54B8B1220E9A4D900B06735 /* network_callback_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1020E9A4D900B06735 /* network_callback_impl.cpp */; };
 		B54B8B1B20E9B8B200B06735 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1A20E9B8B200B06735 /* util.cpp */; };
 		B565D91921055AC300CD9F98 /* storage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B565D91721055AC300CD9F98 /* storage.cpp */; };
+		B565D92021058B2E00CD9F98 /* network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B565D91E21058B2E00CD9F98 /* network.cpp */; };
 		B5C591E120F8653900606A40 /* libnanopb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326120F83120000E3427 /* libnanopb.a */; };
 		B5E153DD20E5E83B0025A759 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E153DC20E5E83B0025A759 /* AppDelegate.m */; };
 		B5E153E020E5E83B0025A759 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E153DF20E5E83B0025A759 /* ViewController.m */; };
@@ -135,6 +136,8 @@
 		B565D91821055AC300CD9F98 /* storage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = storage.hpp; sourceTree = "<group>"; };
 		B565D91A2105605F00CD9F98 /* people_generated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = people_generated.h; path = ../../../../../people_generated.h; sourceTree = "<group>"; };
 		B565D91C210567E300CD9F98 /* storage_observer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = storage_observer.hpp; sourceTree = "<group>"; };
+		B565D91E21058B2E00CD9F98 /* network.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = network.cpp; sourceTree = "<group>"; };
+		B565D91F21058B2E00CD9F98 /* network.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = network.hpp; sourceTree = "<group>"; };
 		B5E153D820E5E83B0025A759 /* lego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lego.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E153DB20E5E83B0025A759 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5E153DC20E5E83B0025A759 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -366,6 +369,8 @@
 				B565D91721055AC300CD9F98 /* storage.cpp */,
 				B565D91821055AC300CD9F98 /* storage.hpp */,
 				B565D91C210567E300CD9F98 /* storage_observer.hpp */,
+				B565D91E21058B2E00CD9F98 /* network.cpp */,
+				B565D91F21058B2E00CD9F98 /* network.hpp */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 				B5E1543120E5EF470025A759 /* LGLegoPlatformImpl.m in Sources */,
 				B54B8B1B20E9B8B200B06735 /* util.cpp in Sources */,
 				B51AD1E920EF3BC4006467E2 /* TestBridge.swift in Sources */,
+				B565D92021058B2E00CD9F98 /* network.cpp in Sources */,
 				B54B8B1220E9A4D900B06735 /* network_callback_impl.cpp in Sources */,
 				B5E153E020E5E83B0025A759 /* ViewController.m in Sources */,
 				B524AB4E2100664800CD1A90 /* LGSPage.mm in Sources */,
