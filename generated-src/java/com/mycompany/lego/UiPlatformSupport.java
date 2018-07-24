@@ -11,4 +11,6 @@ public abstract class UiPlatformSupport {
     public abstract void getTimeStringAsync(UiManager manager);
 
     public abstract void postTaskInBackgroundThread(Task task);
+
+    public abstract void postTaskInMainThread(Task task);
 }

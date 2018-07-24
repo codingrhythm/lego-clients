@@ -16,4 +16,6 @@
 
 - (void)postTaskInBackgroundThread:(nullable LGTask *)task;
 
+- (void)postTaskInMainThread:(nullable LGTask *)task;
+
 @end

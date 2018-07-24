@@ -120,4 +120,5 @@ ui_platform_support = interface +o +j {
   get_storage_path(): string;
   get_time_string_async(manager: ui_manager);
   post_task_in_background_thread(task: task);
+  post_task_in_main_thread(task: task);
 }

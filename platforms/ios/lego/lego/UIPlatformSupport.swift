@@ -28,4 +28,10 @@ class UIPlatformSupport: LGUiPlatformSupport {
             task?.execute()
         }
     }
+
+    func postTask(inMainThread task: LGTask?) {
+        DispatchQueue.main.async {
+            task?.execute()
+        }
+    }
 }

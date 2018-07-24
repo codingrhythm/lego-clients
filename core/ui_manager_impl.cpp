@@ -43,6 +43,26 @@ private:
     std::weak_ptr<lego::Storage> storage_;
 };
 
+class UpdatePeopleStateTask: public lego::Task {
+public:
+    UpdatePeopleStateTask(const lego::People people, const std::shared_ptr<lego::UiObserver> observer)
+    : people_(people.first_name, people.last_name) {
+        observer_ = observer;
+    }
+
+    void execute() {
+        try {
+            auto p = observer_.lock();
+            p->people_updated(people_);
+        } catch (std::bad_weak_ptr b) {
+            printf("bad weak prt");
+        }
+    }
+private:
+    std::weak_ptr<lego::UiObserver> observer_;
+    lego::People people_;
+};
+
 namespace lego {
 
     std::shared_ptr<UiManager> UiManager::create(const std::shared_ptr<UiObserver> & observer, const std::shared_ptr<UiPlatformSupport> & platform) {
@@ -95,7 +115,9 @@ namespace lego {
             people_record->first_name()->c_str(),
             people_record->last_name()->c_str()
         };
-        _observer->people_updated(_people);
+
+        auto task = std::make_shared<UpdatePeopleStateTask>(_people, _observer);
+        _platform->post_task_in_main_thread(task);
     }
 
     void UIManagerImpl::time_string_updated(const std::string &time_string) {

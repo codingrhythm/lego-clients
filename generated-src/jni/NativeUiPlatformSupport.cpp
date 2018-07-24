@@ -48,5 +48,13 @@ void NativeUiPlatformSupport::JavaProxy::post_task_in_background_thread(const st
                            ::djinni::get(::djinni_generated::NativeTask::fromCpp(jniEnv, c_task)));
     ::djinni::jniExceptionCheck(jniEnv);
 }
+void NativeUiPlatformSupport::JavaProxy::post_task_in_main_thread(const std::shared_ptr<::lego::Task> & c_task) {
+    auto jniEnv = ::djinni::jniGetThreadEnv();
+    ::djinni::JniLocalScope jscope(jniEnv, 10);
+    const auto& data = ::djinni::JniClass<::djinni_generated::NativeUiPlatformSupport>::get();
+    jniEnv->CallVoidMethod(Handle::get().get(), data.method_postTaskInMainThread,
+                           ::djinni::get(::djinni_generated::NativeTask::fromCpp(jniEnv, c_task)));
+    ::djinni::jniExceptionCheck(jniEnv);
+}
 
 }  // namespace djinni_generated

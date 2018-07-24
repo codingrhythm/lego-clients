@@ -46,6 +46,12 @@ public:
             [djinni_private_get_proxied_objc_object() postTaskInBackgroundThread:(::djinni_generated::Task::fromCpp(c_task))];
         }
     }
+    void post_task_in_main_thread(const std::shared_ptr<::lego::Task> & c_task) override
+    {
+        @autoreleasepool {
+            [djinni_private_get_proxied_objc_object() postTaskInMainThread:(::djinni_generated::Task::fromCpp(c_task))];
+        }
+    }
 };
 
 }  // namespace djinni_generated

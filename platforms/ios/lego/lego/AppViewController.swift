@@ -66,10 +66,8 @@ extension AppViewController: LGUiObserver {
     }
 
     func peopleUpdated(_ people: LGPeople) {
-        DispatchQueue.main.async { [unowned self] in
-            self.nameLabel.text = people.firstName + " " + people.lastName
-            self.stateChanges.append(String(format: "[%0.5f] people: %@", -self.startTime.timeIntervalSinceNow, self.nameLabel.text!))
-        }
+        self.nameLabel.text = people.firstName + " " + people.lastName
+        self.stateChanges.append(String(format: "[%0.5f] people: %@", -self.startTime.timeIntervalSinceNow, self.nameLabel.text!))
     }
 
     func timeStringUpdated(_ timeString: String) {
