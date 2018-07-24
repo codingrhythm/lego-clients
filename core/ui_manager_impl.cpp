@@ -63,6 +63,46 @@ private:
     lego::People people_;
 };
 
+class UpdateTitleStateTask: public lego::Task {
+public:
+    UpdateTitleStateTask(const std::string title, const std::shared_ptr<lego::UiObserver> observer) {
+        title_ = title;
+        observer_ = observer;
+    }
+
+    void execute() {
+        try {
+            auto p = observer_.lock();
+            p->title_updated(title_);
+        } catch (std::bad_weak_ptr b) {
+            printf("bad weak prt");
+        }
+    }
+private:
+    std::weak_ptr<lego::UiObserver> observer_;
+    std::string title_;
+};
+
+class UpdateTimeStateTask: public lego::Task {
+public:
+    UpdateTimeStateTask(const std::string timeString, const std::shared_ptr<lego::UiObserver> observer) {
+        timeString_ = timeString;
+        observer_ = observer;
+    }
+
+    void execute() {
+        try {
+            auto p = observer_.lock();
+            p->time_string_updated(timeString_);
+        } catch (std::bad_weak_ptr b) {
+            printf("bad weak prt");
+        }
+    }
+private:
+    std::weak_ptr<lego::UiObserver> observer_;
+    std::string timeString_;
+};
+
 namespace lego {
 
     std::shared_ptr<UiManager> UiManager::create(const std::shared_ptr<UiObserver> & observer, const std::shared_ptr<UiPlatformSupport> & platform) {
@@ -92,7 +132,12 @@ namespace lego {
 
     void UIManagerImpl::update_title(const std::string & new_title) {
         _title = new_title;
-        _observer->title_updated(_title);
+        // do complex in memory task here
+        // this is just a demo purpose
+        // in real world cases, you don't need to have background thread for a simple task like this,
+        // so there is no need to dispatch back to main queue
+        auto task = std::make_shared<UpdateTitleStateTask>(_title, _observer);
+        _platform->post_task_in_main_thread(task);
     }
 
     void UIManagerImpl::update_first_name(const std::string & first_name) {
@@ -121,7 +166,8 @@ namespace lego {
     }
 
     void UIManagerImpl::time_string_updated(const std::string &time_string) {
-        _observer->time_string_updated(time_string);
+        auto task = std::make_shared<UpdateTimeStateTask>(time_string, _observer);
+        _platform->post_task_in_main_thread(task);
     }
 
     void UIManagerImpl::get_time_string_async() {
