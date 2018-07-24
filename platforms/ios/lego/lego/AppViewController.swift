@@ -59,17 +59,21 @@ class AppViewController: UIViewController {
 
 extension AppViewController: LGUiObserver {
     func titleUpdated(_ title: String) {
-        navigationItem.title = title
-        self.stateChanges.append(String(format: "[%0.5f] title: %@", -startTime.timeIntervalSinceNow, title))
+        DispatchQueue.main.async { [unowned self] in
+            self.navigationItem.title = title
+            self.stateChanges.append(String(format: "[%0.5f] title: %@", -self.startTime.timeIntervalSinceNow, title))
+        }
     }
 
     func peopleUpdated(_ people: LGPeople) {
-        nameLabel.text = people.firstName + " " + people.lastName
-        self.stateChanges.append(String(format: "[%0.5f] people: %@", -startTime.timeIntervalSinceNow, nameLabel.text!))
+        DispatchQueue.main.async { [unowned self] in
+            self.nameLabel.text = people.firstName + " " + people.lastName
+            self.stateChanges.append(String(format: "[%0.5f] people: %@", -self.startTime.timeIntervalSinceNow, self.nameLabel.text!))
+        }
     }
 
     func timeStringUpdated(_ timeString: String) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [unowned self] in
             self.timeLabel.text = timeString
             self.stateChanges.append(String(format: "[%0.5f] timeString: %@", -self.startTime.timeIntervalSinceNow, timeString))
         }

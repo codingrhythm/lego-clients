@@ -11,7 +11,7 @@ namespace lego {
         std::shared_ptr<UiObserver> _observer;
         std::shared_ptr<UiPlatformSupport> _platform;
         std::string _title;
-        std::unique_ptr<Storage> _storage;
+        std::shared_ptr<Storage> _storage;
         lego::People _people;
 
     public:

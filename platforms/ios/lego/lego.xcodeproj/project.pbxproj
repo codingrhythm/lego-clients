@@ -30,6 +30,7 @@
 		B54B8B1120E9A4D900B06735 /* lego_core_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B0F20E9A4D900B06735 /* lego_core_impl.cpp */; };
 		B54B8B1220E9A4D900B06735 /* network_callback_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1020E9A4D900B06735 /* network_callback_impl.cpp */; };
 		B54B8B1B20E9B8B200B06735 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54B8B1A20E9B8B200B06735 /* util.cpp */; };
+		B55ECF3E2106D53800B1B535 /* LGTask+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B55ECF3D2106D53800B1B535 /* LGTask+Private.mm */; };
 		B565D91921055AC300CD9F98 /* storage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B565D91721055AC300CD9F98 /* storage.cpp */; };
 		B565D92021058B2E00CD9F98 /* network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B565D91E21058B2E00CD9F98 /* network.cpp */; };
 		B5C591E120F8653900606A40 /* libnanopb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F5326120F83120000E3427 /* libnanopb.a */; };
@@ -132,6 +133,10 @@
 		B54B8B0F20E9A4D900B06735 /* lego_core_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lego_core_impl.cpp; path = ../../../../../core/lego_core_impl.cpp; sourceTree = "<group>"; };
 		B54B8B1020E9A4D900B06735 /* network_callback_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = network_callback_impl.cpp; path = ../../../../../core/network_callback_impl.cpp; sourceTree = "<group>"; };
 		B54B8B1A20E9B8B200B06735 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = ../../../../../deps/flatbuffers/src/util.cpp; sourceTree = "<group>"; };
+		B55ECF3A2106D52800B1B535 /* task.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = task.hpp; path = "../../../../../../generated-src/cpp/task.hpp"; sourceTree = "<group>"; };
+		B55ECF3B2106D53800B1B535 /* LGTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGTask.h; path = "../../../../../generated-src/objc/LGTask.h"; sourceTree = "<group>"; };
+		B55ECF3C2106D53800B1B535 /* LGTask+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LGTask+Private.h"; path = "../../../../../generated-src/objc/LGTask+Private.h"; sourceTree = "<group>"; };
+		B55ECF3D2106D53800B1B535 /* LGTask+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "LGTask+Private.mm"; path = "../../../../../generated-src/objc/LGTask+Private.mm"; sourceTree = "<group>"; };
 		B565D91721055AC300CD9F98 /* storage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = storage.cpp; sourceTree = "<group>"; };
 		B565D91821055AC300CD9F98 /* storage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = storage.hpp; sourceTree = "<group>"; };
 		B565D91A2105605F00CD9F98 /* people_generated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = people_generated.h; path = ../../../../../people_generated.h; sourceTree = "<group>"; };
@@ -291,6 +296,9 @@
 		B5E153F320E5EAE10025A759 /* Bridge */ = {
 			isa = PBXGroup;
 			children = (
+				B55ECF3B2106D53800B1B535 /* LGTask.h */,
+				B55ECF3C2106D53800B1B535 /* LGTask+Private.h */,
+				B55ECF3D2106D53800B1B535 /* LGTask+Private.mm */,
 				B524AB672101A91000CD1A90 /* LGUiPlatformSupport.h */,
 				B524AB662101A91000CD1A90 /* LGUiPlatformSupport+Private.h */,
 				B524AB682101A91000CD1A90 /* LGUiPlatformSupport+Private.mm */,
@@ -341,6 +349,7 @@
 		B5E1542C20E5ED460025A759 /* Includes */ = {
 			isa = PBXGroup;
 			children = (
+				B55ECF3A2106D52800B1B535 /* task.hpp */,
 				B524AB602101919700CD1A90 /* app_listener.hpp */,
 				B524AB1A2100662F00CD1A90 /* lego_core.hpp */,
 				B524AB112100662F00CD1A90 /* lego_platform.hpp */,
@@ -499,6 +508,7 @@
 				B524AB4B2100664800CD1A90 /* LGPeople+Private.mm in Sources */,
 				B524AB4A2100664800CD1A90 /* LGSTemplate.mm in Sources */,
 				B524AB692101A91000CD1A90 /* LGUiPlatformSupport+Private.mm in Sources */,
+				B55ECF3E2106D53800B1B535 /* LGTask+Private.mm in Sources */,
 				B524AB412100664800CD1A90 /* LGLegoPlatform+Private.mm in Sources */,
 				B50DDC8F20FD6EB500EB3C53 /* lego.grpc.pb.cc in Sources */,
 				B54B8B1120E9A4D900B06735 /* lego_core_impl.cpp in Sources */,

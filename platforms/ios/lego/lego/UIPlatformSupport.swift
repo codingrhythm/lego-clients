@@ -22,4 +22,10 @@ class UIPlatformSupport: LGUiPlatformSupport {
             manager?.timeStringUpdated(self.getTimeString())
         }
     }
+
+    func postTask(inBackgroundThread task: LGTask?) {
+        DispatchQueue.global().async {
+            task?.execute()
+        }
+    }
 }
