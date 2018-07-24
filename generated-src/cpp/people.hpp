@@ -8,11 +8,6 @@
 
 namespace lego {
 
-/**
- *######################################
- * App Architecture Related Interfaces #
- *######################################
- */
 struct People final {
     std::string first_name;
     std::string last_name;

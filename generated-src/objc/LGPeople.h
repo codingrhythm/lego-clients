@@ -3,11 +3,6 @@
 
 #import <Foundation/Foundation.h>
 
-/**
- *######################################
- * App Architecture Related Interfaces #
- *######################################
- */
 @interface LGPeople : NSObject
 - (nonnull instancetype)initWithFirstName:(nonnull NSString *)firstName
                                  lastName:(nonnull NSString *)lastName;

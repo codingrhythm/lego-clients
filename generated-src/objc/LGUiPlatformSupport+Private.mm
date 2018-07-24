@@ -5,6 +5,7 @@
 #import "LGUiPlatformSupport.h"
 #import "DJIMarshal+Private.h"
 #import "DJIObjcWrapperCache+Private.h"
+#import "LGTask+Private.h"
 #import "LGUiManager+Private.h"
 #include <stdexcept>
 
@@ -37,6 +38,12 @@ public:
     {
         @autoreleasepool {
             [djinni_private_get_proxied_objc_object() getTimeStringAsync:(::djinni_generated::UiManager::fromCpp(c_manager))];
+        }
+    }
+    void post_task_in_background_thread(const std::shared_ptr<::lego::Task> & c_task) override
+    {
+        @autoreleasepool {
+            [djinni_private_get_proxied_objc_object() postTaskInBackgroundThread:(::djinni_generated::Task::fromCpp(c_task))];
         }
     }
 };

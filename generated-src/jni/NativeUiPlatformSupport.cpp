@@ -3,6 +3,7 @@
 
 #include "NativeUiPlatformSupport.hpp"  // my header
 #include "Marshal.hpp"
+#include "NativeTask.hpp"
 #include "NativeUiManager.hpp"
 
 namespace djinni_generated {
@@ -37,6 +38,14 @@ void NativeUiPlatformSupport::JavaProxy::get_time_string_async(const std::shared
     const auto& data = ::djinni::JniClass<::djinni_generated::NativeUiPlatformSupport>::get();
     jniEnv->CallVoidMethod(Handle::get().get(), data.method_getTimeStringAsync,
                            ::djinni::get(::djinni_generated::NativeUiManager::fromCpp(jniEnv, c_manager)));
+    ::djinni::jniExceptionCheck(jniEnv);
+}
+void NativeUiPlatformSupport::JavaProxy::post_task_in_background_thread(const std::shared_ptr<::lego::Task> & c_task) {
+    auto jniEnv = ::djinni::jniGetThreadEnv();
+    ::djinni::JniLocalScope jscope(jniEnv, 10);
+    const auto& data = ::djinni::JniClass<::djinni_generated::NativeUiPlatformSupport>::get();
+    jniEnv->CallVoidMethod(Handle::get().get(), data.method_postTaskInBackgroundThread,
+                           ::djinni::get(::djinni_generated::NativeTask::fromCpp(jniEnv, c_task)));
     ::djinni::jniExceptionCheck(jniEnv);
 }
 

@@ -3,11 +3,6 @@
 
 package com.mycompany.lego;
 
-/**
- *######################################
- * App Architecture Related Interfaces #
- *######################################
- */
 public final class People {
 
 

@@ -8,6 +8,7 @@
 
 namespace lego {
 
+class Task;
 class UiManager;
 
 class UiPlatformSupport {
@@ -19,6 +20,8 @@ public:
     virtual std::string get_storage_path() = 0;
 
     virtual void get_time_string_async(const std::shared_ptr<UiManager> & manager) = 0;
+
+    virtual void post_task_in_background_thread(const std::shared_ptr<Task> & task) = 0;
 };
 
 }  // namespace lego

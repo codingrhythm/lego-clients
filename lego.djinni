@@ -88,6 +88,10 @@ network_callback = interface +c {
 # App Architecture Related Interfaces #
 #######################################
 
+task = interface +c {
+  execute();
+}
+
 people = record {
   first_name: string;
   last_name: string;
@@ -115,4 +119,5 @@ ui_platform_support = interface +o +j {
   get_time_string(): string;
   get_storage_path(): string;
   get_time_string_async(manager: ui_manager);
+  post_task_in_background_thread(task: task);
 }
