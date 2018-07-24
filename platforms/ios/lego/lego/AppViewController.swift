@@ -16,6 +16,14 @@ class AppViewController: UIViewController {
     @IBOutlet fileprivate var firstNameField: UITextField!
     @IBOutlet fileprivate var lastNameField: UITextField!
     @IBOutlet fileprivate var nameLabel: UILabel!
+    @IBOutlet fileprivate var stateChangeHistoryTextView: UITextView!
+    fileprivate var startTime = Date()
+
+    fileprivate var stateChanges: [String] = [] {
+        didSet {
+            stateChangeHistoryTextView.text = stateChanges.joined(separator: "\n")
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +32,7 @@ class AppViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        startTime = Date()
         manager?.start()
     }
 
@@ -37,9 +46,13 @@ class AppViewController: UIViewController {
         manager?.getTimeString()
     }
 
-    @IBAction func saveButtonTapped(_ sender: UIButton) {
-        manager?.updateLastName(lastNameField.text!)
+    @IBAction func firstNameFieldDidChange(_ sender: UITextField) {
         manager?.updateFirstName(firstNameField.text!)
+        manager?.getTimeStringAsync()
+    }
+
+    @IBAction func lastNameFieldDidChange(_ sender: UITextField) {
+        manager?.updateLastName(lastNameField.text!)
         manager?.getTimeStringAsync()
     }
 }
@@ -47,15 +60,18 @@ class AppViewController: UIViewController {
 extension AppViewController: LGUiObserver {
     func titleUpdated(_ title: String) {
         navigationItem.title = title
+        self.stateChanges.append(String(format: "[%0.5f] title: %@", -startTime.timeIntervalSinceNow, title))
     }
 
     func peopleUpdated(_ people: LGPeople) {
         nameLabel.text = people.firstName + " " + people.lastName
+        self.stateChanges.append(String(format: "[%0.5f] people: %@", -startTime.timeIntervalSinceNow, nameLabel.text!))
     }
 
     func timeStringUpdated(_ timeString: String) {
         DispatchQueue.main.async {
             self.timeLabel.text = timeString
+            self.stateChanges.append(String(format: "[%0.5f] timeString: %@", -self.startTime.timeIntervalSinceNow, timeString))
         }
 
     }
