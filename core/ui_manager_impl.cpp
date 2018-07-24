@@ -3,8 +3,7 @@
 
 class SavePeopleTask: public lego::Task {
 public:
-    SavePeopleTask(
-                   const std::string & firstName,
+    SavePeopleTask(const std::string & firstName,
                    const std::string & lastName,
                    const std::shared_ptr<lego::Storage> storage) {
         firstName_ = firstName;
@@ -26,6 +25,24 @@ private:
     std::weak_ptr<lego::Storage> storage_;
 };
 
+class GetPeopleTask: public lego::Task {
+public:
+    GetPeopleTask(const std::shared_ptr<lego::Storage> storage) {
+        storage_ = storage;
+    }
+
+    void execute() {
+        try {
+            auto p = storage_.lock();
+            p->getPeople();
+        } catch (std::bad_weak_ptr b) {
+            printf("bad weak prt");
+        }
+    }
+private:
+    std::weak_ptr<lego::Storage> storage_;
+};
+
 namespace lego {
 
     std::shared_ptr<UiManager> UiManager::create(const std::shared_ptr<UiObserver> & observer, const std::shared_ptr<UiPlatformSupport> & platform) {
@@ -41,11 +58,16 @@ namespace lego {
 
     void UIManagerImpl::start() {
         _storage->setObserver(shared_from_this());
-        _storage->getPeople();
+        this->getPeople();
     }
 
     void UIManagerImpl::stop() {
         _storage->removeObserver();
+    }
+
+    void UIManagerImpl::getPeople() {
+        auto task = std::make_shared<GetPeopleTask>(_storage);
+        _platform->post_task_in_background_thread(task);
     }
 
     void UIManagerImpl::update_title(const std::string & new_title) {
@@ -59,7 +81,8 @@ namespace lego {
     }
 
     void UIManagerImpl::update_last_name(const std::string & last_name) {
-        _storage->save_people(_people.first_name, last_name);
+        auto task = std::make_shared<SavePeopleTask>(_people.first_name, last_name, _storage);
+        _platform->post_task_in_background_thread(task);
     }
 
     void UIManagerImpl::get_time_string() {

@@ -13,6 +13,7 @@ namespace lego {
         std::string _title;
         std::shared_ptr<Storage> _storage;
         lego::People _people;
+        void getPeople();
 
     public:
         UIManagerImpl(const std::shared_ptr<UiObserver> & observer, const std::shared_ptr<UiPlatformSupport> & platform);
