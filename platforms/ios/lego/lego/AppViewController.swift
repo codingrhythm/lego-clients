@@ -34,12 +34,13 @@ class AppViewController: UIViewController {
 
     @IBAction func titleFieldDidChange(_ sender: UITextField) {
         manager?.updateTitle(sender.text!)
-        timeLabel.text = manager?.getTimeString()
+        manager?.getTimeString()
     }
 
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         manager?.updateLastName(lastNameField.text!)
         manager?.updateFirstName(firstNameField.text!)
+        manager?.getTimeStringAsync()
     }
 }
 
@@ -50,5 +51,12 @@ extension AppViewController: LGUiObserver {
 
     func peopleUpdated(_ people: LGPeople) {
         nameLabel.text = people.firstName + " " + people.lastName
+    }
+
+    func timeStringUpdated(_ timeString: String) {
+        DispatchQueue.main.async {
+            self.timeLabel.text = timeString
+        }
+
     }
 }

@@ -7,4 +7,6 @@ public abstract class UiPlatformSupport {
     public abstract String getTimeString();
 
     public abstract String getStoragePath();
+
+    public abstract void getTimeStringAsync(UiManager manager);
 }

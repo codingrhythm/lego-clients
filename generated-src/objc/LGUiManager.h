@@ -22,6 +22,10 @@
 
 - (void)updateLastName:(nonnull NSString *)lastName;
 
-- (nonnull NSString *)getTimeString;
+- (void)timeStringUpdated:(nonnull NSString *)timeString;
+
+- (void)getTimeString;
+
+- (void)getTimeStringAsync;
 
 @end

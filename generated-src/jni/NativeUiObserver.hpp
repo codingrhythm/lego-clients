@@ -35,6 +35,7 @@ private:
 
         void title_updated(const std::string & title) override;
         void people_updated(const ::lego::People & people) override;
+        void time_string_updated(const std::string & time_string) override;
 
     private:
         friend ::djinni::JniInterface<::lego::UiObserver, ::djinni_generated::NativeUiObserver>;
@@ -43,6 +44,7 @@ private:
     const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("com/mycompany/lego/UiObserver") };
     const jmethodID method_titleUpdated { ::djinni::jniGetMethodID(clazz.get(), "titleUpdated", "(Ljava/lang/String;)V") };
     const jmethodID method_peopleUpdated { ::djinni::jniGetMethodID(clazz.get(), "peopleUpdated", "(Lcom/mycompany/lego/People;)V") };
+    const jmethodID method_timeStringUpdated { ::djinni::jniGetMethodID(clazz.get(), "timeStringUpdated", "(Ljava/lang/String;)V") };
 };
 
 }  // namespace djinni_generated

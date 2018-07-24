@@ -35,6 +35,7 @@ private:
 
         std::string get_time_string() override;
         std::string get_storage_path() override;
+        void get_time_string_async(const std::shared_ptr<::lego::UiManager> & manager) override;
 
     private:
         friend ::djinni::JniInterface<::lego::UiPlatformSupport, ::djinni_generated::NativeUiPlatformSupport>;
@@ -43,6 +44,7 @@ private:
     const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("com/mycompany/lego/UiPlatformSupport") };
     const jmethodID method_getTimeString { ::djinni::jniGetMethodID(clazz.get(), "getTimeString", "()Ljava/lang/String;") };
     const jmethodID method_getStoragePath { ::djinni::jniGetMethodID(clazz.get(), "getStoragePath", "()Ljava/lang/String;") };
+    const jmethodID method_getTimeStringAsync { ::djinni::jniGetMethodID(clazz.get(), "getTimeStringAsync", "(Lcom/mycompany/lego/UiManager;)V") };
 };
 
 }  // namespace djinni_generated

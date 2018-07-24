@@ -16,6 +16,8 @@ public:
     virtual void title_updated(const std::string & title) = 0;
 
     virtual void people_updated(const People & people) = 0;
+
+    virtual void time_string_updated(const std::string & time_string) = 0;
 };
 
 }  // namespace lego

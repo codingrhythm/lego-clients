@@ -5,6 +5,7 @@
 #import "LGUiPlatformSupport.h"
 #import "DJIMarshal+Private.h"
 #import "DJIObjcWrapperCache+Private.h"
+#import "LGUiManager+Private.h"
 #include <stdexcept>
 
 static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for this file");
@@ -30,6 +31,12 @@ public:
         @autoreleasepool {
             auto objcpp_result_ = [djinni_private_get_proxied_objc_object() getStoragePath];
             return ::djinni::String::toCpp(objcpp_result_);
+        }
+    }
+    void get_time_string_async(const std::shared_ptr<::lego::UiManager> & c_manager) override
+    {
+        @autoreleasepool {
+            [djinni_private_get_proxied_objc_object() getTimeStringAsync:(::djinni_generated::UiManager::fromCpp(c_manager))];
         }
     }
 };

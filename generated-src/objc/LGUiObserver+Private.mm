@@ -31,6 +31,12 @@ public:
             [djinni_private_get_proxied_objc_object() peopleUpdated:(::djinni_generated::People::fromCpp(c_people))];
         }
     }
+    void time_string_updated(const std::string & c_time_string) override
+    {
+        @autoreleasepool {
+            [djinni_private_get_proxied_objc_object() timeStringUpdated:(::djinni::String::fromCpp(c_time_string))];
+        }
+    }
 };
 
 }  // namespace djinni_generated

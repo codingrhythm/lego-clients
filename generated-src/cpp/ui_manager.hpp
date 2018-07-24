@@ -27,7 +27,11 @@ public:
 
     virtual void update_last_name(const std::string & last_name) = 0;
 
-    virtual std::string get_time_string() = 0;
+    virtual void time_string_updated(const std::string & time_string) = 0;
+
+    virtual void get_time_string() = 0;
+
+    virtual void get_time_string_async() = 0;
 };
 
 }  // namespace lego

@@ -11,4 +11,6 @@
 
 - (void)peopleUpdated:(nonnull LGPeople *)people;
 
+- (void)timeStringUpdated:(nonnull NSString *)timeString;
+
 @end

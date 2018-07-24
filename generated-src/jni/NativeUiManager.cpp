@@ -76,14 +76,31 @@ CJNIEXPORT void JNICALL Java_com_mycompany_lego_UiManager_00024CppProxy_native_1
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 
-CJNIEXPORT jstring JNICALL Java_com_mycompany_lego_UiManager_00024CppProxy_native_1getTimeString(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+CJNIEXPORT void JNICALL Java_com_mycompany_lego_UiManager_00024CppProxy_native_1timeStringUpdated(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_timeString)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::lego::UiManager>(nativeRef);
-        auto r = ref->get_time_string();
-        return ::djinni::release(::djinni::String::fromCpp(jniEnv, r));
-    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
+        ref->time_string_updated(::djinni::String::toCpp(jniEnv, j_timeString));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
+}
+
+CJNIEXPORT void JNICALL Java_com_mycompany_lego_UiManager_00024CppProxy_native_1getTimeString(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
+        const auto& ref = ::djinni::objectFromHandleAddress<::lego::UiManager>(nativeRef);
+        ref->get_time_string();
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
+}
+
+CJNIEXPORT void JNICALL Java_com_mycompany_lego_UiManager_00024CppProxy_native_1getTimeStringAsync(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
+        const auto& ref = ::djinni::objectFromHandleAddress<::lego::UiManager>(nativeRef);
+        ref->get_time_string_async();
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 
 }  // namespace djinni_generated

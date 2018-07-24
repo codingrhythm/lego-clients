@@ -3,9 +3,12 @@
 
 #pragma once
 
+#include <memory>
 #include <string>
 
 namespace lego {
+
+class UiManager;
 
 class UiPlatformSupport {
 public:
@@ -14,6 +17,8 @@ public:
     virtual std::string get_time_string() = 0;
 
     virtual std::string get_storage_path() = 0;
+
+    virtual void get_time_string_async(const std::shared_ptr<UiManager> & manager) = 0;
 };
 
 }  // namespace lego

@@ -21,7 +21,9 @@ namespace lego {
         void update_title(const std::string & new_title);
         void update_first_name(const std::string & first_name);
         void update_last_name(const std::string & last_name);
+        void time_string_updated(const std::string & time_string);
         void people_updated(const UIStorage::PeopleRecord * people_record);
-        std::string get_time_string();
+        void get_time_string();
+        void get_time_string_async();
     };
 }

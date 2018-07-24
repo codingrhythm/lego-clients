@@ -71,10 +71,21 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nonnull NSString *)getTimeString {
+- (void)timeStringUpdated:(nonnull NSString *)timeString {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->get_time_string();
-        return ::djinni::String::fromCpp(objcpp_result_);
+        _cppRefHandle.get()->time_string_updated(::djinni::String::toCpp(timeString));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)getTimeString {
+    try {
+        _cppRefHandle.get()->get_time_string();
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)getTimeStringAsync {
+    try {
+        _cppRefHandle.get()->get_time_string_async();
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

@@ -16,4 +16,10 @@ class UIPlatformSupport: LGUiPlatformSupport {
     func getTimeString() -> String {
         return String(format: "System time: %@", Date() as CVarArg)
     }
+
+    func getTimeStringAsync(_ manager: LGUiManager?) {
+        DispatchQueue.global().async { [unowned self] in
+            manager?.timeStringUpdated(self.getTimeString())
+        }
+    }
 }

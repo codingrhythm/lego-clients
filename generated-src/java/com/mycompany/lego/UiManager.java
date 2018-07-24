@@ -16,7 +16,11 @@ public abstract class UiManager {
 
     public abstract void updateLastName(String lastName);
 
-    public abstract String getTimeString();
+    public abstract void timeStringUpdated(String timeString);
+
+    public abstract void getTimeString();
+
+    public abstract void getTimeStringAsync();
 
     public static native UiManager create(UiObserver observer, UiPlatformSupport platform);
 
@@ -84,11 +88,27 @@ public abstract class UiManager {
         private native void native_updateLastName(long _nativeRef, String lastName);
 
         @Override
-        public String getTimeString()
+        public void timeStringUpdated(String timeString)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            return native_getTimeString(this.nativeRef);
+            native_timeStringUpdated(this.nativeRef, timeString);
         }
-        private native String native_getTimeString(long _nativeRef);
+        private native void native_timeStringUpdated(long _nativeRef, String timeString);
+
+        @Override
+        public void getTimeString()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            native_getTimeString(this.nativeRef);
+        }
+        private native void native_getTimeString(long _nativeRef);
+
+        @Override
+        public void getTimeStringAsync()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            native_getTimeStringAsync(this.nativeRef);
+        }
+        private native void native_getTimeStringAsync(long _nativeRef);
     }
 }

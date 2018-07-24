@@ -7,4 +7,6 @@ public abstract class UiObserver {
     public abstract void titleUpdated(String title);
 
     public abstract void peopleUpdated(People people);
+
+    public abstract void timeStringUpdated(String timeString);
 }

@@ -96,6 +96,7 @@ people = record {
 ui_observer = interface +o +j {
   title_updated(title: string);
   people_updated(people: people);
+  time_string_updated(time_string: string);
 }
 
 ui_manager = interface +c {
@@ -105,10 +106,13 @@ ui_manager = interface +c {
   update_title(new_title: string);
   update_first_name(first_name: string);
   update_last_name(last_name: string);
-  get_time_string(): string;
+  time_string_updated(time_string: string);
+  get_time_string();
+  get_time_string_async();
 }
 
 ui_platform_support = interface +o +j {
   get_time_string(): string;
   get_storage_path(): string;
+  get_time_string_async(manager: ui_manager);
 }

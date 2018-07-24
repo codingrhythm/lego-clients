@@ -36,8 +36,9 @@ namespace lego {
         _storage->save_people(_people.first_name, last_name);
     }
 
-    std::string UIManagerImpl::get_time_string() {
-        return _platform->get_time_string();
+    void UIManagerImpl::get_time_string() {
+        std::string time_string = _platform->get_time_string();
+        _observer->time_string_updated(time_string);
     }
 
     void UIManagerImpl::people_updated(const UIStorage::PeopleRecord * people_record) {
@@ -46,5 +47,13 @@ namespace lego {
             people_record->last_name()->c_str()
         };
         _observer->people_updated(_people);
+    }
+
+    void UIManagerImpl::time_string_updated(const std::string &time_string) {
+        _observer->time_string_updated(time_string);
+    }
+
+    void UIManagerImpl::get_time_string_async() {
+        _platform->get_time_string_async(shared_from_this());
     }
 }
