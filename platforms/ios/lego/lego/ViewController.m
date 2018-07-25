@@ -57,8 +57,8 @@ const int NUMBER_OF_REQUESTS = 10;
     __weak ViewController *weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSDate *start = [NSDate date];
-        DataGenerator *dataGen = [DataGenerator new];
-        LGSTemplate *template = [dataGen createLargeDataWithNumberOfPages:500 questionsPerPage:1000];
+        //DataGenerator *dataGen = [DataGenerator new];
+        LGSTemplate *template = [weakSelf generateLargeData:500 and:1000];
         NSLog(@"done native: %0.5f, template: %@", -[start timeIntervalSinceNow], template.name);
     });
 }
